@@ -32,3 +32,7 @@ $o-colors-is-silent: true !default;
 		background-color: #{nth($color,2)};
 	}
 }
+
+p {
+	color: oColorsGetPaletteColor(black, true);
+}
