@@ -53,7 +53,7 @@
       @if ($property == "") {
         $candidateColor: _oColorsGetUseCase($name, all, $transparency);
       } @else {
-        $candidateColor: _oColorsGetUseCase($name, $propert, $transparency);        
+        $candidateColor: _oColorsGetUseCase($name, $property, $transparency);        
       }
 
       @if ($color == undefined) {

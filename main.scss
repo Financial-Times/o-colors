@@ -34,5 +34,5 @@ $o-colors-is-silent: true !default;
 }
 
 p {
-	color: oColorsGetPaletteColor(black, true);
+	@include oColorsFor(button-selected);
 }
