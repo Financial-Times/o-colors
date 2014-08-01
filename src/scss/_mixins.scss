@@ -5,11 +5,23 @@
 @mixin oColorsFor($useCaseList, $propertyList: all) {
   @if ($propertyList == 'all' or index($propertyList, 'background')) {
     background-color: oColorsGetColorFor($useCaseList, background);
+    $backgroundColor: oColorsGetColorFor($useCaseList, background, true);
+    @if $backgroundColor != undefined {
+    	background-color: $backgroundColor;
+    }
   }
   @if ($propertyList == 'all' or index($propertyList, 'text')) {
     color: oColorsGetColorFor($useCaseList, text);
+    $color: oColorsGetColorFor($useCaseList, text, true);
+    @if $color != undefined {
+    	color: $color;
+    }
   }
   @if ($propertyList == 'all' or index($propertyList, 'border')) {
     border-color: oColorsGetColorFor($useCaseList, border);
+    $borderColor: oColorsGetColorFor($useCaseList, border, true);
+    @if $borderColor != undefined {
+    	border-color: $borderColor
+    }
   }
 }

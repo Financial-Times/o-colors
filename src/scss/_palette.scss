@@ -3,7 +3,7 @@
  *
  * These are the colours that make up the FT palette.  We don't use these colours directly, but instead assign them to 'use cases', which are defined in use-cases.scss.  In the list below, each line contains a color name and a colour code, and is finished with a comma:
  *
- *  <colorname>   <colour code>,
+ *  <colorname>   <solid colour code>    <color rgba>,
  *
  * The colour name must be a single word comprising just letters, numbers, and dashes.  You can have as many spaces between the colour name and the colour code as you like (so you can line them up neatly), and you *MUST* finish the line with a comma (except the final entry, which should not have a comma)
  */
@@ -16,7 +16,7 @@ $o-colors-palette-list:
     inherit        inherit,
 
 	/* Primary Palette */
-	pink           #fff1e0,
+	pink           #fff1e0      rgba(50,70,102,0.7),
 	black          #000000,
 	white          #ffffff,
 	blue           #2e6e9e,
