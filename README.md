@@ -29,7 +29,7 @@ If you need to use a color value as part of a more complex CSS rule, e.g. a bord
 
 ```scss
 .my-thing {
-	color: oColorsGetColorFor(article-life-arts-body article-body body, text, (default: blue));
+	color: oColorsGetColorFor(article-life-arts-body article-body body, text, $default: blue);
 }
 ```
 
@@ -37,8 +37,7 @@ The `oColorsGetColorFor` function takes three arguments:
 
 * **Use case list**: a list of colour use cases in order of preference.  The first one that is defined for the specified property will be returned
 * **Property**: The property that you want to use the colour for (background, border, or text).  Note that in contrast to the `oColorsFor` mixin, you must specify only one property.   Options are `background`, `border`, `text`, and `all`.
-* **Options**: A Sass *map* of additional options, all of which are optional, and may comprise:
-	* **default**: The name of a palette colour to return if none of the specified use cases are defined for the desired property.  May also be set to `null` or `undefined` to return that instead of the built in default (which is transparent)
+* **Default**: The name of a palette colour to return if none of the specified use cases are defined for the desired property.
 
 ### Palette colour function
 
