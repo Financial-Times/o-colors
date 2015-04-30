@@ -48,14 +48,14 @@ $o-colors-usecases: map-merge((
 	// Deprecated
 
 	badge:                    (text: "white", background: "red", _deprecated: "Moved into o-typography"),
-	error:                    (text: "red", border: "red", background: "white", _deprecated: "Move into component"),
+	error:                    (text: "red", border: "red", background: "white", _deprecated: "Moved into component"),
 	heading:                  (text: "grey-tint5", _deprecated: "Use `body` instead"),
 	lead:                     (text: "grey-tint4", _deprecated: "Moved into o-typography"),
 	label:                    (text: "grey-tint5", _deprecated: "Use `body` instead"),
 	link-alt:                 (text: "grey-tint5", _deprecated: "Use `link-title`"),
 	link-alt-hover:           (text: "blue", _deprecated: "Use `link-title-hover`"),
-	control:                  (text: "white", background: "grey-tint5", _deprecated: "Move into component"),
-	control-hover:            (text: "grey-tint1", _deprecated: "Move into component"),
+	control:                  (text: "white", background: "grey-tint5", _deprecated: "Moved into component"),
+	control-hover:            (text: "grey-tint1", _deprecated: "Moved into component"),
 
 	table:                    (background: "transparent", _deprecated: "Moved into o-table component"),
 	table-striped:            (background: "pink", _deprecated: "Moved into o-table component"),
@@ -116,7 +116,7 @@ $o-colors-usecases: map-merge((
 	modal-close:              (border: "white", background: "blue", text: "white", _deprecated: "Moved into o-overlays"),
 
 	// Overlay but not really (required by gallery)
-	overlay:                  (text: "white", background: "grey-tint5", _deprecated: "Move into o-gallery"),
+	overlay:                  (text: "white", background: "grey-tint5", _deprecated: "Moved into o-gallery"),
 
 	// Typography
 	heading-medium:           (border: "pink-tint2", _deprecated: "Moved into o-typography"),
