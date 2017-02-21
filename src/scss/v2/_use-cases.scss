@@ -1,0 +1,47 @@
+////
+/// @group o-colors
+/// @link http://registry.origami.ft.com/components/o-colors
+////
+
+/// Colour use cases v2
+///
+/// These mappings define what we use our colours for.
+///
+/// Use case:           Must be a single word comprising just letters, numbers, and dashes.
+/// Properties:         A Sass map of properties (must be 'border', 'text', 'background', or 'all')
+///                     against palette colours (must be an exact match for a name of a colour defined
+///                     in palette.scss).
+///
+/// Special properties: You can use the following special properties to mark use cases:
+///
+///                     _deprecated: <msg>  Emits <msg> as a warning if referenced, but still works
+///
+/// @type map
+$o-colors-usecases-v2: (
+
+//	<use case>                <properties>
+
+	page:                     (background: 'pink', text: 'grey-tint5'),
+	box:                      (background: 'pink-tint1'),
+	link:                     (text: 'teal'),
+	link-hover:               (text: 'grey-tint4'),
+	link-title:               (text: 'grey-tint5'),
+	link-title-hover:         (text: 'blue'),
+	tag-link:                 (text: 'claret'),
+	tag-link-hover:           (text: 'merlot'),
+	title:                    (text: 'black'),
+	body:                     (text: 'grey-tint5'),
+	muted:                    (text: 'pink-tint3'),
+	product-brand:            (background: 'claret'),
+
+	// Section colours
+	section-life-arts:        (all: 'purple'),
+	section-life-arts-alt:    (all: 'candy'),
+	section-magazine:         (all: 'blue'),
+	section-magazine-alt:     (all: 'light-blue'),
+	section-house-home:       (all: 'green'),
+	section-house-home-alt:   (all: 'lime'),
+	section-money:            (all: 'red'),
+	section-money-alt:        (all: 'white'),
+
+);

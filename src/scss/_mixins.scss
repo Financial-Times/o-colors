@@ -12,6 +12,7 @@
 /// @param {color} $color - Color (rgb, hex, hsl…)
 @mixin oColorsSetColor($name, $color) {
 	$newcolor: ($name: $color);
+
 	$o-colors-palette: map-merge($o-colors-palette, $newcolor) !global;
 }
 
@@ -66,5 +67,35 @@
 	}
 	@if ($propertyList == 'all' or index($propertyList, 'border')) {
 		border-color: oColorsGetColorFor($useCaseList, border, $options: $args);
+	}
+}
+
+/// Set the tint palette colors
+@mixin _oColorsSetTintPalette() {
+	@each $percent in $_o-colors-tint-percentages {
+		@include oColorsSetColor('tint-#{$percent}', oColorsGetNeutralColor($percent));
+	}
+}
+
+@mixin _oColorsSetShadesPalette() {
+	@each $color, $settings in $o-colors-shades {
+		$hue: map-get($settings, 'hue');
+		$shades: map-get($settings, 'shades');
+
+		@each $shade in $shades {
+			$luminosity: map-get($shade, 'lum');
+			$saturation: map-get($shade, 'sat');
+
+			$shade: _oColorsHSB($hue, $saturation, $luminosity);
+			$name: "#{$color}-";
+
+			@if $luminosity < 100 {
+				$name: "#{$name}#{$luminosity}";
+			} @else {
+				$name: "#{$name}#{$luminosity + $saturation}";
+			}
+
+			@include oColorsSetColor($name, $shade);
+		}
 	}
 }

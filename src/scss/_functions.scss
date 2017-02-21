@@ -15,6 +15,18 @@
 	}
 }
 
+/// Get a neutral colour based on the background context and base color
+///
+/// @param {Number} $percentage [60] - percentage opacity of the colour over the background
+/// @param {String} $background [pink] - palette name of background color
+/// @param {String} $color [black] - palette name of color
+@function oColorsGetNeutralColor($percentage: 60, $background: 'pink', $color: 'black') {
+	$base: oColorsGetPaletteColor($color);
+	$context: oColorsGetPaletteColor($background);
+
+	@return mix($base, $context, $percentage);
+}
+
 /// Return the defined palette colour name for a use case / property combination
 ///
 /// @access private
@@ -86,4 +98,40 @@
 	}
 
 	@return oColorsGetPaletteColor($color);
+}
+
+/// Sets the correct color-palette and color-use-cases variables based on the
+/// $o-colors-version value.
+@function _oColorsSetVersion() {
+	@if $o-colors-version == 1 {
+		@warn "o-colors version 1 has been deprecated and will be removed in the next major release.";
+		$o-colors-palette: map-merge($o-colors-palette-v1, $o-colors-palette) !global;
+		$o-colors-usecases: map-merge($o-colors-usecases-v1, $o-colors-usecases) !global;
+	} @else if $o-colors-version == 2 {
+		$o-colors-palette: map-merge($o-colors-palette-v2, $o-colors-palette) !global;
+		$o-colors-usecases: map-merge($o-colors-usecases-v2, $o-colors-usecases) !global;
+	} @else {
+		@return false;
+	}
+
+	@return true;
+}
+
+/// Returns the web-safe HSLA color based on HSB/HSV values
+///
+/// @access private
+///
+/// @param {Number} $hue - number between 0-360
+/// @param {Number} $saturation - number between 0-100
+/// @param {Number} $brigthness - number between 0-100
+/// @param {Number} $alpha [1] - number between 0-1
+@function _oColorsHSB($hue, $saturation, $brightness, $alpha: 1) {
+	@if $brightness == 0 {
+		@return hsla(0, 0, 0, $alpha);
+	} @else {
+		$hsl-luminance: ($brightness/2) * (2 - ($saturation/100));
+		$hsl-saturation: ($brightness * $saturation) / if($hsl-luminance < 50, $hsl-luminance * 2, 200 - $hsl-luminance * 2);
+
+		@return hsla($hue, $hsl-saturation, $hsl-luminance, $alpha);
+	}
 }

@@ -3,9 +3,7 @@
 /// @link http://registry.origami.ft.com/components/o-colors
 ////
 
-$o-colors-palette: () !default;
-
-/// Colour palette
+/// Colour palette v1
 ///
 /// These are the colours that make up the FT palette.
 /// We don't use these colours directly, but instead assign them to 'use cases',
@@ -26,7 +24,7 @@ $o-colors-palette: () !default;
 /// @link http://next.ft.com/__styleguide/design-primitives#palette
 ///
 /// @type map
-$o-colors-palette: map-merge((
+$o-colors-palette-v1: (
 	// Non-colour CSS values
 	'transparent':           transparent,
 	'inherit':               inherit,
@@ -126,4 +124,4 @@ $o-colors-palette: map-merge((
 	'org-b2b-dark':          #c85f04,
 	'org-b2b-light':         #f29d53,
 
-), $o-colors-palette);
+);
