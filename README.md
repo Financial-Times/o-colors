@@ -123,7 +123,7 @@ Output:
 #### Tint palette colors
 
 `oColorsGetTint` will return a tinted palette color based on a specified brightness.
-The function takes the name of a palette color and a brightness value between 0-100.
+The function takes the name of a palette color and a brightness value between 0-100. Higher numbers are brighter, with the exception of when `black` is tinted, where higher numbers are darker.
 
 Usage:
 
