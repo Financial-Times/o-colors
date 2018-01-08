@@ -1,0 +1,14 @@
+{
+  "name": "o-colors",
+  "version": "1.0.0",
+  "description": "The color palette for the FT masterbrand and sub-brand products.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^4.0.0",
+    "sass-true": "^3.0.2"
+  },
+  "scripts": {
+    "test": "mocha test-sass/scss"
+  }
+}
