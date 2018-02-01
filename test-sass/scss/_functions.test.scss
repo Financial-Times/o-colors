@@ -1,0 +1,24 @@
+@include describe('oColors functions') {
+	@include it('oColorsGetPaletteColor returns CSS color for palette color name') {
+		@include assert-equal(oColorsGetPaletteColor('transparent'), (transparent));
+		@include assert-equal(oColorsGetPaletteColor('inherit'), (inherit));
+		@include assert-equal(oColorsGetPaletteColor('paper'), (#fff1e5));
+		@include assert-equal(oColorsGetPaletteColor('black'), (#000000));
+		@include assert-equal(oColorsGetPaletteColor('white'), (#ffffff));
+		@include assert-equal(oColorsGetPaletteColor('claret'), (#990f3d));
+		@include assert-equal(oColorsGetPaletteColor('oxford'), (#0f5499));
+		@include assert-equal(oColorsGetPaletteColor('teal'), (#0d7680));
+		@include assert-equal(oColorsGetPaletteColor('wheat'), (#f2dfce));
+		@include assert-equal(oColorsGetPaletteColor('sky'), (#cce6ff));
+		@include assert-equal(oColorsGetPaletteColor('velvet'), (#593380));
+		@include assert-equal(oColorsGetPaletteColor('mandarin'), (#ff8833));
+		@include assert-equal(oColorsGetPaletteColor('lemon'), (#ffec1a));
+		@include assert-equal(oColorsGetPaletteColor('candy'), (#ff7faa));
+		@include assert-equal(oColorsGetPaletteColor('wasabi'), (#96cc28));
+		@include assert-equal(oColorsGetPaletteColor('jade'), (#00b359));
+		@include assert-equal(oColorsGetPaletteColor('crimson'), (#cc0000));
+		@include assert-equal(oColorsGetPaletteColor('org-b2c'), (#4e96eb));
+		@include assert-equal(oColorsGetPaletteColor('org-b2c-dark'), (#3a70af));
+		@include assert-equal(oColorsGetPaletteColor('org-b2c-light'), (#99c6fb));
+	};
+};
