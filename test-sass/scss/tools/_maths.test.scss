@@ -1,10 +1,10 @@
 @include describe('Math functions') {
-	@include it('finds the square root of a number') {
+	@include it('sqrt: finds the square root of a number') {
 		@include assert-equal(sqrt(4), (2));
 		@include assert-equal(sqrt(121), (11));
 	};
 
-	@include it('finds the power of an exponent for a number') {
+	@include it('pow: finds the power of an exponent for a number') {
 		@include assert-equal(pow(1, 9), (1));
 		@include assert-equal(pow(3, 3), (27));
 	};

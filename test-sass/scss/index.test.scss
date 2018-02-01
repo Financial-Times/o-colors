@@ -2,7 +2,8 @@
 
 @import '../../main';
 
+$_true-error-output-override: true;
 
-// @import 'tools/a11y.test';
+@import 'tools/a11y.test';
 @import 'tools/color.test';
 @import 'tools/maths.test';
