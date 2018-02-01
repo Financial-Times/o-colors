@@ -10,7 +10,7 @@
 		@include assert-equal(oColorsCheckContrast(#000, #fff), ('pass'));
 		@include assert-equal(oColorsCheckContrast(#f2dfce, #cc0000), ('pass')); // wheat, crimson
 		@include assert-equal(oColorsCheckContrast(#ff7faa, #990f3d), ('large')); // candy, claret
-		@include assert-equal(oColorsCheckContrast(#fff1e5, #fff), ('fail')); // candy, claret
+		@include assert-equal(oColorsCheckContrast(#fff1e5, #fff), ('ERROR: This combination of #fff1e5 with #fff does not pass WCAG color contrast guidelines.')); // candy, claret
 
 	};
 };
