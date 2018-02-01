@@ -92,4 +92,21 @@
 			};
 		};
 	};
+
+	@include describe('oColorsGetTint') {
+		@include it('returns a customised version of palette colors that accept shading') {
+			@include assert-equal(oColorsGetTint('black', 10), (#e6d9ce));
+		};
+
+		@include it('returns an error if palette color doesn\'t accept shading') {
+			@include assert-equal(oColorsGetTint('paper', 10),
+			('ERROR: It is not possible to use a tint of: paper, please use one of: black, white, claret, oxford, teal, wheat, sky, slate, velvet, mandarin, lemon, candy, wasabi, jade, crimson instead.'));
+		};
+	};
+
+	@include describe('oColorsGetTextColor') {
+		@include it('returns a text color based on background and opacity percentage') {
+			@include assert-equal(oColorsGetTextColor(oColorsGetPaletteColor('paper')), (#1a1817));
+		};
+	};
 };
