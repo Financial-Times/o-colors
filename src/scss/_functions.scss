@@ -10,8 +10,7 @@
 	@if (map-has-key($o-colors-palette, $name)) {
 		@return map-get($o-colors-palette, $name);
 	} @else {
-		@warn "Color name '#{inspect($name)}' is not defined in the palette.";
-		@return null;
+		@return _warn("Color name '#{inspect($name)}' is not defined in the palette.");
 	}
 }
 
@@ -93,7 +92,7 @@
 
 	@if ($color == null) {
 		@if ($default or $default == null) {
-			@return $default;
+			@return oColorsGetPaletteColor($default);
 		} @else {
 			$warn: "Undefined use-case: can't resolve use case list '#{inspect($namelist)}'";
 
@@ -101,7 +100,7 @@
 				$warn: $warn + " for property '#{inspect($property)}'";
 			}
 
-			@warn $warn;
+			@return _warn($warn);
 		}
 	}
 

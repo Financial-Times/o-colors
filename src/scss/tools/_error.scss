@@ -7,3 +7,11 @@
 
 	@error('#{$message}')
 };
+
+@function _warn($message, $capture: $_test-environment) {
+	@if $capture {
+		@return 'WARNING: #{$message}';
+	}
+
+	@error('#{$message}')
+};
