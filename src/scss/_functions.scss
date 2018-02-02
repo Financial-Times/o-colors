@@ -10,11 +10,8 @@
 	@if (map-has-key($o-colors-palette, $name)) {
 		@return map-get($o-colors-palette, $name);
 	} @else {
-		@if ($name == null) {
-			@return null;
-		} @else {
-			@return _warn("Color name '#{inspect($name)}' is not defined in the palette.");
-		}
+		@warn "Color name '#{inspect($name)}' is not defined in the palette.";
+		@return null;
 	}
 }
 
@@ -104,7 +101,7 @@
 				$warn: $warn + " for property '#{inspect($property)}'";
 			}
 
-			@return _warn($warn);
+			@warn $warn;
 		}
 	}
 

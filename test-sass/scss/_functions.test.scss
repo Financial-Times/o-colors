@@ -22,11 +22,6 @@
 			@include assert-equal(oColorsGetPaletteColor('org-b2c-dark'), (#3a70af));
 			@include assert-equal(oColorsGetPaletteColor('org-b2c-light'), (#99c6fb));
 		};
-
-		@include it('doesn\'t allow non-existent palette name') {
-			@include assert-equal(oColorsGetPaletteColor('pink'),
-			("WARNING: Color name 'pink' is not defined in the palette."));
-		};
 	};
 
 	@include describe('oColorsMix') {
