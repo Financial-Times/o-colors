@@ -1,4 +1,4 @@
-@include describe('oColors mixins'){
+@include describe('oColors mixins') {
 	@include describe('oColorsSetColor') {
 		@include it('adds a custom palette color') {
 			@include oColorsSetColor('olive', #808000);

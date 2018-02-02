@@ -5,7 +5,7 @@
 		@return 'ERROR: #{$message}';
 	}
 
-	@error('#{$message}')
+	@error('#{$message}');
 };
 
 @function _warn($message, $capture: $_test-environment) {
@@ -13,5 +13,5 @@
 		@return 'WARNING: #{$message}';
 	}
 
-	@error('#{$message}')
+	@error('#{$message}');
 };
