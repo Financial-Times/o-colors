@@ -61,7 +61,4 @@ $branded-usecases: (
 	)
 );
 
-$o-brand: 'lalala';
 $o-colors-usecases: if(map-get($branded-usecases, $o-brand), (map-merge(map-get($branded-usecases, $o-brand), $o-colors-usecases)), ());
-
-@debug $o-colors-usecases;
