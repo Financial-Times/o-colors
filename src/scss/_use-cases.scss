@@ -51,7 +51,7 @@ $branded-usecases: (
 	'internal': (
 	//	<use case>                <properties>
 		page:                     (background: 'white'),
-		box:                      (background: 'wheat'),
+		box:                      (background: 'internal-slate-5'),
 		link:                     (text: 'teal'),
 		link-hover:               (text: 'internal-slate-15'),
 		link-title:               (text: 'internal-slate-15'),
@@ -61,4 +61,4 @@ $branded-usecases: (
 	)
 );
 
-$o-colors-usecases: if(map-get($branded-usecases, $o-brand), (map-merge(map-get($branded-usecases, $o-brand), $o-colors-usecases)), ());
+$o-colors-usecases: if(map-get($branded-usecases, $o-colors-brand), (map-merge(map-get($branded-usecases, $o-colors-brand), $o-colors-usecases)), ());
