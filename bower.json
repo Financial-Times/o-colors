@@ -6,8 +6,5 @@
   "ignore": [
     "test",
     ".travis.yml"
-  ],
-  "dependencies": {
-    "o-brand": "^1.0.0"
-  }
+  ]
 }
