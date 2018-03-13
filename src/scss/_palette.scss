@@ -55,7 +55,7 @@ $o-colors-palette: map-merge((
 	'org-b2c-dark':          #3a70af,
 	'org-b2c-light':         #99c6fb,
 
-	'internal-slate':         #262a33,
+	'internal-slate':         #262a33, //is the same as 'slate', but currently here to enable experimental work on internal brand design without distrupting the palette
 ), $o-colors-palette);
 
 $o-colors-tints: (
