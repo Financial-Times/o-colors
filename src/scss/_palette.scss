@@ -122,7 +122,7 @@ $o-colors-tints: (
 
 // Add experimental colors to support work on internal brand design.
 $_o-colors-experimental-palette: (
-	'slate-white-15':        #dedfe0, // experimental: to support work on internal brand design
-	'slate-white-5':         #f4f4f5, // experimental: to support work on internal brand design
+	'slate-white-15':        #dedfe0, // oColorsMix('slate', 'white', 15): to support work on internal brand design
+	'slate-white-5':         #f4f4f5, // oColorsMix('slate', 'white', 5): to support work on internal brand design
 );
 $o-colors-palette: map-merge($_o-colors-experimental-palette, $o-colors-palette);
