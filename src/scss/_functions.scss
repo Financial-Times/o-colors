@@ -8,6 +8,13 @@
 /// @param {String} $name
 @function oColorsGetPaletteColor($name) {
 	@if (map-has-key($o-colors-palette, $name)) {
+
+		// Warn if an experimental palette color is being used.
+		@if $_o-colors-experimental-palette-warning and map-has-key($_o-colors-experimental-palette, $name) {
+			$_o-colors-experimental-palette-warning: false !global;
+			@warn "Please note: The palette colors #{map-keys($_o-colors-experimental-palette)} are experimental and may be removed at any time. No action is required if you are not using these colors directly.";
+		}
+
 		@return map-get($o-colors-palette, $name);
 	} @else {
 		@warn "Color name '#{inspect($name)}' is not defined in the palette";
