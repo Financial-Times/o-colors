@@ -17,36 +17,58 @@
 ///                     _deprecated: <msg>  Emits <msg> as a warning if referenced, but still works
 ///
 /// @type map
-$o-colors-usecases: map-merge((
 
-//	<use case>                <properties>
+//TODO: Include explanation for mapped usecases once they have been made permanent and publicly available
 
-	page:                     (background: 'paper'),
-	box:                      (background: 'wheat'),
-	link:                     (text: 'teal'),
-	link-hover:               (text: 'black-70'),
-	link-title:               (text: 'black-80'),
-	link-title-hover:         (text: 'black-70'),
-	tag-link:                 (text: 'claret'),
-	tag-link-hover:           (text: 'claret-30'),
-	opinion-tag-link:         (text: 'oxford'),
-	opinion-tag-link-hover:   (text: 'oxford-30'),
-	title:                    (text: 'black'),
-	body:                     (text: 'black-80'),
-	muted:                    (text: 'black-20'),
-	opinion:                  (background: 'sky'),
-	hero:                     (background: 'wheat'),
-	hero-opinion:             (background: 'oxford'),
-	hero-highlight:           (background: 'claret'),
+$_o-colors-branded-usecases: (
+	'master': (
+	//	<use case>                <properties>
+		page:                     (background: 'paper'),
+		box:                      (background: 'wheat'),
+		link:                     (text: 'teal'),
+		link-hover:               (text: 'black-70'),
+		link-title:               (text: 'black-80'),
+		link-title-hover:         (text: 'black-70'),
+		tag-link:                 (text: 'claret'),
+		tag-link-hover:           (text: 'claret-30'),
+		opinion-tag-link:         (text: 'oxford'),
+		opinion-tag-link-hover:   (text: 'oxford-30'),
+		title:                    (text: 'black'),
+		body:                     (text: 'black-80'),
+		muted:                    (text: 'black-20'),
+		opinion:                  (background: 'sky'),
+		hero:                     (background: 'wheat'),
+		hero-opinion:             (background: 'oxford'),
+		hero-highlight:           (background: 'claret'),
 
-	// Section colors
-	section-life-arts:        (all: 'velvet'),
-	section-life-arts-alt:    (all: 'candy'),
-	section-magazine:         (all: 'oxford'),
-	section-magazine-alt:     (all: 'sky'),
-	section-house-home:       (all: 'jade'),
-	section-house-home-alt:   (all: 'wasabi'),
-	section-money:            (all: 'crimson'),
-	section-money-alt:        (all: 'white'),
+		// Section colors
+		section-life-arts:        (all: 'velvet'),
+		section-life-arts-alt:    (all: 'candy'),
+		section-magazine:         (all: 'oxford'),
+		section-magazine-alt:     (all: 'sky'),
+		section-house-home:       (all: 'jade'),
+		section-house-home-alt:   (all: 'wasabi'),
+		section-money:            (all: 'crimson'),
+		section-money-alt:        (all: 'white'),
+	),
+	'internal': (
+	//	<use case>                <properties>
+		page:                     (background: 'white'),
+		box:                      (background: 'slate-white-5'),
+		link:                     (text: 'teal'),
+		link-hover:               (text: 'slate-white-15'),
+		link-title:               (text: 'slate-white-15'),
+		link-title-hover:         (text: 'slate-white-15'),
+		title:                    (text: 'slate'),
+		body:                     (text: 'slate'),
+		muted:                    (text: 'black-20'),
+	),
+	'whitelabel': (
+	//	<use case>                <properties>
+		page:                     (background: 'white'),
+	)
+);
 
-), $o-colors-usecases);
+$_o-colors-default-brand-usecases: map-get($_o-colors-branded-usecases, 'master');
+$_o-colors-current-brand-usecases: map-get($_o-colors-branded-usecases, $_o-colors-brand);
+$o-colors-usecases: map-merge(if($_o-colors-current-brand-usecases, $_o-colors-current-brand-usecases, $_o-colors-default-brand-usecases), $o-colors-usecases);

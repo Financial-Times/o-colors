@@ -8,6 +8,13 @@
 /// @param {String} $name
 @function oColorsGetPaletteColor($name) {
 	@if (map-has-key($o-colors-palette, $name)) {
+
+		// Warn if an experimental palette color is being used.
+		@if $_o-colors-experimental-palette-warning and map-has-key($_o-colors-experimental-palette, $name) {
+			$_o-colors-experimental-palette-warning: false !global;
+			@warn "Please note: The palette colors #{map-keys($_o-colors-experimental-palette)} are experimental and may be removed at any time. No action is required if you are not using these colors directly.";
+		}
+
 		@return map-get($o-colors-palette, $name);
 	} @else {
 		@warn "Color name '#{inspect($name)}' is not defined in the palette.";
@@ -21,7 +28,7 @@
 /// @param {String} $background [paper] - palette name of background color
 /// @param {String} $color [black] - palette name of color
 /// @param {Number} $percentage [60] - percentage opacity of the color over the background
-@function oColorsMix($color: 'black', $background: 'paper', $percentage: 80) {
+@function oColorsMix($color: 'black', $background: oColorsGetUseCase('page', 'background'), $percentage: 80) {
 	$context: $background;
 	$base: $color;
 

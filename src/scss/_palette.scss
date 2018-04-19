@@ -56,6 +56,9 @@ $o-colors-palette: map-merge((
 	'org-b2c-light':         #99c6fb,
 ), $o-colors-palette);
 
+// Add experimental colors to support work on internal brand design.
+$o-colors-palette: map-merge($_o-colors-experimental-palette, $o-colors-palette);
+
 $o-colors-tints: (
 	'black': (
 		tints: (5, 10, 20, 30, 40, 50, 60, 70, 80, 90),
