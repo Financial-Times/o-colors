@@ -1,0 +1,15 @@
+{
+  "name": "mathsass",
+  "version": "0.10.1",
+  "homepage": "http://github.com/terkel/mathsass",
+  "main": "dist/_math.scss",
+  "ignore": [
+    "test",
+    ".editorconfig",
+    ".gitattributes",
+    ".gitignore",
+    ".travis.yml",
+    "*.md",
+    "Gruntfile.coffee"
+  ]
+}
