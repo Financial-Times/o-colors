@@ -208,7 +208,7 @@ opinion |               background
 hero |                  background
 hero-opinion |          background
 hero-highlight |        background
-**Section colors** | 
+**Section colors** |
 section-life-arts |     all
 section-life-arts-alt | all
 section-magazine |      all
@@ -247,3 +247,71 @@ If you have any questions or comments about this component, or need help using i
 ## Licence
 
 This software is published by the Financial Times under the [MIT licence](http://opensource.org/licenses/MIT).
+
+
+
+
+
+
+
+### PASS
+**background: paper**
+	AAA:
+	- black
+	- claret
+	- oxford
+	- slate
+	- velvet
+	AA
+	- teal
+	- crimson
+	- org-b2c-dark
+	AA18
+	- jade (#00994d)
+	- org-b2c
+
+**background: white**
+	AAA:
+	- black
+	- claret
+	- slate
+	- velvet
+	AA
+	- teal
+	- oxford
+	- crimson
+	- org-b2c-dark
+	AA18
+	- jade (#00994d)
+	- org-b2c
+
+**background: black**
+	AAA:
+	- org-b2c-light
+	- paper
+	- wheat
+	- sky
+	- mandarin
+	- lemon
+	- candy
+	- wasabi
+	- white
+	AA18
+	- teal
+	- crimson
+
+**background: slate**
+	AAA:
+	- org-b2c-light
+	- paper
+	- wheat
+	- sky
+	- lemon
+	- wasabi
+	- white
+	AA
+	- mandarin
+	- candy
+	AA18
+	- teal
+	- crimson
