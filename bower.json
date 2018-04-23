@@ -7,7 +7,7 @@
     "test",
     ".travis.yml"
   ],
-  "devDependencies": {
+  "dependencies": {
     "mathsass": "^0.10.1"
   }
 }
