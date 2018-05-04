@@ -12,7 +12,10 @@
 	"supportStatus": "active",
 	"demosDefaults": {
 		"sass": "demos/src/demo.scss",
-		"js": "demos/src/demo.js"
+		"js": "demos/src/demo.js",
+		"dependencies": [
+			"o-forms"
+		]
 	},
 	"ci": {
 		"circle": "https://circleci.com/api/v1/project/Financial-Times/o-colors"

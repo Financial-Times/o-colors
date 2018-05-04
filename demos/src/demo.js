@@ -29,10 +29,12 @@ function oColorsDemoPalette() {
 		}
 	}
 
+	const useCaseSelector = document.getElementById("select-standard");
+	useCaseSelector.addEventListener('change', oColorsShowUseCases, false);
+
 	// AO: To be used at a later stage to do overlay tints demos
 	// populateTintDemos(palette, colorTints);
 }
-
 
 function oColorsUseCases() {
 	const useCaseElems = document.querySelectorAll('.use-cases');
@@ -44,19 +46,13 @@ function oColorsUseCases() {
 		for (let use of useCases) {
 			let useClass = 'demo-color-for-' + use;
 			elem.parentNode.classList.add(useClass);
-
-			let button = document.createElement('button');
-			button.textContent = use;
-			button.className = 'o-buttons o-buttons--small o-buttons--uncolored';
-			button.addEventListener('click', oColorsShowUseCases, false);
-			elem.appendChild(button);
 		}
 	}
 }
 
 function oColorsShowUseCases() {
-	const useCase = this.textContent;
-	const useCaseClass = '.demo-color-for-' + useCase;
+	const useCase = this.options[this.selectedIndex].value;
+	const useCaseClass = '.demo-color-for-' + useCase; 
 
 	const colors = document.querySelectorAll(useCaseClass);
 
