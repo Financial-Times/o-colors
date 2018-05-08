@@ -1,3 +1,4 @@
+const contrastRatio = require('./contrast-ratio');
 const wrappers = Array.from(document.querySelectorAll('.demo-wrapper'));
 const demoColors = Array.from(document.querySelectorAll('.demo-color'));
 let activeUseCase = '';
@@ -52,7 +53,7 @@ function oColorsUseCases() {
 
 function oColorsShowUseCases() {
 	const useCase = this.options[this.selectedIndex].value;
-	const useCaseClass = '.demo-color-for-' + useCase; 
+	const useCaseClass = '.demo-color-for-' + useCase;
 
 	const colors = document.querySelectorAll(useCaseClass);
 
