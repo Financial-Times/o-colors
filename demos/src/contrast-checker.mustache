@@ -1,3 +1,67 @@
 <div class="container">
-	
+	<div class="o-forms">
+		<div class="text-selector">
+			<label aria-describedby="select-box-info" for="select-standard" class="o-forms__label">Text/foreground color</label>
+			<select id="select-standard" class="o-forms__select">
+
+				{{#primary}}
+					{{#colors}}
+						<option value={{name}}>{{name}}</option>
+					{{/colors}}
+				{{/primary}}
+
+				{{#secondary}}
+					{{#colors}}
+						<option value={{name}}>{{name}}</option>
+					{{/colors}}
+				{{/secondary}}
+
+				{{#tertiary}}
+					{{#colors}}
+						<option value={{name}}>{{name}}</option>
+					{{/colors}}
+				{{/tertiary}}
+
+				{{#b2c}}
+					{{#colors}}
+						<option value={{name}}>{{name}}</option>
+					{{/colors}}
+				{{/b2c}}
+
+			</select>
+		</div>
+	</div>
+
+	<div class="o-forms">
+		<div class="background-selector">
+			<label aria-describedby="select-box-info" for="select-standard" class="o-forms__label">Background color</label>
+			<select id="select-standard" class="o-forms__select">
+
+				{{#primary}}
+					{{#colors}}
+						<option value={{name}}>{{name}}</option>
+					{{/colors}}
+				{{/primary}}
+
+				{{#secondary}}
+					{{#colors}}
+						<option value={{name}}>{{name}}</option>
+					{{/colors}}
+				{{/secondary}}
+
+				{{#tertiary}}
+					{{#colors}}
+						<option value={{name}}>{{name}}</option>
+					{{/colors}}
+				{{/tertiary}}
+
+				{{#b2c}}
+					{{#colors}}
+						<option value={{name}}>{{name}}</option>
+					{{/colors}}
+				{{/b2c}}
+
+			</select>
+		</div>
+	</div>	
 </div>
