@@ -1,16 +1,24 @@
-function oColorsGetWCAGRating(ratio) {
+function oColorsGetWCAGRating(ratio, color1, color2) {
 	let wcagRating;
+	let message;
 
 	if (ratio >= 7) {
 		wcagRating = 'AAA';
+		message = 'Pass';
 	} else if (ratio >= 4.5) {
 		wcagRating = 'AA';
+		message = 'Pass';
 	} else if (ratio >= 3) {
 		wcagRating = 'AA18';
+		message = `Caution: When using the combination of ${color1} with ${color2}, text should be larger than 18px to pass WCAG color contrast guidelines.`;
 	} else {
-		wcagRating = 'fail';
+		wcagRating = 'Fail';
+		message = `The combination of ${color1} with ${color2} does not pass WCAG color contrast guidelines.`;
 	}
-	return wcagRating;
+	return {
+		'wcagRating': wcagRating,
+		'message': message
+	}
 }
 
 

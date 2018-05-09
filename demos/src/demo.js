@@ -23,7 +23,6 @@ function oColorsDemoPalette() {
 		let oColor = swatch.getAttribute('data-o-color');
 		let hexInput = swatch.querySelector('.hex');
 		hexInput.value = palette[oColor];
-		console.log(hexInput.value)
 
 		if (clickToCopy) {
 			swatch.addEventListener('click', oColorsCopy, false);
