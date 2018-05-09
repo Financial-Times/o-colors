@@ -1,4 +1,3 @@
-const contrastRatio = require('./contrast-ratio');
 const wrappers = Array.from(document.querySelectorAll('.demo-wrapper'));
 const demoColors = Array.from(document.querySelectorAll('.demo-color'));
 let activeUseCase = '';
@@ -24,13 +23,14 @@ function oColorsDemoPalette() {
 		let oColor = swatch.getAttribute('data-o-color');
 		let hexInput = swatch.querySelector('.hex');
 		hexInput.value = palette[oColor];
+		console.log(hexInput.value)
 
 		if (clickToCopy) {
 			swatch.addEventListener('click', oColorsCopy, false);
 		}
 	}
 
-	const useCaseSelector = document.getElementById("select-standard");
+	const useCaseSelector = document.getElementById('select-standard');
 	useCaseSelector.addEventListener('change', oColorsShowUseCases, false);
 
 	// AO: To be used at a later stage to do overlay tints demos

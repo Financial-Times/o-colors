@@ -2,7 +2,7 @@
 	<div class="o-forms">
 		<div class="text-selector">
 			<label aria-describedby="select-box-info" for="select-standard" class="o-forms__label">Text/foreground color</label>
-			<select id="select-standard" class="o-forms__select">
+			<select id="text-selector" class="o-forms__select">
 
 				{{#primary}}
 					{{#colors}}
@@ -32,7 +32,7 @@
 		</div>
 		<div class="background-selector">
 			<label aria-describedby="select-box-info" for="select-standard" class="o-forms__label">Background color</label>
-			<select id="select-standard" class="o-forms__select">
+			<select id="background-selector" class="o-forms__select">
 
 				{{#primary}}
 					{{#colors}}
@@ -60,7 +60,9 @@
 
 			</select>
 
-			<button type="submit" form="select-standard" class="o-buttons o-buttons--primary">Check contrast</button>
+			<button type="submit" form="select-standard" class="o-buttons o-buttons--primary o-buttons--submit-colors">Check contrast</button>
 		</div>
 	</div>
+	<h1 class="rating-result"></h1>
+	<h2 class="ratio-result"></h2>
 </div>

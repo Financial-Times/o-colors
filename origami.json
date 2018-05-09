@@ -26,6 +26,7 @@
 			"name": "contrast-checker",
 			"title": "Contrast ratio checker",
 			"data": "demos/src/palette.json",
+			"js": "demos/src/contrast-checker.js",
 			"template": "demos/src/contrast-checker.mustache",
 			"display_html": false
 		},

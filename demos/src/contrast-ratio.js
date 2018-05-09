@@ -1,5 +1,4 @@
-function oColorsGetWCAGRating(color1, color2) {
-	const ratio = oColorsGetContrastRatio(color1, color2);
+function oColorsGetWCAGRating(ratio) {
 	let wcagRating;
 
 	if (ratio >= 7) {
@@ -36,7 +35,7 @@ function preciseFloor(number, decimals = 2) {
 
 
 function oColorsColorLuminance(hex) {
-	const hexValue = hex.substring(1, hex.length);
+	const hexValue = hex.replace('#', '').trim()
 	const rgbPairs = hexValue.match(/.{1,2}/g);
 
 	const decimals = rgbPairs.map(pair => {
@@ -63,5 +62,6 @@ function oColorsColorLuminance(hex) {
 }
 
 module.exports = {
-	oColorsGetWCAGRating
+	oColorsGetWCAGRating,
+	oColorsGetContrastRatio
 }
