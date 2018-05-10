@@ -15,7 +15,9 @@
 		"js": "demos/src/demo.js",
 		"dependencies": [
 			"o-forms",
-			"o-buttons"
+			"o-buttons",
+			"o-normalise",
+			"o-fonts"
 		]
 	},
 	"ci": {
@@ -27,6 +29,7 @@
 			"title": "Contrast ratio checker",
 			"data": "demos/src/palette.json",
 			"js": "demos/src/contrast-checker.js",
+			"sass": "demos/src/contrast-checker.scss",
 			"template": "demos/src/contrast-checker.mustache",
 			"display_html": false
 		},

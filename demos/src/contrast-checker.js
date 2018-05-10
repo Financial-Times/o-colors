@@ -17,11 +17,13 @@ function showContrastRatio() {
 	const backgroundHex = getComputedStyle(docElem).getPropertyValue(`--o-colors-${backgroundColor}`);
 
 	const ratingResultElem = document.querySelector('.rating-result');
-	const ratioResultElem = document.querySelector('.ratio-result');
+	const ratioResultElem = document.querySelector('.ratio-value');
 	const ratio = contrastRatio.oColorsGetContrastRatio(textHex, backgroundHex);
 	const rating = contrastRatio.oColorsGetWCAGRating(ratio, textColor, backgroundColor);
+	ratingResultElem.className = `rating-result rating-result--${rating.wcagRating.toLowerCase()}`;
+
 	ratioResultElem.innerHTML = `Contrast ratio is ${ratio}`;
-	ratingResultElem.innerHTML = `${rating.wcagRating}. ${rating.message}`;
+	ratingResultElem.innerHTML = `WCAG ${rating.wcagRating}<br>${rating.message}`;
 }
 
 document.addEventListener('DOMContentLoaded', function() {

@@ -1,67 +1,73 @@
 <div class="container">
-	<div class="o-forms">
-		<div class="text-selector">
-			<label aria-describedby="select-box-info" for="select-standard" class="o-forms__label">Text/foreground color</label>
-			<select id="text-selector" class="o-forms__select">
+	<div>
+		<div class="o-forms o-forms--wide">
+			<div class="text-selector">
+				<label aria-describedby="select-box-info" for="select-standard" class="o-forms__label">Text/foreground color</label>
+				<select id="text-selector" class="o-forms__select">
 
-				{{#primary}}
-					{{#colors}}
-						<option value={{name}}>{{name}}</option>
-					{{/colors}}
-				{{/primary}}
+					{{#primary}}
+						{{#colors}}
+							<option value={{name}}>{{name}}</option>
+						{{/colors}}
+					{{/primary}}
 
-				{{#secondary}}
-					{{#colors}}
-						<option value={{name}}>{{name}}</option>
-					{{/colors}}
-				{{/secondary}}
+					{{#secondary}}
+						{{#colors}}
+							<option value={{name}}>{{name}}</option>
+						{{/colors}}
+					{{/secondary}}
 
-				{{#tertiary}}
-					{{#colors}}
-						<option value={{name}}>{{name}}</option>
-					{{/colors}}
-				{{/tertiary}}
+					{{#tertiary}}
+						{{#colors}}
+							<option value={{name}}>{{name}}</option>
+						{{/colors}}
+					{{/tertiary}}
 
-				{{#b2c}}
-					{{#colors}}
-						<option value={{name}}>{{name}}</option>
-					{{/colors}}
-				{{/b2c}}
+					{{#b2c}}
+						{{#colors}}
+							<option value={{name}}>{{name}}</option>
+						{{/colors}}
+					{{/b2c}}
 
-			</select>
+				</select>
+			</div>
 		</div>
-		<div class="background-selector">
-			<label aria-describedby="select-box-info" for="select-standard" class="o-forms__label">Background color</label>
-			<select id="background-selector" class="o-forms__select">
+		<div class="o-forms o-forms--wide">
+			<div class="background-selector">
+				<label aria-describedby="select-box-info" for="select-standard" class="o-forms__label">Background color</label>
+				<select id="background-selector" class="o-forms__select">
 
-				{{#primary}}
-					{{#colors}}
-						<option value={{name}}>{{name}}</option>
-					{{/colors}}
-				{{/primary}}
+					{{#primary}}
+						{{#colors}}
+							<option value={{name}}>{{name}}</option>
+						{{/colors}}
+					{{/primary}}
 
-				{{#secondary}}
-					{{#colors}}
-						<option value={{name}}>{{name}}</option>
-					{{/colors}}
-				{{/secondary}}
+					{{#secondary}}
+						{{#colors}}
+							<option value={{name}}>{{name}}</option>
+						{{/colors}}
+					{{/secondary}}
 
-				{{#tertiary}}
-					{{#colors}}
-						<option value={{name}}>{{name}}</option>
-					{{/colors}}
-				{{/tertiary}}
+					{{#tertiary}}
+						{{#colors}}
+							<option value={{name}}>{{name}}</option>
+						{{/colors}}
+					{{/tertiary}}
 
-				{{#b2c}}
-					{{#colors}}
-						<option value={{name}}>{{name}}</option>
-					{{/colors}}
-				{{/b2c}}
+					{{#b2c}}
+						{{#colors}}
+							<option value={{name}}>{{name}}</option>
+						{{/colors}}
+					{{/b2c}}
 
-			</select>
-			<button type="submit" form="select-standard" class="o-buttons o-buttons--primary o-buttons--submit-colors">Check contrast</button>
+				</select>
+			</div>
 		</div>
+		<button type="submit" form="select-standard" class="o-buttons o-buttons--primary o-buttons--submit-colors">Check contrast</button>
 	</div>
-	<h1 class="rating-result"></h1>
-	<h2 class="ratio-result"></h2>
+	<div class="contrast-result">
+		<p class="rating-result"></p>
+		<p class="ratio-value"></p>
+	</div>
 </div>
