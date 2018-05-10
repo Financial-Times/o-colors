@@ -73,4 +73,4 @@ function oColorsColorLuminance(hex) {
 module.exports = {
 	oColorsGetWCAGRating,
 	oColorsGetContrastRatio
-}
+};

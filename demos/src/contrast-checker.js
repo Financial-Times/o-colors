@@ -20,10 +20,10 @@ function showContrastRatio() {
 	const ratioResultElem = document.querySelector('.ratio-value');
 	const ratio = contrastRatio.oColorsGetContrastRatio(textHex, backgroundHex);
 	const rating = contrastRatio.oColorsGetWCAGRating(ratio, textColor, backgroundColor);
-	ratingResultElem.className = `rating-result rating-result--${rating.wcagRating.toLowerCase()}`;
 
-	ratioResultElem.innerHTML = `Contrast ratio is ${ratio}`;
-	ratingResultElem.innerHTML = `WCAG ${rating.wcagRating}<br>${rating.message}`;
+	ratingResultElem.className = `rating-result rating-result--${rating.wcagRating.toLowerCase()}`;
+	ratioResultElem.innerHTML = `Contrast ratio: ${ratio}`;
+	ratingResultElem.innerHTML = `WCAG ${rating.wcagRating}<br></br>${rating.message}`;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
