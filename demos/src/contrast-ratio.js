@@ -18,7 +18,7 @@ function oColorsGetWCAGRating(ratio, color1, color2) {
 	return {
 		'wcagRating': wcagRating,
 		'message': message
-	}
+	};
 }
 
 
@@ -43,18 +43,18 @@ function preciseFloor(number, decimals = 2) {
 
 
 function oColorsColorLuminance(hex) {
-	const hexValue = hex.replace('#', '').trim()
+	const hexValue = hex.replace('#', '').trim();
 	const rgbPairs = hexValue.match(/.{1,2}/g);
 
 	const decimals = rgbPairs.map(pair => {
 		return parseInt(pair, 16);
-	})
+	});
 
 	const colors = {
 		'red': decimals[0],
 		'green': decimals[1],
 		'blue':decimals[2]
-	}
+	};
 
 	Object.keys(colors).forEach(color => {
 		colors[color] = colors[color] / 255;
@@ -65,11 +65,12 @@ function oColorsColorLuminance(hex) {
 			colors[color] = (colors[color] + 0.055) / 1.055;
 			colors[color] = Math.pow(colors[color], 2.4);
 		}
-	})
+
+	});
 	return colors['red'] * 0.2126 + colors['green'] * 0.7152 + colors['blue'] * 0.0722;
 }
 
 module.exports = {
 	oColorsGetWCAGRating,
-	oColorsGetContrastRatio
+	oColorsGetContrastRatio;
 }
