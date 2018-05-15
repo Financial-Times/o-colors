@@ -3,18 +3,18 @@ const contrastRatio = require('./contrast-ratio');
 function changeColor(colorName, property) {
 	const hexValue = getComputedStyle(document.documentElement).getPropertyValue(`--o-colors-${colorName}`);
 	document.querySelector('.contrast-showcase').style[property] = hexValue;
+	return hexValue;
 }
 
-function showContrastRatio(textColor, backgroundColor) {
-	const docElem = document.documentElement;
-	const textHex = getComputedStyle(docElem).getPropertyValue(`--o-colors-${textColor}`);
-	const backgroundHex = getComputedStyle(docElem).getPropertyValue(`--o-colors-${backgroundColor}`);
+function showContrastRatio(text, background) {
+	const textHex = changeColor(text.value, 'color');
+	const backgroundHex = changeColor(background.value, 'background');
 
 	const ratingMessage = document.querySelector('.rating-message');
 	const ratioValue = document.querySelector('.contrast-ratio');
 	const wcagRating = document.querySelector('.wcag-rating');
 	const ratio = contrastRatio.oColorsGetContrastRatio(textHex, backgroundHex);
-	const rating = contrastRatio.oColorsGetWCAGRating(ratio, textColor, backgroundColor);
+	const rating = contrastRatio.oColorsGetWCAGRating(ratio, text.value, background.value);
 
 	ratingMessage.className = `rating-message rating-result--${rating.wcagRating.toLowerCase()}`;
 	ratingMessage.textContent = rating.message;
@@ -26,20 +26,16 @@ function showContrastRatio(textColor, backgroundColor) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-	const textSelector = document.getElementById('text-selector');
-	const backgroundSelector = document.getElementById('background-selector');
+	const text = document.getElementById('text-selector');
+	const background = document.getElementById('background-selector');
 
-	textSelector.addEventListener('change', () => {
-		changeColor(textSelector.value, 'color');
-		showContrastRatio(textSelector.value, backgroundSelector.value);
+	text.addEventListener('change', () => {
+		showContrastRatio(text, background);
 	});
 
-	backgroundSelector.addEventListener('change', () => {
-		changeColor(backgroundSelector.value, 'background');
-		showContrastRatio(textSelector.value, backgroundSelector.value);
+	background.addEventListener('change', () => {
+		showContrastRatio(text, background);
 	});
 
-	changeColor(textSelector.value, 'color');
-	changeColor(backgroundSelector.value, 'background');
-	showContrastRatio(textSelector.value, backgroundSelector.value);
+	showContrastRatio(text, background);
 });
