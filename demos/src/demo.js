@@ -1,6 +1,3 @@
-const wrappers = Array.from(document.querySelectorAll('.demo-wrapper'));
-const demoColors = Array.from(document.querySelectorAll('.demo-color'));
-let activeUseCase = '';
 let clickToCopy = false;
 
 function oColorsDemoPalette() {
@@ -29,54 +26,8 @@ function oColorsDemoPalette() {
 		}
 	}
 
-	const useCaseSelector = document.getElementById('select-standard');
-	useCaseSelector.addEventListener('change', oColorsShowUseCases, false);
-
 	// AO: To be used at a later stage to do overlay tints demos
 	// populateTintDemos(palette, colorTints);
-}
-
-function oColorsUseCases() {
-	const useCaseElems = document.querySelectorAll('.use-cases');
-
-	for(let elem of useCaseElems) {
-		const useCases = elem.textContent.split(', ');
-		elem.innerHTML = '';
-
-		for (let use of useCases) {
-			let useClass = 'demo-color-for-' + use;
-			elem.parentNode.classList.add(useClass);
-		}
-	}
-}
-
-function oColorsShowUseCases() {
-	const useCase = this.options[this.selectedIndex].value;
-	const useCaseClass = '.demo-color-for-' + useCase;
-
-	const colors = document.querySelectorAll(useCaseClass);
-
-	demoColors.forEach((color) => {
-		color.classList.remove('use-case-active');
-	});
-
-	if (activeUseCase === useCase) {
-		wrappers.forEach((wrapper) => {
-			wrapper.classList.remove('use-cases-fade-out');
-		});
-		activeUseCase = '';
-		return;
-	}
-
-	wrappers.forEach((wrapper) => {
-		wrapper.classList.add('use-cases-fade-out');
-	});
-
-	colors.forEach((color) => {
-		color.classList.add('use-case-active');
-	});
-
-	activeUseCase = useCase;
 }
 
 /* AO: To be used at a later stage with overlay tint demos
@@ -151,5 +102,4 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 
 	oColorsDemoPalette();
-	oColorsUseCases();
 });

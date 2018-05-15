@@ -48,13 +48,6 @@
 			"display_html": false
 		},
 		{
-			"name": "use-cases",
-			"title": "Use cases",
-			"template": "demos/src/use-cases.mustache",
-			"display_html": false,
-			"hidden": true
-		},
-		{
 			"name": "pa11y",
 			"title": "Pa11y",
 			"data": "demos/src/palette.json",

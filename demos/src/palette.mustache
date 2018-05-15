@@ -1,17 +1,4 @@
 <div class="container">
-	<div class="o-forms">
-		<div class="usecase-selection">
-			<label aria-describedby="select-box-info" for="select-standard" class="o-forms__label">Select usecase:</label>
-			<select id="select-standard" class="o-forms__select">
-				<option value="backgrounds" selected>Backgrounds</option>
-				<option value="text">Text</option>
-				<option value="border">Border</option>
-				<option value="buttons">Buttons</option>
-				<option value="icons">Icons</option>
-				<option value="links">Links</option>
-			</select>
-		</div>
-	</div>
 	{{#primary}}
 		<div class="demo-header">
 			<h2>Primary</h2>
@@ -31,7 +18,6 @@
 						{{! Where the tints will display }}
 						<!-- {{#tints}}<div class="demo-tints-container"></div>{{/tints}} -->
 					</div>
-					<div class="use-cases">{{usage}}</div>
 				</div>
 			{{/colors}}
 		</div>
@@ -50,7 +36,6 @@
 					<div class="swatch o-colors-palette-{{name}}" data-o-color="{{name}}">
 						<input type="text" class="hex" id="o-color-input-{{name}}" value="" readonly>
 					</div>
-					<div class="use-cases">{{usage}}</div>
 				</div>
 			{{/colors}}
 		</div>
@@ -69,7 +54,6 @@
 					<div class="swatch o-colors-palette-{{name}}" data-o-color="{{name}}">
 						<input type="text" class="hex" id="o-color-input-{{name}}" value="" readonly>
 					</div>
-					<div class="use-cases">{{usage}}</div>
 				</div>
 			{{/colors}}
 		</div>
@@ -88,7 +72,6 @@
 					<div class="swatch o-colors-palette-{{name}}" data-o-color="{{name}}">
 						<input type="text" class="hex" id="o-color-input-{{name}}" value="" readonly>
 					</div>
-					<div class="use-cases">{{usage}}</div>
 				</div>
 			{{/colors}}
 		</div>
