@@ -17,12 +17,12 @@ function showContrastRatio(textColor, backgroundColor) {
 	const rating = contrastRatio.oColorsGetWCAGRating(ratio, textColor, backgroundColor);
 
 	ratingMessage.className = `rating-message rating-result--${rating.wcagRating.toLowerCase()}`;
-	ratingMessage.innerHTML = rating.message;
+	ratingMessage.textContent = rating.message;
 
-	ratioValue.innerHTML = `Contrast ratio: ${ratio}`;
+	ratioValue.textContent = `Contrast ratio: ${ratio}`;
 
 	wcagRating.className = `wcag-rating rating-result--${rating.wcagRating.toLowerCase()}`;
-	wcagRating.innerHTML = `WCAG ${rating.wcagRating}`;
+	wcagRating.textContent = `WCAG ${rating.wcagRating}`;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
