@@ -32,3 +32,16 @@ body{
 .rating-result--fail {
 	color: oColorsGetPaletteColor('crimson');
 }
+
+.contrast-result {
+	display: grid;
+	grid-template-rows: repeat(2, 1fr);
+}
+
+.contrast-showcase {
+	padding: 20px;
+
+	&--text {
+		font-size: 14px;
+	}
+}
