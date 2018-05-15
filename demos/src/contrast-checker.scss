@@ -5,14 +5,18 @@ $o-colors-is-silent: false;
 $o-colors-button-size: 10px;
 
 .container {
-	max-width: 1100px;
+	max-width: 980px;
 	margin: 0 auto;
+	padding: 20px;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	column-gap: 20px;
 }
 
-body{
+.color-selectors {
+	padding: 20px;
+}
+
+body {
 	font-family: MetricWeb, sans-serif;
 }
 
@@ -21,7 +25,8 @@ body{
 	width: calc(100% - #{2 * $o-colors-button-size});
 }
 
-.rating-result--aaa, .rating-result--aa {
+.rating-result--aaa,
+.rating-result--aa {
 	color: oColorsGetPaletteColor('jade');
 }
 
@@ -34,8 +39,17 @@ body{
 }
 
 .contrast-result {
-	display: grid;
-	grid-template-rows: repeat(2, 1fr);
+	display: flex;
+	flex-direction: column;
+	padding: 20px 10px 0;
+	border-top: 1px solid oColorsGetPaletteColor('slate-white-15');
+	font-size: 18px;
+
+	div {
+		display: flex;
+		justify-content: space-between;
+		font-weight: 600;
+	}
 }
 
 .contrast-showcase {

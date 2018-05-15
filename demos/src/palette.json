@@ -4,11 +4,13 @@
 		"colors": [
 			{
 				"name": "paper",
+				"baseBackground": true,
 				"tints": false,
 				"usage": "backgrounds"
 			},
 			{
 				"name": "black",
+				"baseText": true,
 				"tints": true,
 				"usage": "text, border, backgrounds, buttons, icons"
 			},

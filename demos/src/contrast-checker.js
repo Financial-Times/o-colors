@@ -1,51 +1,45 @@
 const contrastRatio = require('./contrast-ratio');
 
-function contrastChecker() {
-	const colorSubmitButton = document.querySelector('.o-buttons--submit-colors');
-	colorSubmitButton.addEventListener('click', showContrastRatio , false);
-}
-
 function changeColor(colorName, property) {
 	const hexValue = getComputedStyle(document.documentElement).getPropertyValue(`--o-colors-${colorName}`);
-
-	document.querySelector('.contrast-showcase').style[property] = hexValue
+	document.querySelector('.contrast-showcase').style[property] = hexValue;
 }
 
-const textSelector = document.getElementById('text-selector');
-const backgroundSelector = document.getElementById('background-selector');
-
-changeColor(textSelector.value, 'color');
-changeColor(backgroundSelector.value, 'background');
-
-textSelector.addEventListener('change', () => {
-	return changeColor(textSelector.value, 'color');
-})
-
-backgroundSelector.addEventListener('change', () => {
-	return changeColor(backgroundSelector.value, 'background');
-})
-
-function showContrastRatio() {
-	const textSelector = document.getElementById('text-selector');
-	const backgroundSelector = document.getElementById('background-selector');
-
-	const textColor = textSelector.options[textSelector.selectedIndex].value;
-	const backgroundColor = backgroundSelector.options[backgroundSelector.selectedIndex].value;
-
+function showContrastRatio(textColor, backgroundColor) {
 	const docElem = document.documentElement;
 	const textHex = getComputedStyle(docElem).getPropertyValue(`--o-colors-${textColor}`);
 	const backgroundHex = getComputedStyle(docElem).getPropertyValue(`--o-colors-${backgroundColor}`);
 
-	const ratingResultElem = document.querySelector('.rating-result');
-	const ratioResultElem = document.querySelector('.ratio-value');
+	const ratingMessage = document.querySelector('.rating-message');
+	const ratioValue = document.querySelector('.contrast-ratio');
+	const wcagRating = document.querySelector('.wcag-rating');
 	const ratio = contrastRatio.oColorsGetContrastRatio(textHex, backgroundHex);
 	const rating = contrastRatio.oColorsGetWCAGRating(ratio, textColor, backgroundColor);
 
-	ratingResultElem.className = `rating-result rating-result--${rating.wcagRating.toLowerCase()}`;
-	ratioResultElem.innerHTML = `Contrast ratio: ${ratio}`;
-	ratingResultElem.innerHTML = `WCAG ${rating.wcagRating}<br></br>${rating.message}`;
+	ratingMessage.className = `rating-message rating-result--${rating.wcagRating.toLowerCase()}`;
+	ratingMessage.innerHTML = rating.message;
+
+	ratioValue.innerHTML = `Contrast ratio: ${ratio}`;
+
+	wcagRating.className = `wcag-rating rating-result--${rating.wcagRating.toLowerCase()}`;
+	wcagRating.innerHTML = `WCAG ${rating.wcagRating}`;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-	contrastChecker();
+	const textSelector = document.getElementById('text-selector');
+	const backgroundSelector = document.getElementById('background-selector');
+
+	textSelector.addEventListener('change', () => {
+		changeColor(textSelector.value, 'color');
+		showContrastRatio(textSelector.value, backgroundSelector.value);
+	});
+
+	backgroundSelector.addEventListener('change', () => {
+		changeColor(backgroundSelector.value, 'background');
+		showContrastRatio(textSelector.value, backgroundSelector.value);
+	});
+
+	changeColor(textSelector.value, 'color');
+	changeColor(backgroundSelector.value, 'background');
+	showContrastRatio(textSelector.value, backgroundSelector.value);
 });
