@@ -1,7 +1,7 @@
 const contrastRatio = require('./contrast-ratio');
 
 document.addEventListener('DOMContentLoaded', function() {
-	const mixer = document.getElementById('mixer-selector')
+	const mixer = document.getElementById('mixer-selector');
 	const base = document.getElementById('base-selector');
 
 	mixer.addEventListener('change', () => {
@@ -18,13 +18,13 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function oColorsMix(mixer = 'black', base = 'paper') {
-	const mixerHex = getComputedStyle(document.documentElement).getPropertyValue(`--o-colors-${mixer}`).replace(' #','')
-	const baseHex = getComputedStyle(document.documentElement).getPropertyValue(`--o-colors-${base}`).replace(' #','')
+	const mixerHex = getComputedStyle(document.documentElement).getPropertyValue(`--o-colors-${mixer}`).replace(' #','');
+	const baseHex = getComputedStyle(document.documentElement).getPropertyValue(`--o-colors-${base}`).replace(' #','');
 	const textColorRGB = getComputedStyle(document.body).getPropertyValue('color');
 
 	let textColor = textColorRGB === 'rgb(0, 0, 0)' ? '#000000' : '#f3f3f3';
 
-	let ratio = contrastRatio.oColorsGetContrastRatio(textColor, baseHex)
+	let ratio = contrastRatio.oColorsGetContrastRatio(textColor, baseHex);
 
 	if (ratio <= 3) { //if it fails accessbility
 		textColor = textColor === '#000000' ? '#f3f3f3' : '#000000';
@@ -38,15 +38,15 @@ function oColorsMix(mixer = 'black', base = 'paper') {
 		let swatch = range.querySelector(`.percent-${index}0 .sqr`);
 		swatch.style.backgroundColor = hex;
 
-		if (index == 0) {
+		if (index === 0) {
 			document.body.style.backgroundColor = hex;
 		}
 
 		swatch.addEventListener('click', () => {
 			range.querySelectorAll(`.sqr`).forEach(sqr => {
 				sqr.style.borderWidth = '1px';
-				sqr.style.margin = '2px'
-			})
+				sqr.style.margin = '2px';
+			});
 
 			swatch.style.borderWidth = '3px';
 			swatch.style.margin = '0';
@@ -59,7 +59,7 @@ function oColorsMix(mixer = 'black', base = 'paper') {
 const fillCodeSnippets = (hex, mixer, base, index) => {
 	document.getElementById('hex-value').innerText = hex;
 	document.getElementById('code-snippet').innerText = `oColorsMix(${mixer}, ${base}, ${index}0)`;
-}
+};
 
 function mixColors(mixer, base) {
 	const radix = 16;
@@ -79,11 +79,11 @@ function mixColors(mixer, base) {
 			// combine the r/g/b pairs from each color, based on percentage
 			let combinedPair = decimalToHex(Math.round(basePair + (mixPair - basePair) * (percent / 100.0)));
 
-			while (combinedPair.length < 2) { combinedPair = `0${combinedPair}` } // prepend a '0' if combinedPair results in a single digit
+			while (combinedPair.length < 2) { combinedPair = `0${combinedPair}`; }// prepend a '0' if combinedPair results in a single digit
 
 			hexValue += combinedPair; //add new pair to hex string
 		}
 
 		return hexValue;
-	})
-};
+	});
+}
