@@ -40,8 +40,7 @@ const oColorsMix = (mixer = 'black', base = 'paper') => {
 
 const checkContrast = (text, background) => {
 	let textColor = text === 'rgb(0, 0, 0)' ? '#000000' : '#f3f3f3';
-
-	let ratio = contrastRatio.oColorsGetContrastRatio(text, background);
+	let ratio = contrastRatio.oColorsGetContrastRatio(textColor, background);
 
 	if (ratio <= 3) { //if it fails accessbility
 		textColor = textColor === '#000000' ? '#f3f3f3' : '#000000';
