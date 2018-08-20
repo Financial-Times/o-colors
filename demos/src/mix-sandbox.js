@@ -26,7 +26,7 @@ const changeCodeSnippetValues = (mixer, base) => {
 	let hex = document.querySelector('[aria-selected=true]');
 	let percent = hex.parentElement.classList.value.replace('percent-','');
 	fillCodeSnippets(hex.innerText, mixer, base, percent);
-}
+};
 
 const oColorsMix = (mixer = 'black', base = 'paper') => {
 	const mixerHex = getComputedStyle(document.documentElement).getPropertyValue(`--o-colors-${mixer}`).replace(/^\s*#/,'');
@@ -34,8 +34,9 @@ const oColorsMix = (mixer = 'black', base = 'paper') => {
 	const textColorRGB = getComputedStyle(document.body).getPropertyValue('color');
 
 	checkContrast(textColorRGB, baseHex);
-	colourSwatches(mixHexes(mixerHex, baseHex));
-}
+	const hexArray = mixHexes(mixerHex, baseHex);
+	colourSwatches(hexArray, mixer, base);
+};
 
 const checkContrast = (text, background) => {
 	let textColor = text === 'rgb(0, 0, 0)' ? '#000000' : '#f3f3f3';
@@ -46,7 +47,7 @@ const checkContrast = (text, background) => {
 		textColor = textColor === '#000000' ? '#f3f3f3' : '#000000';
 		document.body.style.setProperty('--color', textColor);
 	}
-}
+};
 
 const mixHexes = (mixer, base) => {
 	const radix = 16;
@@ -73,10 +74,10 @@ const mixHexes = (mixer, base) => {
 
 		return hexValue;
 	});
-}
+};
 
 
-const colourSwatches = (hexes) => {
+const colourSwatches = (hexes, mixer, base) => {
 	hexes.forEach((hex, index) => {
 		let range = document.querySelector('.mix-range');
 		let swatch = range.querySelector(`.percent-${index * 10} .sqr`);
@@ -95,7 +96,7 @@ const colourSwatches = (hexes) => {
 			fillCodeSnippets(hex, mixer, base, index * 10);
 		});
 	});
-}
+};
 
 const fillCodeSnippets = (hex, mixer, base, index) => {
 	document.getElementById('hex-value').innerText = hex;
