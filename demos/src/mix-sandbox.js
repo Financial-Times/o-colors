@@ -6,20 +6,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	mixer.addEventListener('change', () => {
 		oColorsMix(mixer.value, base.value);
+		let hex = document.querySelector('[aria-selected=true]');
+		let percent = hex.parentElement.classList.value.replace('percent-','');
+		fillCodeSnippets(hex.innerText, mixer.value, base.value, percent);
 	});
 
 	base.addEventListener('change', () => {
 		oColorsMix(mixer.value, base.value);
+
+		let hex = document.querySelector('[aria-selected=true]');
+		let percent = hex.parentElement.classList.value.replace('percent-','');
+		fillCodeSnippets(hex.innerText, mixer.value, base.value, percent);
 	});
 
 	oColorsMix(mixer.value, base.value);
-	let defaultHex = getComputedStyle(document.documentElement).getPropertyValue(`--o-colors-${mixer.value}-80`).trim();
-	fillCodeSnippets(defaultHex, mixer.value, base.value, 8);
+	document.querySelector('.percent-80').firstElementChild.setAttribute('aria-selected', true);
+	let defaultHex = getComputedStyle(document.documentElement).getPropertyValue(`--o-colors-${mixer.value}-80`);
+	fillCodeSnippets(defaultHex, mixer.value, base.value, 80);
 });
 
 function oColorsMix(mixer = 'black', base = 'paper') {
-	const mixerHex = getComputedStyle(document.documentElement).getPropertyValue(`--o-colors-${mixer}`).replace(' #','');
-	const baseHex = getComputedStyle(document.documentElement).getPropertyValue(`--o-colors-${base}`).replace(' #','');
+	const mixerHex = getComputedStyle(document.documentElement).getPropertyValue(`--o-colors-${mixer}`).replace(/^\s*#/,'');
+	const baseHex = getComputedStyle(document.documentElement).getPropertyValue(`--o-colors-${base}`).replace(/^\s*#/,'');
 	const textColorRGB = getComputedStyle(document.body).getPropertyValue('color');
 
 	let textColor = textColorRGB === 'rgb(0, 0, 0)' ? '#000000' : '#f3f3f3';
@@ -36,7 +44,7 @@ function oColorsMix(mixer = 'black', base = 'paper') {
 	mixHex.forEach((hex, index) => {
 		let range = document.querySelector('.mix-range');
 		let swatch = range.querySelector(`.percent-${index}0 .sqr`);
-		swatch.style.backgroundColor = hex;
+		swatch.style.backgroundColor = swatch.style.color = swatch.innerText = hex;
 
 		if (index === 0) {
 			document.body.style.backgroundColor = hex;
@@ -44,21 +52,18 @@ function oColorsMix(mixer = 'black', base = 'paper') {
 
 		swatch.addEventListener('click', () => {
 			range.querySelectorAll(`.sqr`).forEach(sqr => {
-				sqr.style.borderWidth = '1px';
-				sqr.style.margin = '2px';
+				sqr.setAttribute('aria-selected', false);
 			});
 
-			swatch.style.borderWidth = '3px';
-			swatch.style.margin = '0';
-
-			fillCodeSnippets(hex, mixer, base, index);
+			swatch.setAttribute('aria-selected', true);
+			fillCodeSnippets(hex, mixer, base, index * 10);
 		});
 	});
 }
 
 const fillCodeSnippets = (hex, mixer, base, index) => {
 	document.getElementById('hex-value').innerText = hex;
-	document.getElementById('code-snippet').innerText = `oColorsMix(${mixer}, ${base}, ${index}0)`;
+	document.getElementById('code-snippet').innerText = `oColorsMix(${mixer}, ${base}, ${index})`;
 };
 
 function mixColors(mixer, base) {
