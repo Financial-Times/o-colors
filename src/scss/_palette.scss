@@ -23,38 +23,66 @@
 /// line with a comma.
 ///
 /// @type map
+
 $o-colors-palette: map-merge((
-	// non-color css values
-	'transparent':           transparent,
-	'inherit':               inherit,
+// non-color css values
+'transparent':           transparent,
+'inherit':               inherit,
 
+// primary palette
+'black':                 #000000,
+'white':                 #ffffff,
+), $o-colors-palette);
+
+@if $_o-colors-brand == master {
+	$o-colors-palette: map-merge((
+		// primary palette
+		'paper':                 #fff1e5,
+		'claret':                #990f3d,
+		'oxford':                #0f5499,
+		'teal':                  #0d7680,
+
+		//secondary palette
+		'wheat':                 #f2dfce,
+		'sky':                   #cce6ff,
+		'slate':                 #262a33,
+		'velvet':                #593380,
+		'mandarin':              #ff8833,
+		'lemon':                 #ffec1a,
+
+		//tertiary palette
+		'candy':                 #ff7faa,
+		'wasabi':                #96cc28,
+		'jade':                  #00994d,
+		'crimson':               #cc0000,
+
+		//b2c palette
+		'org-b2c':               #4e96eb,
+		'org-b2c-dark':          #3a70af,
+		'org-b2c-light':         #99c6fb,
+	), $o-colors-palette);
+}
+
+@if $_o-colors-brand == internal {
+	$o-colors-palette: map-merge((
 	// primary palette
-	'paper':                 #fff1e5,
-	'black':                 #000000,
-	'white':                 #ffffff,
-
-	'claret':                #990f3d,
 	'oxford':                #0f5499,
 	'teal':                  #0d7680,
 
-	'wheat':                 #f2dfce,
+	//secondary palette
 	'sky':                   #cce6ff,
 	'slate':                 #262a33,
-
 	'velvet':                #593380,
 	'mandarin':              #ff8833,
 	'lemon':                 #ffec1a,
 
+	//tertiary palette
 	'candy':                 #ff7faa,
 	'wasabi':                #96cc28,
-
 	'jade':                  #00994d,
 	'crimson':               #cc0000,
-
-	'org-b2c':               #4e96eb,
-	'org-b2c-dark':          #3a70af,
-	'org-b2c-light':         #99c6fb,
-), $o-colors-palette);
+	), $o-colors-palette);
+}
 
 // Add experimental colors to support work on internal brand design.
 $o-colors-palette: map-merge($_o-colors-experimental-palette, $o-colors-palette);
