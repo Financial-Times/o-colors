@@ -70,7 +70,6 @@ $o-colors-palette: map-merge((
 	'teal':                  #0d7680,
 
 	//secondary palette
-	'sky':                   #cce6ff,
 	'slate':                 #262a33,
 	'velvet':                #593380,
 	'mandarin':              #ff8833,
@@ -166,10 +165,6 @@ $o-colors-palette: if($_o-colors-brand == internal, map-merge($_o-colors-experim
 			hue: 185,
 			saturation: 90,
 			tints: (20, 30, 40, 50, 60, 70, 80, 90, 100),
-		),
-		'sky': (
-			hue: 210,
-			saturation: 20,
 		),
 		'slate': (
 			hue: 220,
