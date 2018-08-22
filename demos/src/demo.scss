@@ -1,4 +1,3 @@
-$o-brand: internal;
 $o-colors-is-silent: false;
 // Import colors module
 @import '../../main';
@@ -34,7 +33,6 @@ body {
 	}
 }
 
-@debug $_o-colors-brand;
 @each $name, $csscolor in $o-colors-palette {
 	@if $csscolor != 'transparent' and $csscolor != 'inherit' {
 		.o-colors-palette-#{$name} .hex,
@@ -54,7 +52,6 @@ body {
 	&:after,
 	.hex {
 		$test: oColorsGetPaletteColor('org-b2c');
-		@debug $test;
 		color: oColorsGetTextColor(oColorsGetPaletteColor('org-b2c'), 90);
 	}
 }
