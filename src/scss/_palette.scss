@@ -85,7 +85,7 @@ $o-colors-palette: map-merge((
 }
 
 // Add experimental colors to support work on internal brand design.
-$o-colors-palette: map-merge($_o-colors-experimental-palette, $o-colors-palette);
+$o-colors-palette: if($_o-colors-brand == internal, map-merge($_o-colors-experimental-palette, $o-colors-palette), $o-colors-palette);
 
 @if $_o-colors-brand == master {
 	$o-colors-tints: map-merge((
