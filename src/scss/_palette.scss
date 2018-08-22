@@ -87,66 +87,121 @@ $o-colors-palette: map-merge((
 // Add experimental colors to support work on internal brand design.
 $o-colors-palette: map-merge($_o-colors-experimental-palette, $o-colors-palette);
 
-$o-colors-tints: (
-	'black': (
-		tints: (5, 10, 20, 30, 40, 50, 60, 70, 80, 90),
-	),
-	'white': (
-		tints: (10, 20, 40, 60, 80),
-	),
-	'claret': (
-		hue: 340,
-		saturation: 90,
-		tints: (30, 40, 50, 60, 70, 80, 90, 100),
-	),
-	'oxford': (
-		hue: 210,
-		saturation: 90,
-		tints: (30, 40, 50, 60, 70, 80, 90, 100),
-	),
-	'teal': (
-		hue: 185,
-		saturation: 90,
-		tints: (20, 30, 40, 50, 60, 70, 80, 90, 100),
-	),
-	'wheat': (
-		hue: 28,
-		saturation: 15,
-	),
-	'sky': (
-		hue: 210,
-		saturation: 20,
-	),
-	'slate': (
-		hue: 220,
-		saturation: 20,
-	),
-	'velvet': (
-		hue: 270,
-		saturation: 60,
-	),
-	'mandarin': (
-		hue: 25,
-		saturation: 80,
-	),
-	'lemon': (
-		hue: 55,
-		saturation: 90,
-	),
-	'candy': (
-		hue: 340,
-		saturation: 50,
-	),
-	'wasabi': (
-		hue: 80,
-		saturation: 80,
-	),
-	'jade': (
-		hue: 150,
-		saturation: 100,
-	),
-	'crimson': (
-		hue: 360,
-		saturation: 100,
-	)
-);
+@if $_o-colors-brand == master {
+	$o-colors-tints: map-merge((
+		'black': (
+			tints: (5, 10, 20, 30, 40, 50, 60, 70, 80, 90),
+		),
+		'white': (
+			tints: (10, 20, 40, 60, 80),
+		),
+		'claret': (
+			hue: 340,
+			saturation: 90,
+			tints: (30, 40, 50, 60, 70, 80, 90, 100),
+		),
+		'oxford': (
+			hue: 210,
+			saturation: 90,
+			tints: (30, 40, 50, 60, 70, 80, 90, 100),
+		),
+		'teal': (
+			hue: 185,
+			saturation: 90,
+			tints: (20, 30, 40, 50, 60, 70, 80, 90, 100),
+		),
+		'wheat': (
+			hue: 28,
+			saturation: 15,
+		),
+		'sky': (
+			hue: 210,
+			saturation: 20,
+		),
+		'slate': (
+			hue: 220,
+			saturation: 20,
+		),
+		'velvet': (
+			hue: 270,
+			saturation: 60,
+		),
+		'mandarin': (
+			hue: 25,
+			saturation: 80,
+		),
+		'lemon': (
+			hue: 55,
+			saturation: 90,
+		),
+		'candy': (
+			hue: 340,
+			saturation: 50,
+		),
+		'wasabi': (
+			hue: 80,
+			saturation: 80,
+		),
+		'jade': (
+			hue: 150,
+			saturation: 100,
+		),
+		'crimson': (
+			hue: 360,
+			saturation: 100,
+		)
+	), $o-colors-tints);
+}
+@if $_o-colors-brand == internal {
+	$o-colors-tints: map-merge((
+		'black': (
+			tints: (5, 10, 20, 30, 40, 50, 60, 70, 80, 90),
+		),
+		'oxford': (
+			hue: 210,
+			saturation: 90,
+			tints: (30, 40, 50, 60, 70, 80, 90, 100),
+		),
+		'teal': (
+			hue: 185,
+			saturation: 90,
+			tints: (20, 30, 40, 50, 60, 70, 80, 90, 100),
+		)
+		'sky': (
+			hue: 210,
+			saturation: 20,
+		),
+		'slate': (
+			hue: 220,
+			saturation: 20,
+		),
+		'velvet': (
+			hue: 270,
+			saturation: 60,
+		),
+		'mandarin': (
+			hue: 25,
+			saturation: 80,
+		),
+		'lemon': (
+			hue: 55,
+			saturation: 90,
+		),
+		'candy': (
+			hue: 340,
+			saturation: 50,
+		),
+		'wasabi': (
+			hue: 80,
+			saturation: 80,
+		),
+		'jade': (
+			hue: 150,
+			saturation: 100,
+		),
+		'crimson': (
+			hue: 360,
+			saturation: 100,
+		)
+	), $o-colors-tints);
+}
