@@ -64,6 +64,8 @@ $o-colors-palette: map-merge((
 }
 
 @if $_o-colors-brand == internal {
+	$_o-colors-experimental-palette-warning: true !global;
+	
 	$o-colors-palette: map-merge((
 	// primary palette
 	'oxford':                #0f5499,

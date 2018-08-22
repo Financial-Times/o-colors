@@ -43,6 +43,14 @@
 			"name": "candy"
 		}
 	],
+	"experimental": [
+		{
+			"name": "slate-white-5"
+		},
+		{
+			"name": "slate-white-15"
+		}
+	],
 	"tints": [
 		{
 			"name": "black",
