@@ -1,5 +1,5 @@
+$o-brand: internal;
 $o-colors-is-silent: false;
-
 // Import colors module
 @import '../../main';
 
@@ -34,6 +34,7 @@ body {
 	}
 }
 
+@debug $_o-colors-brand;
 @each $name, $csscolor in $o-colors-palette {
 	@if $csscolor != 'transparent' and $csscolor != 'inherit' {
 		.o-colors-palette-#{$name} .hex,
@@ -52,6 +53,8 @@ body {
 .o-colors-palette-org-b2c {
 	&:after,
 	.hex {
+		$test: oColorsGetPaletteColor('org-b2c');
+		@debug $test;
 		color: oColorsGetTextColor(oColorsGetPaletteColor('org-b2c'), 90);
 	}
 }
@@ -79,27 +82,15 @@ body {
 .demo-wrapper {
 	width: 100%;
 	display: flex;
-	margin-left: -10px;
-	margin-right: -10px;
-	justify-content: flex-start;
-	flex-direction: row;
 	flex-wrap: wrap;
-	align-content: space-between;
+	justify-content: center;
 }
 
 .use-cases-fade-out .demo-color { opacity: 0.37; }
 .use-cases-fade-out .demo-color.use-case-active { opacity: 1; }
 
 .demo-color {
-	flex: 0 0 30%;
-	margin: 0 10px 20px;
-	transition: opacity 0.3s ease-out;
-
-	.o-buttons {
-		margin-right: 5px;
-		color: oColorsMix(black, white, 80);
-		border-color: oColorsMix(black, white, 20);
-	}
+	margin: 0 5px;
 
 	h3 {
 		position: relative;
@@ -113,17 +104,17 @@ body {
 	}
 }
 
-.demo-tint-button {
-	position: absolute;
-	top: 0;
-	right: 0;
-	height: 40px;
-	padding: 0 10px;
-	background-color: oColorsGetPaletteColor('white');
-	cursor: pointer;
-	border: 0;
-	border-left: 1px solid oColorsMix(black, white, 20);
-}
+// .demo-tint-button {
+// 	position: absolute;
+// 	top: 0;
+// 	right: 0;
+// 	height: 40px;
+// 	padding: 0 10px;
+// 	background-color: oColorsGetPaletteColor('white');
+// 	cursor: pointer;
+// 	border: 0;
+// 	border-left: 1px solid oColorsMix(black, white, 20);
+// }
 
 .demo-tints-container {
 	position: absolute;

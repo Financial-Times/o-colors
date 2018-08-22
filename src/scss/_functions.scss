@@ -8,7 +8,6 @@
 /// @param {String} $name
 @function oColorsGetPaletteColor($name) {
 	@if (map-has-key($o-colors-palette, $name)) {
-
 		// Warn if an experimental palette color is being used.
 		@if $_o-colors-experimental-palette-warning and map-has-key($_o-colors-experimental-palette, $name) {
 			$_o-colors-experimental-palette-warning: false !global;
@@ -148,6 +147,11 @@
 /// @param {Color} $background - the hex color of the background the text will appear on
 /// @param {Number} $opacity [100] - the opacity percentage the text color should appear at
 @function oColorsGetTextColor($background, $opacity: 90) {
+	@if ($background == null) {
+		@warn '#{$background} is not a valid hex code. To get a text color, please supply a valid hex code for the background color';
+		@return null;
+	}
+	
 	$baseColor: _oColorsGetTextBase($background);
 	$percentage: $opacity;
 
