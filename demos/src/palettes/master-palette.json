@@ -1,81 +1,71 @@
 {
-	"primary": {
-		"colors": [{
-				"name": "paper",
-				"baseBackground": true,
-				"tints": false
-			},
-			{
-				"name": "black",
-				"baseText": true,
-				"tints": true
-			},
-			{
-				"name": "white",
-				"tints": true
-			},
-			{
-				"name": "claret",
-				"tints": true
-			},
-			{
-				"name": "oxford",
-				"tints": true
-			},
-			{
-				"name": "teal",
-				"tints": true
-			}
-		]
-	},
-	"secondary": {
-		"colors": [{
-				"name": "wheat"
-			},
-			{
-				"name": "sky"
-			},
-			{
-				"name": "slate"
-			},
-			{
-				"name": "velvet"
-			},
-			{
-				"name": "mandarin"
-			},
-			{
-				"name": "lemon"
-			}
-		]
-	},
-	"tertiary": {
-		"colors": [{
-				"name": "jade"
-			},
-			{
-				"name": "wasabi"
-			},
-			{
-				"name": "crimson"
-			},
-			{
-				"name": "candy"
-			}
-		]
-	},
-	"b2c": {
-		"colors": [{
-				"name": "org-b2c"
-			},
-			{
-				"name": "org-b2c-dark"
-			},
-			{
-				"name": "org-b2c-light"
-			}
-		]
-	},
+	"primary": [
+		{
+			"name": "paper",
+			"baseBackground": true
+		},
+		{
+			"name": "black",
+			"baseText": true
+		},
+		{
+			"name": "white"
+		},
+		{
+			"name": "claret"
+		},
+		{
+			"name": "oxford"
+		},
+		{
+			"name": "teal"
+		}
+	],
+	"secondary": [
+		{
+			"name": "wheat"
+		},
+		{
+			"name": "sky"
+		},
+		{
+			"name": "slate"
+		},
+		{
+			"name": "velvet"
+		},
+		{
+			"name": "mandarin"
+		},
+		{
+			"name": "lemon"
+		}
+	],
+	"tertiary": [
+		{
+			"name": "jade"
+		},
+		{
+			"name": "wasabi"
+		},
+		{
+			"name": "crimson"
+		},
+		{
+			"name": "candy"
+		}
+	],
+	"b2c": [
+		{
+			"name": "org-b2c"
+		},
+		{
+			"name": "org-b2c-dark"
+		},
+		{
+			"name": "org-b2c-light"
+		}
+	],
 	"tints": [
 		{
 			"name": "black",

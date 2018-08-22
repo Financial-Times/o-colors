@@ -1,60 +1,51 @@
 {
-	"primary": {
-		"colors": [
-			{
-				"name": "black",
-				"baseText": true,
-				"tints": true
-			},
-			{
-				"name": "white",
-				"baseBackground": true,
-				"tints": true
-			},
-			{
-				"name": "oxford",
-				"tints": true
-			},
-			{
-				"name": "teal",
-				"tints": true
-			}
-		]
-	},
-	"secondary": {
-		"colors": [
-			{
-				"name": "sky"
-			},
-			{
-				"name": "slate"
-			},
-			{
-				"name": "velvet"
-			},
-			{
-				"name": "mandarin"
-			},
-			{
-				"name": "lemon"
-			}
-		]
-	},
-	"tertiary": {
-		"colors": [{
-				"name": "jade"
-			},
-			{
-				"name": "wasabi"
-			},
-			{
-				"name": "crimson"
-			},
-			{
-				"name": "candy"
-			}
-		]
-	},
+	"primary": [
+		{
+			"name": "black",
+			"baseText": true
+		},
+		{
+			"name": "white",
+			"baseBackground": true
+		},
+		{
+			"name": "oxford"
+		},
+		{
+			"name": "teal"
+		}
+	],
+	"secondary": [
+		{
+			"name": "sky"
+		},
+		{
+			"name": "slate"
+		},
+		{
+			"name": "velvet"
+		},
+		{
+			"name": "mandarin"
+		},
+		{
+			"name": "lemon"
+		}
+	],
+	"tertiary": [
+		{
+			"name": "jade"
+		},
+		{
+			"name": "wasabi"
+		},
+		{
+			"name": "crimson"
+		},
+		{
+			"name": "candy"
+		}
+	],
 	"tints": [
 		{
 			"name": "black",
