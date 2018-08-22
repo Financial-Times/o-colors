@@ -100,18 +100,6 @@ body {
 	}
 }
 
-// .demo-tint-button {
-// 	position: absolute;
-// 	top: 0;
-// 	right: 0;
-// 	height: 40px;
-// 	padding: 0 10px;
-// 	background-color: oColorsGetPaletteColor('white');
-// 	cursor: pointer;
-// 	border: 0;
-// 	border-left: 1px solid oColorsMix(black, white, 20);
-// }
-
 .demo-tints-container {
 	position: absolute;
 	top: 0;
@@ -219,12 +207,4 @@ body {
 			font-size: 12px;
 		}
 	}
-}
-
-.my-thing {
-	@include oColorsFor(custom-box box, background text, 80);
-}
-
-.o-colors-tinted-color {
-	background-color: oColorsGetTint('oxford', 90);
 }
