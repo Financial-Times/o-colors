@@ -51,7 +51,6 @@ body {
 .o-colors-palette-org-b2c {
 	&:after,
 	.hex {
-		$test: oColorsGetPaletteColor('org-b2c');
 		color: oColorsGetTextColor(oColorsGetPaletteColor('org-b2c'), 90);
 	}
 }
