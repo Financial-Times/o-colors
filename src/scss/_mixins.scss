@@ -62,6 +62,7 @@
 	@if ($propertyList == 'all' or index($propertyList, 'background')) {
 		background-color: oColorsGetColorFor($useCaseList, background, $options: $args);
 	}
+	
 	@if ($propertyList == 'all' or index($propertyList, 'text')) {
 		$useCaseTextColor: oColorsGetColorFor($useCaseList, text, $options: $args);
 		$useCaseBackgroundColor: oColorsGetColorFor($useCaseList, background, $options: $args);
