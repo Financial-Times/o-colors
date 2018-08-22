@@ -37,7 +37,7 @@ body {
 @each $name, $csscolor in $o-colors-palette {
 	@if $csscolor != 'transparent' and $csscolor != 'inherit' {
 		.o-colors-border-#{$name} {
-			border-width: 2px 2px 0 2px;
+			border-width: 2px 2px 0;
 			border-style: solid;
 			border-color:  oColorsGetPaletteColor($name);
 			
@@ -157,8 +157,7 @@ body {
 		opacity: 1;
 	}
 
-	&.o-colors-palette-white,
-	&.o-colors-palette-paper {
+	&.o-colors-palette-white {
 		border: 2px solid oColorsMix(black, white, 20);
 	}
 
