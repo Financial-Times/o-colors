@@ -26,7 +26,7 @@ body {
 	box-sizing: border-box;
 	font-family: MetricWeb, Arial, sans-serif;
 	font-size: 18px;
-	
+
 	*,
 	*:before,
 	*:after {
@@ -40,12 +40,12 @@ body {
 			border-width: 2px 2px 0;
 			border-style: solid;
 			border-color:  oColorsGetPaletteColor($name);
-			
+
 			@if $name == 'white' {
 				border-color: oColorsMix(black, white, 20);
 			}
 		}
-		
+
 		.o-colors-palette-#{$name} .hex,
 		.o-colors-palette-#{$name}:after {
 			// Text at 90% does not pass contrast tests so increase
