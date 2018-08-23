@@ -20,12 +20,6 @@
 			"name": "slate"
 		},
 		{
-			"name": "velvet"
-		},
-		{
-			"name": "mandarin"
-		},
-		{
 			"name": "lemon"
 		}
 	],
@@ -34,13 +28,7 @@
 			"name": "jade"
 		},
 		{
-			"name": "wasabi"
-		},
-		{
 			"name": "crimson"
-		},
-		{
-			"name": "candy"
 		}
 	],
 	"experimental": [
