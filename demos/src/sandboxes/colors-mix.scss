@@ -34,7 +34,7 @@ body {
 	pre {
 		margin: 10px 0;
 		padding: 10px;
-		border: 1px solid oColorsGetPaletteColor(slate-white-15);
+		border: 1px solid oColorsMix('black', 'white', 5);
 	}
 }
 

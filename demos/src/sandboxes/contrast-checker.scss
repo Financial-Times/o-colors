@@ -25,7 +25,7 @@ body {
 }
 
 .rating-result--aa18 {
-	color: oColorsGetPaletteColor('mandarin');
+	color: oColorsMix('crimson', 'lemon', 50);
 }
 
 .rating-result--fail {
@@ -36,7 +36,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	padding: 20px 10px 0;
-	border-top: 1px solid oColorsGetPaletteColor('slate-white-15');
+	border-top: 1px solid oColorsMix('black', 'white', 5);
 	font-size: 18px;
 
 	div {
@@ -48,7 +48,7 @@ body {
 
 .contrast-showcase {
 	padding: 20px;
-	border: 1px solid oColorsGetPaletteColor('slate-white-15');
+	border: 1px solid oColorsMix('black', 'white', 5);
 
 	&--text {
 		font-size: 14px;
