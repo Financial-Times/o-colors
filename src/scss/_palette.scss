@@ -65,7 +65,7 @@ $o-colors-palette: map-merge((
 
 @if $_o-colors-brand == internal {
 	$_o-colors-experimental-palette-warning: true !global;
-	
+
 	$o-colors-palette: map-merge((
 	// primary palette
 	'oxford':                #0f5499,
@@ -73,13 +73,9 @@ $o-colors-palette: map-merge((
 
 	//secondary palette
 	'slate':                 #262a33,
-	'velvet':                #593380,
-	'mandarin':              #ff8833,
 	'lemon':                 #ffec1a,
 
 	//tertiary palette
-	'candy':                 #ff7faa,
-	'wasabi':                #96cc28,
 	'jade':                  #00994d,
 	'crimson':               #cc0000,
 	), $o-colors-palette);
