@@ -36,9 +36,9 @@
 	$base: oColorsGetPaletteColor($color);
 
 	@if type-of($context) != color {
-		@return _error(''#{inspect($background)}' is not a valid color.');
+		@return _error("'#{inspect($background)}' is not a valid color.");
 	} @else if type-of($base) != color {
-		@return _error(''#{inspect($color)}' is not a valid color.');
+		@return _error("'#{inspect($color)}' is not a valid color.");
 	} @else {
 		@return mix($base, $context, $percentage);
 	}
@@ -150,7 +150,7 @@
 /// @param {Number} $opacity [100] - the opacity percentage the text color should appear at
 @function oColorsGetTextColor($background, $opacity: 90) {
 	@if $background == null or type-of($background) != color {
-		@return _error '#{$background} is not a valid color. To get a text color, please supply a valid hex code or color name for the background color';
+		@return _error('#{$background} is not a valid color. To get a text color, please supply a valid hex code or color name for the background color');
 	}
 
 	$baseColor: _oColorsGetTextBase($background);
