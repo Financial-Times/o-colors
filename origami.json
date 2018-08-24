@@ -6,7 +6,8 @@
 	"origamiVersion": 1,
 	"brands" : [
 		"master",
-		"internal"
+		"internal",
+		"whitelabel"
 	],
 	"support": "https://github.com/Financial-Times/o-colors/issues",
 	"supportContact": {
@@ -19,6 +20,7 @@
 		"js": "demos/src/demo.js",
 		"dependencies": [
 			"o-forms",
+			"o-buttons",
 			"o-normalise",
 			"o-fonts",
 			"o-syntax-highlight"
