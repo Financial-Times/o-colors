@@ -18,6 +18,16 @@ $o-colors-is-silent: false;
 	.o-forms__additional-info {
 		color: inherit;
 	}
+
+
+	@media (max-width: 630px) {
+		grid-template-columns: 1fr;
+
+		.details {
+			grid-row: 2;
+			padding-bottom: 20px;
+		}
+	}
 }
 
 .color-selectors {
@@ -46,12 +56,6 @@ body {
 	[class^='percent'] {
 		display: flex;
 		justify-content: flex-start;
-
-		&:before {
-			content: '';
-			height: 50px;
-			width: 50px;
-		}
 	}
 
 	.sqr {
