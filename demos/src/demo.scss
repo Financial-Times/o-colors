@@ -15,8 +15,8 @@ body {
 	}
 }
 
-@each $name, $csscolor in $o-colors-palette {
-	@if $csscolor != 'transparent' and $csscolor != 'inherit' {
+@each $name, $value in $o-colors-palette {
+	@if $name != 'transparent' and $name != 'inherit' {
 		.o-colors-border-#{$name} {
 			border-width: 2px 2px 0;
 			border-style: solid;
@@ -29,7 +29,7 @@ body {
 
 		.o-colors-palette-#{$name} .hex,
 		.o-colors-palette-#{$name}:after {
-			color: oColorsGetTextColor($csscolor, 95);
+			color: oColorsGetTextColor($name, 95);
 		}
 	}
 }

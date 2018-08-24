@@ -62,7 +62,7 @@
 	@if ($propertyList == 'all' or index($propertyList, 'background')) {
 		background-color: oColorsGetColorFor($useCaseList, background, $options: $args);
 	}
-	
+
 	@if ($propertyList == 'all' or index($propertyList, 'text')) {
 		$useCaseTextColor: oColorsGetColorFor($useCaseList, text, $options: $args);
 		$useCaseBackgroundColor: oColorsGetColorFor($useCaseList, background, $options: $args);
@@ -86,9 +86,14 @@
 		$tints: map-get($settings, 'tints');
 
 		$saturation: null;
+		$deprecated: null;
 
 		@if map-has-key($settings, 'saturation') {
 			$saturation: map-get($settings, 'saturation');
+		}
+
+		@if map-has-key($settings, '_deprecated') {
+			$deprecated: '_deprecated';
 		}
 
 		@if $tints != null {
@@ -102,7 +107,7 @@
 					$tint: _oColorsHSB($hue, $saturation, $value);
 				}
 
-				@include oColorsSetColor($name, $tint);
+				@include oColorsSetColor($name, ($tint, $deprecated));
 			}
 		}
 	}
