@@ -6,7 +6,6 @@ $o-colors-is-silent: false;
 :root {
 	--color: black;
 }
-
 .container {
 	max-width: 800px;
 	margin: 0 auto;
@@ -38,6 +37,7 @@ body {
 	}
 }
 
+
 .mix-range {
 	display: flex;
 	flex-direction: column-reverse;
@@ -46,12 +46,6 @@ body {
 	[class^='percent'] {
 		display: flex;
 		justify-content: flex-start;
-
-		&:before {
-			content: '';
-			height: 50px;
-			width: 50px;
-		}
 	}
 
 	.sqr {
