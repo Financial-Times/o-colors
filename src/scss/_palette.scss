@@ -65,7 +65,7 @@ $o-colors-palette: map-merge((
 
 @if $_o-colors-brand == internal {
 	// Set warning, avoid outputting it twice
-	$_o-colors-experimental-palette-warning: if($_o-colors-experimental-palette-warning == null, true,$_o-colors-experimental-palette-warning) !global;
+	$_o-colors-experimental-palette-warning: if($_o-colors-experimental-palette-warning == null, true, $_o-colors-experimental-palette-warning) !global;
 
 	$o-colors-palette: map-merge((
 	// primary palette
