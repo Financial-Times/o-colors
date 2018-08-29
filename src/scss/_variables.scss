@@ -10,7 +10,7 @@ $_o-colors-experimental-palette: (
 	'slate-white-5':         #f4f4f5, // oColorsMix('slate', 'white', 5): to support work on internal brand design
 );
 
-$_o-colors-experimental-palette-warning: false !default;
+$_o-colors-experimental-palette-warning: null !default;
 
 $o-colors-usecases: () !default;
 
