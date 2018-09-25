@@ -1,6 +1,7 @@
 $o-colors-is-silent: true !default;
 
-$_o-colors-brand: if(global-variable-exists(o-brand), if($o-brand != null, $o-brand, 'master'), 'master');
+$_available-brands: ('master', 'internal', 'whitelabel');
+$_o-colors-brand: if((global-variable-exists(o-brand) and index($_available-brands, $o-brand)), $o-brand, 'master');
 
 $o-colors-palette: () !default;
 $o-colors-tints: () !default;
