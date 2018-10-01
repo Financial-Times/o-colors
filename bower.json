@@ -8,6 +8,7 @@
     ".travis.yml"
   ],
   "dependencies": {
-    "mathsass": "^0.10.1"
+    "mathsass": "^0.10.1",
+    "o-brand": "restructure"
   }
 }
