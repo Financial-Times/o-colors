@@ -55,6 +55,7 @@
 			@include assert-equal(oColorsGetUseCase(hero, background), ('wheat'));
 			@include assert-equal(oColorsGetUseCase(hero-opinion, background), ('oxford'));
 			@include assert-equal(oColorsGetUseCase(hero-highlight, background), ('claret'));
+			@include assert-equal(oColorsGetUseCase(focus, outline), ('teal-100'));
 			@include assert-equal(oColorsGetUseCase(section-life-arts, all), ('velvet'));
 			@include assert-equal(oColorsGetUseCase(section-life-arts-alt, all), ('candy'));
 			@include assert-equal(oColorsGetUseCase(section-magazine, all), ('oxford'));

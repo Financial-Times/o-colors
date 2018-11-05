@@ -40,6 +40,7 @@ $_o-colors-branded-usecases: (
 		hero:                     (background: 'wheat'),
 		hero-opinion:             (background: 'oxford'),
 		hero-highlight:           (background: 'claret'),
+		focus:                    (outline: 'teal-100'),
 
 		// Section colors
 		section-life-arts:        (all: 'velvet'),
@@ -62,6 +63,7 @@ $_o-colors-branded-usecases: (
 		title:                    (text: 'slate'),
 		body:                     (text: 'slate'),
 		muted:                    (text: 'black-20'),
+		focus:                    (outline: 'teal-100'),
 	),
 	'whitelabel': (
 	//	<use case>                <properties>

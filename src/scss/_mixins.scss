@@ -85,6 +85,10 @@
 	@if ($propertyList == 'all' or index($propertyList, 'border')) {
 		border-color: oColorsGetColorFor($useCaseList, border, $options: $args);
 	}
+
+	@if ($propertyList == 'all' or index($propertyList, 'outline')) {
+		outline-color: oColorsGetColorFor($useCaseList, outline, $options: $args);
+	}
 }
 
 /// Update the palette with calculated tints of
