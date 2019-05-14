@@ -17,7 +17,16 @@ $o-colors-is-silent: false;
 }
 
 .color-selectors {
-	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+
+	.o-forms-field {
+		flex-basis: 49%;
+	}
+	select option {
+		padding: 6px 0;
+		text-align: center;
+	}
 }
 
 body {

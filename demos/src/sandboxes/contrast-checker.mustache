@@ -1,64 +1,71 @@
 <div class="container">
 	<div class="color-selectors">
-		<div class="o-forms o-forms--inline">
-			<label aria-describedby="select-box-info" for="select-standard" class="o-forms__label">Text/foreground color</label>
-			<select id="text-selector" class="o-forms__select">
+		<label class="o-forms-field">
+			<span class="o-forms-title">
+				<span class="o-forms-title__main">Text / Foreground Colour</span>
+			</span>
 
-				{{#primary}}
-					<option value="{{name}}" {{#baseText}}selected {{/baseText}}>{{name}}</option>
-				{{/primary}}
+			<span class="o-forms-input o-forms-input--select">
+					<select id="text-selector" multiple>
+						{{#primary}}
+							<option style="background-color: var(--o-colors--{{name}}" value="{{name}}" {{#baseText}}selected {{/baseText}}>{{name}}</option>
+						{{/primary}}
 
-				{{#secondary}}
-					<option value={{name}}>{{name}}</option>
-				{{/secondary}}
+						{{#secondary}}
+							<option style="background-color: var(--o-colors--{{name}}" value={{name}}>{{name}}</option>
+						{{/secondary}}
 
-				{{#tertiary}}
-					<option value={{name}}>{{name}}</option>
-				{{/tertiary}}
+						{{#tertiary}}
+							<option style="background-color: var(--o-colors--{{name}}" value={{name}}>{{name}}</option>
+						{{/tertiary}}
 
-				{{#b2c}}
-					<option value={{name}}>{{name}}</option>
-				{{/b2c}}
+						{{#b2c}}
+							<option style="background-color: var(--o-colors--{{name}}" value={{name}}>{{name}}</option>
+						{{/b2c}}
 
-				{{#experimental}}
-					<option value={{name}}>{{name}}</option>
-				{{/experimental}}
+						{{#experimental}}
+							<option style="background-color: var(--o-colors--{{name}}" value={{name}}>{{name}}</option>
+						{{/experimental}}
+				</select>
+			</span>
+		</label>
 
-			</select>
+		<label class="o-forms-field">
+			<span class="o-forms-title">
+				<span class="o-forms-title__main">Background Colour</span>
+			</span>
+
+			<span class="o-forms-input o-forms-input--select">
+					<select id="background-selector" multiple>
+						{{#primary}}
+							<option style="background-color: var(--o-colors--{{name}}" value="{{name}}" {{#baseBackground}}selected {{/baseBackground}}>{{name}}</option>
+						{{/primary}}
+
+						{{#secondary}}
+							<option style="background-color: var(--o-colors--{{name}}" value={{name}}>{{name}}</option>
+						{{/secondary}}
+
+						{{#tertiary}}
+							<option style="background-color: var(--o-colors--{{name}}" value={{name}}>{{name}}</option>
+						{{/tertiary}}
+
+						{{#b2c}}
+							<option style="background-color: var(--o-colors--{{name}}" value={{name}}>{{name}}</option>
+						{{/b2c}}
+
+						{{#experimental}}
+							<option style="background-color: var(--o-colors--{{name}}" value={{name}}>{{name}}</option>
+						{{/experimental}}
+				</select>
+			</span>
+		</label>
+	</div>
+	<div class="contrast-result">
+		<div>
+			<span class='contrast-ratio'></span>
+			<span class="wcag-rating rating-result"></span>
 		</div>
-		<div class="o-forms o-forms--inline">
-			<label aria-describedby="select-box-info" for="select-standard" class="o-forms__label">Background color</label>
-			<select id="background-selector" class="o-forms__select">
-
-				{{#primary}}
-					<option value={{name}} {{#baseBackground}}selected {{/baseBackground}}>{{name}}</option>
-				{{/primary}}
-
-				{{#secondary}}
-					<option value={{name}}>{{name}}</option>
-				{{/secondary}}
-
-				{{#tertiary}}
-					<option value={{name}}>{{name}}</option>
-				{{/tertiary}}
-
-				{{#b2c}}
-					<option value={{name}}>{{name}}</option>
-				{{/b2c}}
-
-				{{#experimental}}
-					<option value={{name}}>{{name}}</option>
-				{{/experimental}}
-
-			</select>
-		</div>
-		<div class="contrast-result">
-			<div>
-				<span class='contrast-ratio'></span>
-				<span class="wcag-rating rating-result"></span>
-			</div>
-			<p class="rating-message rating-result"></p>
-		</div>
+		<p class="rating-message rating-result"></p>
 	</div>
 
 	<div class="contrast-showcase">
