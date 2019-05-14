@@ -26,16 +26,10 @@ function showContrastRatio(text, background) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-	const text = document.getElementById('text-selector');
-	const background = document.getElementById('background-selector');
-
-	text.addEventListener('change', () => {
-		showContrastRatio(text, background);
+	const form = document.forms[0];
+	form.addEventListener('change', () => {
+		showContrastRatio(form['foreground'], form['background']);
 	});
 
-	background.addEventListener('change', () => {
-		showContrastRatio(text, background);
-	});
-
-	showContrastRatio(text, background);
+	showContrastRatio(form['foreground'], form['background']);
 });
