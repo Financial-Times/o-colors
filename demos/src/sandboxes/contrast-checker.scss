@@ -33,10 +33,10 @@ body {
 		[role=tab] {
 			color: black;
 			border-color: black;
-			background-color: oColorsGetPaletteColor('black-5');
+			background-color: oColorsGetPaletteColor('white');
 
 			&[aria-selected=true] {
-				background-color: oColorsGetPaletteColor('black-20');
+				background-color: oColorsGetPaletteColor('black-10');
 
 				a {
 					font-weight: 600;
@@ -75,6 +75,11 @@ body {
 		
 		&:checked {
 			border: 2px solid deeppink;
+		}
+
+		&[name=mix] {
+			height: 48px;
+			width: 22px;
 		}
 	}
 }

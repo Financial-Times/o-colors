@@ -1,4 +1,5 @@
 import contrastRatio from './contrast-ratio';
+import colorMix from './colors-mix';
 
 function changeColor(colorName, property) {
 	const root = document.documentElement;
@@ -29,9 +30,16 @@ function showContrastRatio(text, background) {
 
 document.addEventListener('DOMContentLoaded', function() {
 	const form = document.forms[0];
+
 	form.addEventListener('change', () => {
 		showContrastRatio(form['foreground'], form['background']);
+		colorMix.oColorsMix(form['mixer'].value, form['base'].value)
 	});
 
+	form['mix'].forEach(input => {
+		input.addEventListener('dblclick', () => console.log('lol'))
+	})
+	
 	showContrastRatio(form['foreground'], form['background']);
+	colorMix.oColorsMix(form['mixer'].value, form['base'].value);
 });
