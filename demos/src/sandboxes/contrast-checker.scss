@@ -2,14 +2,22 @@ $o-colors-is-silent: false;
 
 // Import colors module
 @import '../../../main';
+:root {
+	--background: white;
+	--foreground: black;
+}
 
-.container {
-	max-width: 1200px;
+body {
+	font-family: MetricWeb, sans-serif;
+	max-width: 1300px;
 	margin: 0 auto;
-	padding: 20px;
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(4, 1fr);
 	grid-gap: 20px;
+	padding-top: 20px;
+
+	background-color: var(--background);
+	color: var(--foreground);
 
 	@media (max-width: 630px) {
 		grid-template-columns: 1fr;
@@ -17,17 +25,44 @@ $o-colors-is-silent: false;
 }
 
 .color-selectors {
-	display: flex;
-	justify-content: space-between;
-	grid-area: 1 / 1;
+	grid-area: 1 / 2;
+
+	.o-tabs--buttontabs[data-o-tabs--js][role="tablist"] {
+		border-color: black;
+
+		[role=tab] {
+			color: black;
+			border-color: black;
+			background-color: oColorsGetPaletteColor('black-5');
+
+			&[aria-selected=true] {
+				background-color: oColorsGetPaletteColor('black-20');
+
+				a {
+					font-weight: 600;
+				}
+			}
+
+			&[aria-selected=false] a {
+				font-weight: 400;
+			}
+		}
+	}
 
 	.swatches {
 		flex-basis: 45%;
-		border: 1px solid oColorsMix('black', 'white', 15);
+		background-color: white;
+		border: 1px solid black;
+		border-top: 0;
+		margin: 0; 
 
 		span, 
 		br {
 			margin-bottom: 6px;
+		}
+
+		.o-forms-title__prompt {
+			color: black;
 		}
 	}
 
@@ -39,14 +74,11 @@ $o-colors-is-silent: false;
 		cursor: pointer;
 		
 		&:checked {
-			border: 1px solid deeppink;
+			border: 2px solid deeppink;
 		}
 	}
 }
 
-body {
-	font-family: MetricWeb, sans-serif;
-}
 
 .rating-result--aaa,
 .rating-result--aa {
@@ -62,12 +94,15 @@ body {
 }
 
 .contrast-result {
+	align-self: flex-start;
+	color: black;
+	grid-area: 2 / 2;
 	display: flex;
 	flex-direction: column;
 	padding: 20px 10px 0;
-	border-top: 1px solid oColorsMix('black', 'white', 15);
 	font-size: 18px;
-	grid-area: 2 / 1;
+	background-color: white;
+	border: 1px solid black;
 
 	div {
 		display: flex;
@@ -77,9 +112,7 @@ body {
 }
 
 .contrast-showcase {
-	padding: 20px;
-	border: 1px solid oColorsMix('black', 'white', 15);
-	grid-area: 1 / 2 / span 2;
+	grid-area: 1 / 3 / span 3;
 
 	h3 {
 		font-size: 18px;

@@ -1,13 +1,15 @@
 import contrastRatio from './contrast-ratio';
 
 function changeColor(colorName, property) {
-	const hexValue = getComputedStyle(document.documentElement).getPropertyValue(`--o-colors-${colorName}`);
-	document.querySelector('.contrast-showcase').style[property] = hexValue;
+	const root = document.documentElement;
+	const hexValue = getComputedStyle(root).getPropertyValue(`--o-colors-${colorName}`);
+
+	root.style.setProperty(`--${property}`, hexValue);
 	return hexValue;
 }
 
 function showContrastRatio(text, background) {
-	const textHex = changeColor(text.value, 'color');
+	const textHex = changeColor(text.value, 'foreground');
 	const backgroundHex = changeColor(background.value, 'background');
 
 	const ratingMessage = document.querySelector('.rating-message');
@@ -17,7 +19,7 @@ function showContrastRatio(text, background) {
 	const rating = contrastRatio.oColorsGetWCAGRating(ratio, text.value, background.value);
 
 	ratingMessage.className = `rating-message rating-result--${rating.wcagRating.toLowerCase()}`;
-	ratingMessage.textContent = rating.message;
+	ratingMessage.innerHTML = rating.message;
 
 	ratioValue.textContent = `Contrast ratio: ${ratio}`;
 

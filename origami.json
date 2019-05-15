@@ -22,6 +22,7 @@
 			"o-forms",
 			"o-normalise",
 			"o-fonts",
+			"o-tabs",
 			"o-syntax-highlight"
 		]
 	},

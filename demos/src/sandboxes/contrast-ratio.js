@@ -1,4 +1,4 @@
-function oColorsGetWCAGRating(ratio, color1, color2) {
+function oColorsGetWCAGRating(ratio, foreground, background) {
 	let wcagRating;
 	let message;
 
@@ -10,10 +10,10 @@ function oColorsGetWCAGRating(ratio, color1, color2) {
 		message = 'Pass';
 	} else if (ratio >= 3) {
 		wcagRating = 'AA18';
-		message = `Caution: When using the combination of '${color1}' on '${color2}', text should be larger than 18px to pass WCAG color contrast guidelines.`;
+		message = `Caution: When using the combination of <code>${foreground}</code> on <code>${background}</code>, text should be larger than 18px to pass WCAG color contrast guidelines.`;
 	} else {
 		wcagRating = 'Fail';
-		message = `The combination of '${color1}' on '${color2}' does not pass WCAG color contrast guidelines.`;
+		message = `The combination of <code>${foreground}</code> on <code>${background}</code> does not pass WCAG color contrast guidelines.`;
 	}
 	return {
 		'wcagRating': wcagRating,
@@ -22,9 +22,9 @@ function oColorsGetWCAGRating(ratio, color1, color2) {
 }
 
 
-function oColorsGetContrastRatio(color1, color2) {
-	const l1 = oColorsColorLuminance(color1) + 0.05;
-	const l2 = oColorsColorLuminance(color2) + 0.05;
+function oColorsGetContrastRatio(foreground, background) {
+	const l1 = oColorsColorLuminance(foreground) + 0.05;
+	const l2 = oColorsColorLuminance(background) + 0.05;
 	let ratio = l1/l2;
 
 	if (l2 > l1) {

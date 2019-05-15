@@ -1,7 +1,9 @@
-<div class="container">
 	<form class="color-selectors">
-		<fieldset class="swatches swatches--foreground">
-			<legend	class="o-forms-title__main">Foreground Colour</legend>
+	<ul data-o-component="o-tabs" class="o-tabs o-tabs--buttontabs" role="tablist">
+		<li role="tab" aria-selected="true"><a href="#foreground">Foreground Colour</a></li>
+		<li role="tab"><a href="#background">Background Colour</a></li>
+	</ul>
+		<fieldset id="foreground" class="swatches swatches--foreground o-tabs__tabpanel">
 			<span class="o-forms-title__prompt">Palette</span>
 			{{#primary}}
 				<label title="{{name}}">
@@ -26,7 +28,7 @@
 					<input type=radio name="foreground" style="background-color: var(--o-colors-{{name}})" value="{{name}}">
 				</label>
 			{{/experimental}}
-				<span class="o-forms-title__prompt">Tints</span>
+			<span class="o-forms-title__prompt">Tints</span>
 			{{#tints}}
 				{{#tint-levels}}
 					<label title="{{name}}-{{.}}">
@@ -35,11 +37,9 @@
 				{{/tint-levels}}
 				<br>
 			{{/tints}}
-			</details>
 		</fieldset>
-
-		<fieldset class="swatches swatches--background">
-			<legend class="o-forms-title__main">Background Colour</legend>
+		<fieldset id="background" class="swatches swatches--background o-tabs__tabpanel">
+			<span class="o-forms-title__prompt">Palette</span>
 			{{#primary}}
 				<label title="{{name}}">
 					<input type=radio name="background" style="background-color: var(--o-colors-{{name}})" value="{{name}}"  {{#baseBackground}}checked{{/baseBackground}}>
@@ -63,19 +63,19 @@
 					<input type=radio name="background" style="background-color: var(--o-colors-{{name}})" value="{{name}}">
 				</label>
 			{{/experimental}}
+			<span class="o-forms-title__prompt">Tints</span>
 			{{#tints}}
-
-				<br>
 				{{#tint-levels}}
 					<label title="{{name}}-{{.}}">
 						<input type=radio name="background" style="background-color: var(--o-colors-{{name}}-{{.}})" value="{{name}}-{{.}}">
 					</label>
 				{{/tint-levels}}
+				<br>
 			{{/tints}}
 		</fieldset>
 	</form>
 
-	<div class="contrast-result">
+	<div class="contrast-result" data-o-component='o-syntax-highlight'>
 		<div>
 			<span class='contrast-ratio'></span>
 			<span class="wcag-rating rating-result"></span>
@@ -89,5 +89,3 @@
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec ultrices arcu. Donec faucibus euismod condimentum. Donec pharetra diam nunc, accumsan tempus est pellentesque nec. Vivamus eget fermentum lacus. Integer quis luctus leo, sed placerat mi. Duis suscipit elit quis tortor iaculis, nec accumsan orci varius. Vestibulum a volutpat nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In eget velit felis. Donec tempus viverra urna eu varius. Ut tempus, nisi non consectetur dapibus, elit diam laoreet magna, in aliquam risus ipsum ut sem. Maecenas ut arcu tincidunt, luctus arcu quis, condimentum est. Phasellus consequat id massa at finibus. Nulla gravida lectus purus. Sed massa justo, pellentesque sit amet vehicula id, finibus vulputate leo.</p>
 		<p>Etiam viverra tempus purus, et pretium nunc. Donec suscipit lacus at lectus varius ullamcorper. Etiam et accumsan leo. Curabitur ultricies, tellus id suscipit gravida, augue libero volutpat nunc, eu porta mi ipsum eu orci. Nunc vitae mi ut metus sagittis eleifend eget nec nisl. Vivamus risus nibh, tempus vitae massa at, ultricies pulvinar neque. Cras placerat massa massa, at molestie erat lacinia eu. Aenean mollis cursus tristique. Nam quis odio id ex venenatis scelerisque. Curabitur vitae sagittis lectus, quis elementum lacus. </p>
 	</div>
-
-</div>
