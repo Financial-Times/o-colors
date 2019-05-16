@@ -12,7 +12,7 @@ body {
 	max-width: 1300px;
 	margin: 0 auto;
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(5, 1fr);
 	grid-gap: 20px;
 	padding-top: 20px;
 
@@ -25,7 +25,8 @@ body {
 }
 
 .color-selectors {
-	grid-area: 1 / 2;
+	grid-area: 1 / 4 / span 3;
+	min-width: 300px;
 
 	.o-tabs--buttontabs[data-o-tabs--js][role="tablist"] {
 		border-color: black;
@@ -50,7 +51,6 @@ body {
 	}
 
 	.swatches {
-		flex-basis: 45%;
 		background-color: white;
 		border: 1px solid black;
 		border-top: 0;
@@ -134,13 +134,14 @@ body {
 .contrast-result {
 	align-self: flex-start;
 	color: black;
-	grid-area: 2 / 2;
+	grid-area: 1 / 2 / auto / span 2 ;
 	display: flex;
 	flex-direction: column;
 	padding: 20px 10px 0;
 	font-size: 18px;
 	background-color: white;
 	border: 1px solid black;
+	margin-top: 28px;
 
 	div {
 		display: flex;
@@ -150,11 +151,12 @@ body {
 }
 
 .contrast-showcase {
-	grid-area: 1 / 3 / span 3;
+	grid-area: 2 / 2 / auto / span 2;
 
 	h3 {
 		font-size: 18px;
 		font-weight: 400;
+		margin-top: 0;
 	}
 
 	&--text {
