@@ -28,18 +28,43 @@ function showContrastRatio(text, background) {
 	wcagRating.textContent = `WCAG ${rating.wcagRating}`;
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', (e) => {
 	const form = document.forms[0];
+	const foreground = form['foreground'];
+	const background = form['background'];
+	// const mixer = form['mixer'];
+	// const base = form['base'];
 
-	form.addEventListener('change', () => {
-		showContrastRatio(form['foreground'], form['background']);
-		colorMix.oColorsMix(form['mixer'].value, form['base'].value)
+	foreground[0].addEventListener('input', (e) => {
+		showContrastRatio(foreground, background);
+		// colorMix.oColorsMix(mixer.value, base.value);
 	});
 
-	form['mix'].forEach(input => {
-		input.addEventListener('dblclick', () => console.log('lol'))
-	})
+	background[0].addEventListener('input', (e) => {
+		showContrastRatio(foreground, background);
+		// colorMix.oColorsMix(mixer.value, base.value);
+	});
+
+	// form['range'].forEach(input => {
+	// 	input.addEventListener('dblclick', () => {
+	// 		addMixedSwatch(foreground, input);
+	// 		addMixedSwatch(background, input);
+	// 	})
+	// })
 	
-	showContrastRatio(form['foreground'], form['background']);
-	colorMix.oColorsMix(form['mixer'].value, form['base'].value);
+	showContrastRatio(foreground, background);
+	// colorMix.oColorsMix(mixer.value, base.value);
 });
+
+const addMixedSwatch = (panel, item) => {
+	let label = document.createElement('label');
+	label.setAttribute('title', item.value)
+
+	let newSwatch = document.createElement('input');
+	newSwatch.setAttribute('type', 'radio');
+	newSwatch.setAttribute('name', panel.id);
+	newSwatch.style.backgroundColor = item.style.backgroundColor;
+
+	label.appendChild(newSwatch);
+	panel[0].appendChild(label);
+}

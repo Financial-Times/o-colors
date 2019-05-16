@@ -1,20 +1,27 @@
 	<form class="color-selectors">
-	<ul data-o-component="o-tabs" class="o-tabs o-tabs--buttontabs" role="tablist">
-		<li role="tab" aria-selected="true"><a href="#foreground">Foreground Colour</a></li>
-		<li role="tab"><a href="#background">Background Colour</a></li>
-		<li role="tab"><a href="#mixer">Mixer</a></li>
-	</ul>
+		<ul data-o-component="o-tabs" class="o-tabs o-tabs--buttontabs" role="tablist">
+			<li role="tab" aria-selected="true"><a href="#foreground">Foreground Colour</a></li>
+			<li role="tab"><a href="#background">Background Colour</a></li>
+			{{! <li role="tab"><a href="#mixer">Mixer</a></li> }}
+		</ul>
 		<fieldset id="foreground" class="swatches swatches--foreground o-tabs__tabpanel">
 			{{> fieldsets/foreground }}
+			<span class="o-forms-title__main">Mixes</span>
+			<label>
+				<input type="radio" class="o-overlay-trigger"
+					data-o-overlay-src="#mixer-overlay"
+					data-o-overlay-id="mixer-overlay"
+					aria-pressed="false"
+					aria-haspopup="true">
+			</label>
 		</fieldset>
 
 		<fieldset id="background" class="swatches swatches--background o-tabs__tabpanel">
 			{{> fieldsets/background}}
 		</fieldset>
-		<fieldset id="mixer" class="swatches swatches--background o-tabs__tabpanel">
-			{{> fieldsets/mixer}}
-		</fieldset>
+		{{> fieldsets/mixer }}
 	</form>
+
 
 	<div class="contrast-result" data-o-component='o-syntax-highlight'>
 		<div>
@@ -30,3 +37,4 @@
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec ultrices arcu. Donec faucibus euismod condimentum. Donec pharetra diam nunc, accumsan tempus est pellentesque nec. Vivamus eget fermentum lacus. Integer quis luctus leo, sed placerat mi. Duis suscipit elit quis tortor iaculis, nec accumsan orci varius. Vestibulum a volutpat nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In eget velit felis. Donec tempus viverra urna eu varius. Ut tempus, nisi non consectetur dapibus, elit diam laoreet magna, in aliquam risus ipsum ut sem. Maecenas ut arcu tincidunt, luctus arcu quis, condimentum est. Phasellus consequat id massa at finibus. Nulla gravida lectus purus. Sed massa justo, pellentesque sit amet vehicula id, finibus vulputate leo.</p>
 		<p>Etiam viverra tempus purus, et pretium nunc. Donec suscipit lacus at lectus varius ullamcorper. Etiam et accumsan leo. Curabitur ultricies, tellus id suscipit gravida, augue libero volutpat nunc, eu porta mi ipsum eu orci. Nunc vitae mi ut metus sagittis eleifend eget nec nisl. Vivamus risus nibh, tempus vitae massa at, ultricies pulvinar neque. Cras placerat massa massa, at molestie erat lacinia eu. Aenean mollis cursus tristique. Nam quis odio id ex venenatis scelerisque. Curabitur vitae sagittis lectus, quis elementum lacus. </p>
 	</div>
+

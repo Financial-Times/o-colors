@@ -61,6 +61,7 @@ body {
 			margin-bottom: 6px;
 		}
 
+		.o-forms-title__main,
 		.o-forms-title__prompt {
 			color: black;
 		}
@@ -77,13 +78,30 @@ body {
 			border: 2px solid deeppink;
 		}
 
-		&[name=mix] {
+		&.o-overlay-trigger {
+			background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1%3Aplus?source=o-colors&width=24&height=24&tint=gray')
+		}
+	}
+}
+
+.o-overlay__content {
+	input[type=radio] {
+		appearance: none;
+		border: 1px solid lightgrey;
+		height: 24px;
+		width: 24px;
+		cursor: pointer;
+		
+		&:checked {
+			border: 2px solid deeppink;
+		}
+
+		&[name=range] {
 			height: 48px;
 			width: 22px;
 		}
 	}
 }
-
 
 .rating-result--aaa,
 .rating-result--aa {

@@ -43,6 +43,7 @@ function preciseFloor(number, decimals = 2) {
 
 
 function oColorsColorLuminance(hex) {
+	console.log(hex)
 	const hexValue = hex.replace('#', '').trim();
 	const rgbPairs = hexValue.match(/.{1,2}/g);
 

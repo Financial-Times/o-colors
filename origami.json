@@ -23,6 +23,7 @@
 			"o-normalise",
 			"o-fonts",
 			"o-tabs",
+			"o-overlay",
 			"o-syntax-highlight"
 		]
 	},
