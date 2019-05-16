@@ -78,7 +78,9 @@ const mixHexes = (mixer, base) => {
 
 const colourSwatches = (hexes, mixer, base) => {
 	hexes.forEach((hex, index)=> {
-		document.querySelector(`label[title="${index * 10}%"] input`).style.backgroundColor = hex;
+		input = document.querySelector(`label[title="${index * 10}%"] input`)
+		input.style.backgroundColor = hex;
+		input.setAttribute('value', hex);
 	})
 	// hexes.forEach((hex, index) => {
 	// 	let range = document.querySelector('.mix-range');

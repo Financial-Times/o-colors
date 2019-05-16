@@ -3,7 +3,11 @@ import colorMix from './colors-mix';
 
 function changeColor(colorName, property) {
 	const root = document.documentElement;
-	const hexValue = getComputedStyle(root).getPropertyValue(`--o-colors-${colorName}`);
+	let hexValue = getComputedStyle(root).getPropertyValue(`--o-colors-${colorName}`);
+
+	if (hexValue.length <= 0) {
+		hexValue = colorName
+	}
 
 	root.style.setProperty(`--${property}`, hexValue);
 	return hexValue;
@@ -12,7 +16,6 @@ function changeColor(colorName, property) {
 function showContrastRatio(text, background) {
 	const textHex = changeColor(text.value, 'foreground');
 	const backgroundHex = changeColor(background.value, 'background');
-
 	const ratingMessage = document.querySelector('.rating-message');
 	const ratioValue = document.querySelector('.contrast-ratio');
 	const wcagRating = document.querySelector('.wcag-rating');
@@ -28,43 +31,50 @@ function showContrastRatio(text, background) {
 	wcagRating.textContent = `WCAG ${rating.wcagRating}`;
 }
 
+
 document.addEventListener('DOMContentLoaded', (e) => {
 	const form = document.forms[0];
 	const foreground = form['foreground'];
 	const background = form['background'];
-	// const mixer = form['mixer'];
-	// const base = form['base'];
-
-	foreground[0].addEventListener('input', (e) => {
+	
+	form.addEventListener('change', () => {
 		showContrastRatio(foreground, background);
-		// colorMix.oColorsMix(mixer.value, base.value);
 	});
-
-	background[0].addEventListener('input', (e) => {
-		showContrastRatio(foreground, background);
-		// colorMix.oColorsMix(mixer.value, base.value);
-	});
-
-	// form['range'].forEach(input => {
-	// 	input.addEventListener('dblclick', () => {
-	// 		addMixedSwatch(foreground, input);
-	// 		addMixedSwatch(background, input);
-	// 	})
-	// })
 	
 	showContrastRatio(foreground, background);
-	// colorMix.oColorsMix(mixer.value, base.value);
 });
 
-const addMixedSwatch = (panel, item) => {
+document.addEventListener('oOverlay.ready', () => {
+	const form = document.forms[0];
+	const fieldset = form['overlay-fieldset'];
+	const mixer = form['mixer'];
+	const base = form['base'];
+	const range = form['range'];
+
+	const addButton = fieldset.querySelector('button');
+
+	colorMix.oColorsMix(mixer.value, base.value);
+
+	fieldset.addEventListener('change', () => {
+		colorMix.oColorsMix(mixer.value, base.value);
+	})
+
+	addButton.addEventListener('click', () => {
+		addMixedSwatch(foreground, range.value);
+		addMixedSwatch(background, range.value);
+	})
+});
+
+const addMixedSwatch = (panel, color) => {
 	let label = document.createElement('label');
-	label.setAttribute('title', item.value)
+	label.setAttribute('title', color)
 
 	let newSwatch = document.createElement('input');
 	newSwatch.setAttribute('type', 'radio');
 	newSwatch.setAttribute('name', panel.id);
-	newSwatch.style.backgroundColor = item.style.backgroundColor;
+	newSwatch.setAttribute('value', color);
+	newSwatch.style.backgroundColor = color;
 
 	label.appendChild(newSwatch);
-	panel[0].appendChild(label);
+	panel.appendChild(label);
 }

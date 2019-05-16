@@ -85,6 +85,11 @@ body {
 }
 
 .o-overlay__content {
+	fieldset {
+		border: 0;
+		padding: 0;
+	}
+
 	input[type=radio] {
 		appearance: none;
 		border: 1px solid lightgrey;
