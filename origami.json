@@ -19,12 +19,13 @@
 		"sass": "demos/src/demo.scss",
 		"js": "demos/src/demo.js",
 		"dependencies": [
-			"o-forms",
-			"o-normalise",
-			"o-fonts",
-			"o-tabs",
-			"o-overlay",
-			"o-syntax-highlight"
+			"o-buttons@^5.16.4",
+			"o-fonts@^3.3.1",
+			"o-forms@^7.0.2",
+			"o-normalise@^1.7.1",
+			"o-overlay@^2.4.7",
+			"o-syntax-highlight@^1.6.1",
+			"o-tabs@^4.3.2"
 		]
 	},
 	"ci": {

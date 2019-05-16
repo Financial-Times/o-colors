@@ -63,6 +63,8 @@ document.addEventListener('oOverlay.ready', () => {
 		addMixedSwatch(foreground, range.value);
 		addMixedSwatch(background, range.value);
 	})
+
+	document.removeEventListener('oOverlay.ready', () => {})
 });
 
 const addMixedSwatch = (panel, color) => {
