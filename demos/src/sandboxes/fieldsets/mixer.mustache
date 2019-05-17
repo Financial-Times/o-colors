@@ -1,4 +1,5 @@
 <script type="text/template" id="mixer-overlay">
+	<button class="o-overlay__close"></button>
 	<fieldset form="color-selectors" id="overlay-fieldset">
 		<span class="o-forms-title__main">Mixer</span>
 		{{#primary}}
@@ -84,6 +85,6 @@
 		<label title="100%">
 			<input type=radio form="color-selectors" name="range" value="{{name}}">
 		</label>
-		<button class="o-buttons o-buttons--mono">Add</button>
+		<button class="o-buttons o-buttons--mono" id="add-mix">Add</button>
 	</fieldset>
 </script>

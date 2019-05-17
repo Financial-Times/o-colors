@@ -7,10 +7,11 @@
 	<fieldset id="foreground" class="swatches swatches--foreground o-tabs__tabpanel">
 		{{> fieldsets/foreground }}
 		<span class="o-forms-title__main">Mixes</span>
-		<label ">
+		<label title="Add mixed colour">
 			<input type="radio" class="o-overlay-trigger"
 				data-o-overlay-src="#mixer-overlay"
 				data-o-overlay-id="mixer-overlay"
+				data-o-overlay-customclose="true"
 				aria-pressed="false"
 				aria-haspopup="true">
 		</label>
@@ -31,18 +32,23 @@
 	{{> fieldsets/mixer }}
 </form>
 
-
-<div class="contrast-result" data-o-component='o-syntax-highlight'>
+<div class="contrast-info" data-o-component="o-syntax-highlight">
+	<div class="contrast-combination">
+		<span class="o-forms-title__main">Combination</span>
+		<p class="combination"></p>
+	</div>
 	<div>
+		<span class="o-forms-title__main">Contrast Details</span>
 		<span class='contrast-ratio'></span>
 		<span class="wcag-rating rating-result"></span>
+		<p class="rating-message rating-result"></p>
 	</div>
-	<p class="rating-message rating-result"></p>
 </div>
 
-<div class="contrast-showcase">
+<div class="contrast-text">
 	<h3>This is an example of text at 18px</h3>
 	<p>Everything else is 14px</p>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec ultrices arcu. Donec faucibus euismod condimentum. Donec pharetra diam nunc, accumsan tempus est pellentesque nec. Vivamus eget fermentum lacus. Integer quis luctus leo, sed placerat mi. Duis suscipit elit quis tortor iaculis, nec accumsan orci varius. Vestibulum a volutpat nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In eget velit felis. Donec tempus viverra urna eu varius. Ut tempus, nisi non consectetur dapibus, elit diam laoreet magna, in aliquam risus ipsum ut sem. Maecenas ut arcu tincidunt, luctus arcu quis, condimentum est. Phasellus consequat id massa at finibus. Nulla gravida lectus purus. Sed massa justo, pellentesque sit amet vehicula id, finibus vulputate leo.</p>
-	</div>
+	<p>This contrast checker is constrained to the colours that exist within the o-colors color palette. It also provides the option to include 'mixed' colours, which allow the original palette colours to be mixd with each other at different percentages.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec ultrices arcu. Donec faucibus euismod condimentum. Donec pharetra diam nunc, accumsan tempus est pellentesque nec. Vivamus eget fermentum lacus. Integer quis luctus leo, sed placerat mi.</p>
+</div>
 

@@ -85,6 +85,13 @@ body {
 }
 
 .o-overlay__content {
+	> :first-child {
+		margin: 0;
+		border: 0;
+		position: absolute;
+		right: 20px;
+	}
+
 	fieldset {
 		border: 0;
 		padding: 0;
@@ -131,35 +138,39 @@ body {
 	color: oColorsGetPaletteColor('crimson');
 }
 
-.contrast-result {
-	align-self: flex-start;
-	color: black;
+.contrast-info {
 	grid-area: 1 / 2 / auto / span 2 ;
-	display: flex;
-	flex-direction: column;
-	padding: 20px 10px 0;
-	font-size: 18px;
+
+	color: black;
 	background-color: white;
 	border: 1px solid black;
+	padding: 10px;
 	margin-top: 28px;
+	
+	.o-forms-title__main {
+		margin-bottom: 4px;
+	}
 
-	div {
-		display: flex;
-		justify-content: space-between;
-		font-weight: 600;
+	.contrast-combination {
+		margin-bottom: 12px;
+	}
+
+	p {
+		margin: 0;
 	}
 }
 
-.contrast-showcase {
+.contrast-text {
 	grid-area: 2 / 2 / auto / span 2;
+	font-size: 14px;
+
+	code {
+		font-size: 12px;
+	}
 
 	h3 {
 		font-size: 18px;
 		font-weight: 400;
 		margin-top: 0;
-	}
-
-	&--text {
-		font-size: 14px;
 	}
 }

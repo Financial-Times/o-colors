@@ -16,12 +16,16 @@ function changeColor(colorName, property) {
 function showContrastRatio(text, background) {
 	const textHex = changeColor(text.value, 'foreground');
 	const backgroundHex = changeColor(background.value, 'background');
+
+	const combination = document.querySelector('.combination');
 	const ratingMessage = document.querySelector('.rating-message');
 	const ratioValue = document.querySelector('.contrast-ratio');
 	const wcagRating = document.querySelector('.wcag-rating');
+
 	const ratio = contrastRatio.oColorsGetContrastRatio(textHex, backgroundHex);
 	const rating = contrastRatio.oColorsGetWCAGRating(ratio, text.value, background.value);
 
+	combination.innerHTML = rating.combination;
 	ratingMessage.className = `rating-message rating-result--${rating.wcagRating.toLowerCase()}`;
 	ratingMessage.innerHTML = rating.message;
 
@@ -51,7 +55,7 @@ document.addEventListener('oOverlay.ready', () => {
 	const base = form['base'];
 	const range = form['range'];
 
-	const addButton = fieldset.querySelector('button');
+	const addButton = document.getElementById('add-mix');
 
 	colorMix.oColorsMix(mixer.value, base.value);
 
@@ -62,9 +66,9 @@ document.addEventListener('oOverlay.ready', () => {
 	addButton.addEventListener('click', () => {
 		addMixedSwatch(foreground, range.value);
 		addMixedSwatch(background, range.value);
-	})
+	});
 
-	document.removeEventListener('oOverlay.ready', () => {})
+	addButton.removeEventListener('click', () => console.log('removed'));
 });
 
 const addMixedSwatch = (panel, color) => {
@@ -79,4 +83,6 @@ const addMixedSwatch = (panel, color) => {
 
 	label.appendChild(newSwatch);
 	panel.appendChild(label);
+
+	label = null;
 }
