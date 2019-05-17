@@ -74,11 +74,12 @@ body {
 		width: 24px;
 		cursor: pointer;
 		
-		&:checked {
+		&:checked:not(.o-overlay-trigger) {
 			border: 2px solid deeppink;
 		}
 
-		&.o-overlay-trigger {
+		&.o-overlay-trigger,
+		&.trigger-input {
 			background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1%3Aplus?source=o-colors&width=24&height=24&tint=gray')
 		}
 	}
@@ -179,5 +180,9 @@ body {
 		font-size: 18px;
 		font-weight: 400;
 		margin-top: 0;
+	}
+
+	a {
+		color: inherit;
 	}
 }

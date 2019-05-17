@@ -36,16 +36,19 @@ function showContrastRatio(text, background) {
 }
 
 
-document.addEventListener('DOMContentLoaded', (e) => {
+document.addEventListener('o.DOMContentLoaded', () => {
 	const form = document.forms[0];
 	const foreground = form['foreground'];
 	const background = form['background'];
-	
 	form.addEventListener('change', () => {
 		showContrastRatio(foreground, background);
 	});
 	
 	showContrastRatio(foreground, background);
+
+	document.querySelector('.trigger-input').addEventListener('click', () => {
+		Origami['o-overlay'].getOverlays()['mixer-overlay'].open();
+	})
 });
 
 let eventsAdded = false;
@@ -58,8 +61,8 @@ document.addEventListener('oOverlay.ready', () => {
 	if (!eventsAdded) {
 		document.getElementById('add-mix').addEventListener('click', () => {
 			const range = document.forms[0]['range'];
-			addMixedSwatch(foreground, range.value);
-			addMixedSwatch(background, range.value);
+			addMixedSwatch('foreground', range.value);
+			addMixedSwatch('background', range.value);
 		});
 
 		eventsAdded = true;
@@ -70,18 +73,13 @@ const generateRange = () => {
 	colorMix.oColorsMix(document.forms[0]['mixer'].value, document.forms[0]['base'].value);
 }
 
-const addMixedSwatch = (panel, color) => {
+const addMixedSwatch = (panelName, color, names) => {
 	let label = document.createElement('label');
 	label.setAttribute('title', color)
 
-	let newSwatch = document.createElement('input');
-	newSwatch.setAttribute('type', 'radio');
-	newSwatch.setAttribute('name', panel.id);
-	newSwatch.setAttribute('value', color);
-	newSwatch.style.backgroundColor = color;
+	label.innerHTML = `
+		<input type="radio" name="${panelName}" value="${color}" style="background-color: ${color};"/>
+	`;
 
-	label.appendChild(newSwatch);
-	panel.appendChild(label);
-
-	label = null;
+	document.forms[0][panelName][0].appendChild(label);
 }

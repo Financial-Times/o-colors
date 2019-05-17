@@ -10,7 +10,7 @@ function oColorsGetWCAGRating(ratio, foreground, background) {
 		message = 'Pass';
 	} else if (ratio >= 3) {
 		wcagRating = 'AA18';
-		message = `Caution: When using this, text should be larger than 18px to pass WCAG color contrast guidelines.`;
+		message = `Caution: When using this combination, text should be larger than 18px to pass WCAG color contrast guidelines.`;
 	} else {
 		wcagRating = 'Fail';
 		message = `This combination does not pass WCAG color contrast guidelines.`;
@@ -36,15 +36,12 @@ function oColorsGetContrastRatio(foreground, background) {
 	return ratio;
 }
 
-
 function preciseFloor(number, decimals = 2) {
 	const multiplier = Math.pow(10, decimals);
 	return Math.floor(number * multiplier) / multiplier;
 }
 
-
 function oColorsColorLuminance(hex) {
-	console.log(hex)
 	const hexValue = hex.replace('#', '').trim();
 	const rgbPairs = hexValue.match(/.{1,2}/g);
 
