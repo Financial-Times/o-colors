@@ -48,28 +48,27 @@ document.addEventListener('DOMContentLoaded', (e) => {
 	showContrastRatio(foreground, background);
 });
 
-document.addEventListener('oOverlay.ready', () => {
-	const form = document.forms[0];
-	const fieldset = form['overlay-fieldset'];
-	const mixer = form['mixer'];
-	const base = form['base'];
-	const range = form['range'];
+let eventsAdded = false;
 
-	const addButton = document.getElementById('add-mix');
+document.addEventListener('oOverlay.ready', () => {	
+	generateRange();
 
-	colorMix.oColorsMix(mixer.value, base.value);
+	document.forms[0]['overlay-fieldset'].addEventListener('change', generateRange);
+	
+	if (!eventsAdded) {
+		document.getElementById('add-mix').addEventListener('click', () => {
+			const range = document.forms[0]['range'];
+			addMixedSwatch(foreground, range.value);
+			addMixedSwatch(background, range.value);
+		});
 
-	fieldset.addEventListener('change', () => {
-		colorMix.oColorsMix(mixer.value, base.value);
-	})
-
-	addButton.addEventListener('click', () => {
-		addMixedSwatch(foreground, range.value);
-		addMixedSwatch(background, range.value);
-	});
-
-	addButton.removeEventListener('click', () => console.log('removed'));
+		eventsAdded = true;
+	}
 });
+
+const generateRange = () => {
+	colorMix.oColorsMix(document.forms[0]['mixer'].value, document.forms[0]['base'].value);
+}
 
 const addMixedSwatch = (panel, color) => {
 	let label = document.createElement('label');
