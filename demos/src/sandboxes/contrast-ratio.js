@@ -1,13 +1,12 @@
 function oColorsGetWCAGRating(ratio, foreground, background) {
 	let wcagRating;
-	let message;
+	let message = 'This combination passes WCAG color contrast guidelines';
+	let combination = `<code>${foreground}</code> on <code>${background}</code>`;
 
 	if (ratio >= 7) {
 		wcagRating = 'AAA';
-		message = 'Pass';
 	} else if (ratio >= 4.5) {
 		wcagRating = 'AA';
-		message = 'Pass';
 	} else if (ratio >= 3) {
 		wcagRating = 'AA18';
 		message = `Caution: When using this combination, text should be larger than 18px to pass WCAG color contrast guidelines.`;
@@ -15,10 +14,11 @@ function oColorsGetWCAGRating(ratio, foreground, background) {
 		wcagRating = 'Fail';
 		message = `This combination does not pass WCAG color contrast guidelines.`;
 	}
+
 	return {
-		'combination': `<code>${foreground}</code> on <code>${background}</code>`,
-		'wcagRating': wcagRating,
-		'message': message
+		combination,
+		wcagRating,
+		message
 	};
 }
 

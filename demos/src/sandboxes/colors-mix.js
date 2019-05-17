@@ -1,26 +1,26 @@
 import contrastRatio from './contrast-ratio';
 
-// document.addEventListener('DOMContentLoaded', function() {
-// 	const mixer = document.getElementById('mixer-selector');
-// 	const base = document.getElementById('base-selector');
+document.addEventListener('o.DOMContentLoaded', function() {
+	const mixer = document.getElementById('mixer-selector');
+	const base = document.getElementById('base-selector');
 
-// 	mixer.addEventListener('change', () => {
-// 		oColorsMix(mixer.value, base.value);
-// 		changeCodeSnippetValues(mixer.value, base.value);
-// 	});
+	mixer.addEventListener('change', () => {
+		oColorsMix(mixer.value, base.value);
+		changeCodeSnippetValues(mixer.value, base.value);
+	});
 
-// 	base.addEventListener('change', () => {
-// 		oColorsMix(mixer.value, base.value);
-// 		changeCodeSnippetValues(mixer.value, base.value);
-// 	});
+	base.addEventListener('change', () => {
+		oColorsMix(mixer.value, base.value);
+		changeCodeSnippetValues(mixer.value, base.value);
+	});
 
-// 	oColorsMix(mixer.value, base.value);
+	oColorsMix(mixer.value, base.value);
 
-// 	//set visible hex value and sass function to default values of oColorsMix
-// 	document.querySelector('.percent-80').firstElementChild.setAttribute('aria-selected', true);
-// 	let defaultHex = getComputedStyle(document.documentElement).getPropertyValue(`--o-colors-${mixer.value}-80`);
-// 	fillCodeSnippets(defaultHex, mixer.value, base.value, 80);
-// });
+	//set visible hex value and sass function to default values of oColorsMix
+	document.querySelector('.percent-80').firstElementChild.setAttribute('aria-selected', true);
+	let defaultHex = getComputedStyle(document.documentElement).getPropertyValue(`--o-colors-${mixer.value}-80`);
+	fillCodeSnippets(defaultHex, mixer.value, base.value, 80);
+});
 
 const changeCodeSnippetValues = (mixer, base) => {
 	let hex = document.querySelector('[aria-selected=true]');
@@ -31,9 +31,9 @@ const changeCodeSnippetValues = (mixer, base) => {
 const oColorsMix = (mixer = 'black', base = 'paper') => {
 	const mixerHex = getComputedStyle(document.documentElement).getPropertyValue(`--o-colors-${mixer}`).replace(/^\s*#/,'');
 	const baseHex = getComputedStyle(document.documentElement).getPropertyValue(`--o-colors-${base}`).replace(/^\s*#/,'');
-	// const textColorRGB = getComputedStyle(document.body).getPropertyValue('color');
+	const textColorRGB = getComputedStyle(document.body).getPropertyValue('color');
 
-	// checkContrast(textColorRGB, baseHex);
+	checkContrast(textColorRGB, baseHex);
 	const hexArray = mixHexes(mixerHex, baseHex);
 	colourSwatches(hexArray, mixer, base);
 };
