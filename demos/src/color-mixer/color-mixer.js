@@ -1,5 +1,5 @@
-import contrastRatio from '../sandboxes/contrast-ratio';
-import { mixHexes } from '../sandboxes/colors-mix';
+import { getContrastRatio } from '../shared/contrast-ratio';
+import { mixHexes } from '../shared/colors-mix';
 
 document.addEventListener('o.DOMContentLoaded', function() {
 	const forms = document.forms;
@@ -27,7 +27,7 @@ const checkTextContrast = (background) => {
 	const text = getComputedStyle(root).getPropertyValue('--color');
 
 	let textColor = text === '#000000' ? '#000000' : '#f3f3f3';
-	const ratio = contrastRatio.oColorsGetContrastRatio(textColor, background);
+	const ratio = getContrastRatio(textColor, background);
 
 	if (ratio <= 3) { // if it fails accessbility, change text colour
 		textColor = textColor === '#000000' ? '#f3f3f3' : '#000000';

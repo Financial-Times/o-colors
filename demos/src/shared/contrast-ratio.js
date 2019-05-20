@@ -1,4 +1,4 @@
-function oColorsGetWCAGRating(ratio, foreground, background) {
+function getWCAGRating(ratio, foreground, background) {
 	let wcagRating;
 	let message = 'This combination passes WCAG color contrast guidelines';
 	let combination = `<code>${foreground}</code> on <code>${background}</code>`;
@@ -23,7 +23,7 @@ function oColorsGetWCAGRating(ratio, foreground, background) {
 }
 
 
-function oColorsGetContrastRatio(foreground, background) {
+function getContrastRatio(foreground, background) {
 	const l1 = oColorsColorLuminance(foreground) + 0.05;
 	const l2 = oColorsColorLuminance(background) + 0.05;
 	let ratio = l1 / l2;
@@ -70,6 +70,6 @@ function oColorsColorLuminance(hex) {
 }
 
 export default {
-	oColorsGetWCAGRating,
-	oColorsGetContrastRatio
+	getWCAGRating,
+	getContrastRatio
 };
