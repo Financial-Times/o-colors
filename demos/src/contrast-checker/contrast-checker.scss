@@ -153,7 +153,7 @@ body {
 	grid-area: 1 / 2 / auto / span 2 ;
 	padding: 12px;
 	margin-top: 28px;
-	min-width: 280px;
+	max-width: 360px;
 
 	.contrast-combination {
 		margin-bottom: 12px;
@@ -183,7 +183,7 @@ body {
 			color: oColorsGetPaletteColor('jade');
 		}
 
-		&--a18 {
+		&--aa18 {
 			color: oColorsMix('crimson', 'lemon', 50);
 		}
 
@@ -200,7 +200,7 @@ body {
 .contrast-showcase {
 	grid-area: 2 / 2 / auto / span 2;
 	font-size: 14px;
-	width: 300px;
+	max-width: 360px;
 
 	code {
 		font-size: 12px;
