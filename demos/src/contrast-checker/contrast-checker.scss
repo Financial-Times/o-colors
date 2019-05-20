@@ -2,6 +2,19 @@ $o-colors-is-silent: false;
 
 // Import colors module
 @import '../../../main';
+
+@mixin swatchStyle() {
+	appearance: none;
+	border: 1px solid lightgrey;
+	height: 24px;
+	width: 24px;
+	cursor: pointer;
+
+	&:checked:not(.o-overlay-trigger) {
+		border: 2px solid deeppink;
+	}
+}
+
 :root {
 	--background: white;
 	--foreground: black;
@@ -12,21 +25,48 @@ body {
 	max-width: 1300px;
 	margin: 0 auto;
 	display: grid;
-	grid-template-columns: repeat(5, 1fr);
+	grid-template-columns: 1fr repeat(5, auto) 1fr;
 	grid-gap: 20px;
 	padding-top: 20px;
 
 	background-color: var(--background);
 	color: var(--foreground);
 
-	@media (max-width: 630px) {
-		grid-template-columns: 1fr;
+	@media (max-width: 690px) {
+		grid-template-columns: 1fr auto 1fr;
+
+		.contrast-info {
+			grid-row: 1;
+			grid-column: 2;
+		}
+
+		.color-selectors {
+			grid-row: 2;
+			grid-column: 2;
+		}
+
+		.contrast-showcase {
+			grid-row: 3;
+			grid-column: 2;
+		}
+	}
+
+	.o-forms-title__main,
+	.o-forms-title__prompt {
+		color: black;
+	}
+
+	.swatches,
+	.contrast-info {
+		color: black;
+		background-color: white;
+		border: 1px solid black;
 	}
 }
 
 .color-selectors {
 	grid-area: 1 / 4 / span 3;
-	min-width: 300px;
+	width: 300px;
 
 	.o-tabs--buttontabs[data-o-tabs--js][role="tablist"] {
 		border-color: black;
@@ -51,8 +91,6 @@ body {
 	}
 
 	.swatches {
-		background-color: white;
-		border: 1px solid black;
 		border-top: 0;
 		margin: 0; 
 
@@ -60,23 +98,10 @@ body {
 		br {
 			margin-bottom: 6px;
 		}
-
-		.o-forms-title__main,
-		.o-forms-title__prompt {
-			color: black;
-		}
 	}
 
 	input[type=radio] {
-		appearance: none;
-		border: 1px solid lightgrey;
-		height: 24px;
-		width: 24px;
-		cursor: pointer;
-		
-		&:checked:not(.o-overlay-trigger) {
-			border: 2px solid deeppink;
-		}
+		@include swatchStyle();
 
 		&.o-overlay-trigger,
 		&.trigger-input {
@@ -106,15 +131,7 @@ body {
 	}
 
 	input[type=radio] {
-		appearance: none;
-		border: 1px solid lightgrey;
-		height: 24px;
-		width: 24px;
-		cursor: pointer;
-		
-		&:checked {
-			border: 2px solid deeppink;
-		}
+		@include swatchStyle();
 
 		&[name=range] {
 			height: 48px;
@@ -124,7 +141,6 @@ body {
 
 	.o-forms-title__main {
 		margin: 4px 0 8px;
-		color: black;
 	}
 
 	button {
@@ -133,44 +149,58 @@ body {
 	}
 }
 
-.rating-result--aaa,
-.rating-result--aa {
-	color: oColorsGetPaletteColor('jade');
-}
-
-.rating-result--aa18 {
-	color: oColorsMix('crimson', 'lemon', 50);
-}
-
-.rating-result--fail {
-	color: oColorsGetPaletteColor('crimson');
-}
-
 .contrast-info {
 	grid-area: 1 / 2 / auto / span 2 ;
-
-	color: black;
-	background-color: white;
-	border: 1px solid black;
-	padding: 10px;
+	padding: 12px;
 	margin-top: 28px;
-	
-	.o-forms-title__main {
-		margin-bottom: 4px;
-	}
+	min-width: 300px;
 
 	.contrast-combination {
 		margin-bottom: 12px;
+		max-width: 280px;
+
+		.o-forms-title__main {
+			display: inline-block;
+		}
+
+		.combination {
+			float: right
+		}
 	}
 
-	p {
-		margin: 0;
+	.contrast-details {
+		clear: both;
+	}
+
+	.wcag-rating {
+		margin-left: 12px;
+		font-weight: 600;
+	}
+
+	.rating-result {
+		&--aaa,
+		&--aa {
+			color: oColorsGetPaletteColor('jade');
+		}
+
+		&--a18 {
+			color: oColorsMix('crimson', 'lemon', 50);
+		}
+
+		&--fail {
+			color: oColorsGetPaletteColor('crimson')
+		}
+	}
+
+	.rating-message {
+		margin-bottom: 0;
 	}
 }
 
-.contrast-text {
+.contrast-showcase {
 	grid-area: 2 / 2 / auto / span 2;
 	font-size: 14px;
+	width: 300px;
 
 	code {
 		font-size: 12px;

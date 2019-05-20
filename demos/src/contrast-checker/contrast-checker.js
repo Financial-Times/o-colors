@@ -24,7 +24,7 @@ function showContrastRatio(text, background) {
 	const rating = getWCAGRating(ratio, text.value, background.value);	
 	
 	document.querySelector('.combination').innerHTML = rating.combination;
-	document.querySelector('.contrast-ratio').textContent = `Contrast ratio: ${ratio}`;
+	document.querySelector('.contrast-ratio').innerHTML = `Contrast ratio: <strong>${ratio}</strong>`;
 	
 	const ratingMessage = document.querySelector('.rating-message');
 	ratingMessage.className = `rating-message rating-result--${rating.wcagRating.toLowerCase()}`;
