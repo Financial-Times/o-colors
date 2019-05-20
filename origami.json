@@ -48,9 +48,9 @@
 			"name": "master-colors-mix",
 			"title": "Color Mixer",
 			"data": "demos/src/palettes/master-palette.json",
-			"js": "demos/src/sandboxes/colors-mix.js",
-			"sass": "demos/src/sandboxes/colors-mix.scss",
-			"template": "demos/src/sandboxes/colors-mix.mustache",
+			"js": "demos/src/color-mixer/main.js",
+			"sass": "demos/src/color-mixer/main.scss",
+			"template": "demos/src/color-mixer/index.mustache",
 			"display_html": false,
 			"brands":	[
 				"master"
@@ -128,8 +128,8 @@
 			"title": "Color Mixer",
 			"data": "demos/src/palettes/internal-palette.json",
 			"js": "demos/src/sandboxes/colors-mix.js",
-			"sass": "demos/src/sandboxes/colors-mix.scss",
-			"template": "demos/src/sandboxes/colors-mix.mustache",
+			"sass": "demos/src/color-mixer/main.scss",
+			"template": "demos/src/color-mixer/index.mustache",
 			"display_html": false,
 			"brands":	[
 				"internal"

@@ -1,52 +1,31 @@
 import contrastRatio from './contrast-ratio';
 
-document.addEventListener('o.DOMContentLoaded', function() {
-	const mixer = document.getElementById('mixer-selector');
-	const base = document.getElementById('base-selector');
-
-	mixer.addEventListener('change', () => {
-		oColorsMix(mixer.value, base.value);
-		changeCodeSnippetValues(mixer.value, base.value);
-	});
-
-	base.addEventListener('change', () => {
-		oColorsMix(mixer.value, base.value);
-		changeCodeSnippetValues(mixer.value, base.value);
-	});
-
-	oColorsMix(mixer.value, base.value);
-
-	//set visible hex value and sass function to default values of oColorsMix
-	document.querySelector('.percent-80').firstElementChild.setAttribute('aria-selected', true);
-	let defaultHex = getComputedStyle(document.documentElement).getPropertyValue(`--o-colors-${mixer.value}-80`);
-	fillCodeSnippets(defaultHex, mixer.value, base.value, 80);
-});
-
-const changeCodeSnippetValues = (mixer, base) => {
-	let hex = document.querySelector('[aria-selected=true]');
-	let percent = hex.parentElement.classList.value.replace('percent-','');
-	fillCodeSnippets(hex.innerText, mixer, base, percent);
-};
+const getHexValue = (mixer, base) => {
+	const root = getComputedStyle(document.documentElement);
+	return {
+		mixer: getComputedStyle(root).getPropertyValue(`--o-colors-${mixer}`).replace(/^\s*#/, ''),
+		base: getComputedStyle(root).getPropertyValue(`--o-colors-${base}`).replace(/^\s*#/, '')
+	}
+}
 
 const oColorsMix = (mixer = 'black', base = 'paper') => {
-	const mixerHex = getComputedStyle(document.documentElement).getPropertyValue(`--o-colors-${mixer}`).replace(/^\s*#/,'');
-	const baseHex = getComputedStyle(document.documentElement).getPropertyValue(`--o-colors-${base}`).replace(/^\s*#/,'');
-	const textColorRGB = getComputedStyle(document.body).getPropertyValue('color');
+	const hex = getHexValues(mixer, base);
 
-	checkContrast(textColorRGB, baseHex);
-	const hexArray = mixHexes(mixerHex, baseHex);
+	// checkTextContrast(hex.text, hex.base);
+	const hexArray = mixHexes(hex.mixer, hex.base);
 	colourSwatches(hexArray, mixer, base);
 };
 
-const checkContrast = (text, background) => {
-	let textColor = text === 'rgb(0, 0, 0)' ? '#000000' : '#f3f3f3';
-	let ratio = contrastRatio.oColorsGetContrastRatio(textColor, background);
+// const checkTextContrast = (text, background) => {
+// 	const text = getComputedStyle(document.documentElement).getPropertyValue('color');
+// 	let textColor = text === 'rgb(0, 0, 0)' ? '#000000' : '#f3f3f3';
+// 	let ratio = contrastRatio.oColorsGetContrastRatio(textColor, background);
 
-	if (ratio <= 3) { //if it fails accessbility
-		textColor = textColor === '#000000' ? '#f3f3f3' : '#000000';
-		document.body.style.setProperty('--color', textColor);
-	}
-};
+// 	if (ratio <= 3) { //if it fails accessbility
+// 		textColor = textColor === '#000000' ? '#f3f3f3' : '#000000';
+// 		document.body.style.setProperty('--color', textColor);
+// 	}
+// };
 
 const mixHexes = (mixer, base) => {
 	const radix = 16;
@@ -111,5 +90,6 @@ const fillCodeSnippets = (hex, mixer, base, index) => {
 };
 
 export default {
-	oColorsMix
+	getHexValue,
+	mixHexes
 }
