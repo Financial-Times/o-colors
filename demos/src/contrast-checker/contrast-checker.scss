@@ -75,18 +75,18 @@ body {
 			color: black;
 			border-color: black;
 			background-color: oColorsGetPaletteColor('white');
+		}
 
-			&[aria-selected=true] {
+		[role=tab][aria-selected=true] {
 				background-color: oColorsGetPaletteColor('black-10');
 
-				a {
-					font-weight: 600;
-				}
+			a {
+				font-weight: 600;
 			}
+		}
 
-			&[aria-selected=false] a {
-				font-weight: 400;
-			}
+		[role=tab][aria-selected=false] a {
+			font-weight: 400;
 		}
 	}
 
@@ -100,12 +100,12 @@ body {
 		}
 	}
 
-	input[type=radio] {
+	input[type=radio] { //sass-lint:disable-line no-qualifying-elements
 		@include swatchStyle();
 
 		&.o-overlay-trigger,
 		&.trigger-input {
-			background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1%3Aplus?source=o-colors&width=24&height=24&tint=gray')
+			background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1%3Aplus?source=o-colors&width=24&height=24&tint=gray');
 		}
 	}
 }
@@ -118,7 +118,7 @@ body {
 		right: 20px;
 	}
 
-	#add-mix {
+	#add-mix { //sass-lint:disable-line no-ids
 		background-image: none;
 		font-size: inherit;
 		float: none;
@@ -130,7 +130,7 @@ body {
 		padding: 0;
 	}
 
-	input[type=radio] {
+	input[type=radio] { //sass-lint:disable-line no-qualifying-elements
 		@include swatchStyle();
 
 		&[name=range] {
@@ -153,7 +153,7 @@ body {
 	grid-area: 1 / 2 / auto / span 2 ;
 	padding: 12px;
 	margin-top: 28px;
-	min-width: 300px;
+	min-width: 280px;
 
 	.contrast-combination {
 		margin-bottom: 12px;
@@ -164,7 +164,7 @@ body {
 		}
 
 		.combination {
-			float: right
+			float: right;
 		}
 	}
 
@@ -188,7 +188,7 @@ body {
 		}
 
 		&--fail {
-			color: oColorsGetPaletteColor('crimson')
+			color: oColorsGetPaletteColor('crimson');
 		}
 	}
 

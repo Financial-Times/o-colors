@@ -3,8 +3,8 @@ const getHexValues = (mixer, base) => {
 	return {
 		mixer: root.getPropertyValue(`--o-colors-${mixer}`).replace(/^\s*#/, ''),
 		base: root.getPropertyValue(`--o-colors-${base}`).replace(/^\s*#/, '')
-	}
-}
+	};
+};
 
 const mixHexes = (mixer, base) => {
 	const radix = 16;
@@ -36,4 +36,4 @@ const mixHexes = (mixer, base) => {
 export default {
 	getHexValues,
 	mixHexes
-}
+};
