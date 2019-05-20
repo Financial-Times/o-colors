@@ -26,10 +26,10 @@ function oColorsGetWCAGRating(ratio, foreground, background) {
 function oColorsGetContrastRatio(foreground, background) {
 	const l1 = oColorsColorLuminance(foreground) + 0.05;
 	const l2 = oColorsColorLuminance(background) + 0.05;
-	let ratio = l1/l2;
+	let ratio = l1 / l2;
 
 	if (l2 > l1) {
-		ratio = 1/ratio;
+		ratio = 1 / ratio;
 	}
 
 	ratio = preciseFloor(ratio);
@@ -42,7 +42,6 @@ function preciseFloor(number, decimals = 2) {
 }
 
 function oColorsColorLuminance(hex) {
-	console.log(hex)
 	const hexValue = hex.replace('#', '').trim();
 	const rgbPairs = hexValue.match(/.{1,2}/g);
 
