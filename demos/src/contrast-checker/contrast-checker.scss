@@ -66,7 +66,7 @@ body {
 
 .color-selectors {
 	grid-area: 1 / 4 / span 3;
-	width: 300px;
+	width: 320px;
 
 	.o-tabs--buttontabs[data-o-tabs--js][role="tablist"] {
 		border-color: black;
@@ -153,7 +153,7 @@ body {
 	grid-area: 1 / 2 / auto / span 2 ;
 	padding: 12px;
 	margin-top: 28px;
-	max-width: 360px;
+	width: 320px;
 
 	.contrast-combination {
 		margin-bottom: 12px;
@@ -200,7 +200,7 @@ body {
 .contrast-showcase {
 	grid-area: 2 / 2 / auto / span 2;
 	font-size: 14px;
-	max-width: 360px;
+	max-width: 340px;
 
 	code {
 		font-size: 12px;
