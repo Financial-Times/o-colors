@@ -22,15 +22,15 @@
 ///     	'palette-custom-properties': true
 ///     ));
 ///
-/// @param {Map} $ops - The o-colors features to output. See the [readme](https://registry.origami.ft.com/components/o-colors) for a full list of options.
-@mixin oColors($ops: (
+/// @param {Map} $opts - The o-colors features to output. See the [readme](https://registry.origami.ft.com/components/o-colors) for a full list of options.
+@mixin oColors($opts: (
 	'palette-custom-properties': true,
 	'palette-classes': true,
 	'usecase-classes': true
 )) {
-	$palette-proeprties: map-get($ops, 'palette-custom-properties');
-	$palette-classes: map-get($ops, 'palette-classes');
-	$usecase-classes: map-get($ops, 'usecase-classes');
+	$palette-proeprties: map-get($opts, 'palette-custom-properties');
+	$palette-classes: map-get($opts, 'palette-classes');
+	$usecase-classes: map-get($opts, 'usecase-classes');
 
 	@if($palette-proeprties) {
 		@include _oColorsCSSVariables;
