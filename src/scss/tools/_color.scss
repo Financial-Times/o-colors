@@ -94,6 +94,8 @@
 	@return floor($number * $multiplier) / $multiplier;
 }
 
+// sass-lint:disable variable-name-format
+
 // Returns the square root of a number.
 // @param {Number} $x
 // @example
@@ -235,3 +237,4 @@ $SQRT2: 1.4142135623730951;
     }
     @return $x;
 }
+// sass-lint:enable variable-name-format
