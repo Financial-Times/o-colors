@@ -156,6 +156,9 @@
     @return $ret;
 }
 
+$LN2:   0.6931471805599453;
+$SQRT2: 1.4142135623730951;
+
 // Returns the natural logarithm of a number.
 // @param {Number} $x
 // @param {Number} $b The base number
