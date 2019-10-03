@@ -8,8 +8,8 @@ The following variables have changed:
 
 The following mixins have changed:
 
-- `oColorsGetPaletteColor` is now [`oColorsSetColor`](#oColorsSetColor).
-- [`oColorsByName`](#oColorsByName) has updated arguments.
+- `oColorsGetPaletteColor` is now [`oColorsByName`](#oColorsByName).
+- [`oColorsSetColor`](#oColorsSetColor) has updated arguments.
 
 The following have been removed from the palette:
 
