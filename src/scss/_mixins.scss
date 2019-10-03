@@ -13,9 +13,9 @@
 ///     	$opts: (deprecated: 'your deprecation message')
 ///     );
 ///
-/// @param {String} $name - Name in the palette
-/// @param {String} $color-name - Color (rgb, hex, hsl…)
-/// @param {Color} $color-hex - List (to signal deprecated tints for internal brand)
+/// @param {String} $project-name - The name of the component or project setting this colour, e.g. 'o-example'.
+/// @param {String} $color-name - The name of the colour e.g. 'paper'.
+/// @param {Color} $color-hex - The colour to set (hex) e.g. #ff69b4.
 /// @param {Map} $opts - A map of options. Accepts a `deprecated` key with a message to deprecated a set colour e.g. `$opts: (deprecated: 'your deprecation message')`.
 @mixin oColorsSetColor($project-name, $color-name, $color-hex, $opts: ()) {
 	// Validate arguments.
