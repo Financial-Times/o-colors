@@ -216,7 +216,7 @@ You can add use cases for your particular component or product. This is done usi
 
 It takes three arguments:
 
-* **Use case**: your particular use case
+* **Usecase**: your particular usecase
 * **Property**: the property for which the color should be used for (background, border, or text)
 * **Color**: a color from the palette
 
