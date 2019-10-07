@@ -208,7 +208,7 @@ section-money-alt |     all
 
 ## Defining custom usecases
 
-You can add use cases for your particular component or product. This is done using the `oColorsSetUseCase` mixin:
+You can add usecases for your particular component or product. This is done using the `oColorsSetUseCase` mixin:
 
 ```scss
 @include oColorsSetUseCase(email, text, 'black-60');
