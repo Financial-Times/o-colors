@@ -61,7 +61,7 @@ As `o-colors` [no longer outputs usecase CSS classes](#MIGRATION.md#migrating-fr
 
 #### oColorsByUsecase
 
-`oColorsGetUseCase` is now `oColorsByUsecase`. By default `oColorsByUsecase` it now errors if a usecase isn't found, unless a `$fallback` colour has been given (which may be `null`). A list of usecases is no longer accepted. `oColorsByUsecase` also has a new `$from` argument, to get usecases set by different component or projects.
+`oColorsGetUseCase` is now `oColorsByUsecase`. By default `oColorsByUsecase` now errors if a usecase isn't found, unless a `$fallback` colour has been given (which may be `null`). A list of usecases are no longer accepted. `oColorsByUsecase` also has a new `$from` argument, to get usecases set by different component or projects.
 
 If getting a usecase set by o-colors update the mixin name:
 ```diff
