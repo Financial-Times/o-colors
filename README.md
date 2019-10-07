@@ -206,7 +206,7 @@ section-house-home-alt |all
 section-money |         all
 section-money-alt |     all
 
-## Defining custom use cases
+## Defining custom usecases
 
 You can add use cases for your particular component or product. This is done using the `oColorsSetUseCase` mixin:
 
