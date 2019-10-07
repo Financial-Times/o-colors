@@ -220,7 +220,7 @@ It takes three arguments:
 * **Property**: the property for which the color should be used for (background, border, or text)
 * **Color**: a color from the palette
 
-If you are creating a use case for a component, you *must* namespace your use case name with the name of your component.
+If you are creating a usecase for a component, you *must* namespace your usecase name with the name of your component.
 
 You can also use `oColorsByUsecase` to retrieve the palette color name (eg `paper`) defined against a usecase. This can be useful when you need the palette color name to use with another Sass mixin.
 
