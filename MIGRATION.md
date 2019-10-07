@@ -69,7 +69,7 @@ If getting a usecase set by o-colors update the mixin name:
 +background-color: oColorsByUsecase('page', 'background');
 ```
 
-Not `all` is no longer a valid property when getting a usecase. Instead use one of 'text', 'background', 'border', or 'outline'.
+Note `all` is no longer a valid property when getting a usecase. Instead use one of 'text', 'background', 'border', or 'outline'.
 ```diff
 -color: oColorsGetUseCase('page', 'all');
 +color: oColorsByUsecase('page', 'text');
