@@ -16,7 +16,7 @@ $_o-colors-default-palette-colors: () !default;
 $_o-colors-palette: () !default;
 $o-colors-tints: ();
 
-$o-colors-usecases: () !default;
+$_o-colors-usecases: () !default;
 
 // These are common usecase which are not necessarily defined for each brand.
 // When the usecase is used and `null` is returned, there is no need to warn about it.

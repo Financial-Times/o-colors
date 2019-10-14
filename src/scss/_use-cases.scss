@@ -8,69 +8,67 @@
 /// These mappings define what we use our colors for.
 ///
 /// Use case:           Must be a single word comprising just letters, numbers, and dashes.
-/// Properties:         A Sass map of properties (must be 'border', 'text', 'background', or 'all')
+/// Properties:         A Sass map of colours `colors` and options `opts`.
+/// Properties-colors:  A Sass map of properties (must be 'border', 'text', 'background', 'outline', or 'all')
 ///                     against palette colors (must be an exact match for a name of a color defined
 ///                     in palette.scss).
-///
-/// Special properties: You can use the following special properties to mark use cases:
-///
-///                     _deprecated: <msg>  Emits <msg> as a warning if referenced, but still works
+/// Properties-opts:    A Sass map of options. May include a 'deprecated' key with a deprecation message for
+///						the usecase, or a map of deprecation messages for each usecase property.
+///						E.g. `('deprecated': 'this usecase is not used anymore.')`
+///						E.g. `('deprecated': ('border': 'this usecase has no border property anymore'))`
 ///
 /// @type map
-
-//TODO: Include explanation for mapped usecases once they have been made permanent and publicly available
-
 $_o-colors-branded-usecases: (
 	'master': (
-	//	<use case>                <properties>
-		o-colors-focus:                    (outline: 'black-50'),
-		o-colors-page:                     (background: 'paper'),
-		o-colors-box:                      (background: 'wheat'),
-		o-colors-link:                     (text: 'teal'),
-		o-colors-link-hover:               (text: 'teal-30'),
-		o-colors-link-title:               (text: 'black-80'),
-		o-colors-link-title-hover:         (text: 'black-70'),
-		o-colors-tag-link:                 (text: 'claret'),
-		o-colors-tag-link-hover:           (text: 'claret-30'),
-		o-colors-opinion-tag-link:         (text: 'oxford'),
-		o-colors-opinion-tag-link-hover:   (text: 'oxford-30'),
-		o-colors-title:                    (text: 'black'),
-		o-colors-body:                     (text: 'black-80'),
-		o-colors-muted:                    (text: 'black-20'),
-		o-colors-opinion:                  (background: 'sky'),
-		o-colors-hero:                     (background: 'wheat'),
-		o-colors-hero-opinion:             (background: 'oxford'),
-		o-colors-hero-highlight:           (background: 'claret'),
+		//	<use case>						<properties>
+		o-colors-focus:						('colors': (outline: 'black-50'), 'opts': ()),
+		o-colors-page:						('colors': (background: 'paper'), 'opts': ()),
+		o-colors-box:						('colors': (background: 'wheat'), 'opts': ()),
+		o-colors-link:						('colors': (text: 'teal'), 'opts': ()),
+		o-colors-link-hover:				('colors': (text: 'teal-30'), 'opts': ()),
+		o-colors-link-title:				('colors': (text: 'black-80'), 'opts': ()),
+		o-colors-link-title-hover:			('colors': (text: 'black-70'), 'opts': ()),
+		o-colors-tag-link:					('colors': (text: 'claret'), 'opts': ()),
+		o-colors-tag-link-hover:			('colors': (text: 'claret-30'), 'opts': ()),
+		o-colors-opinion-tag-link:			('colors': (text: 'oxford'), 'opts': ()),
+		o-colors-opinion-tag-link-hover:	('colors': (text: 'oxford-30'), 'opts': ()),
+		o-colors-title:						('colors': (text: 'black'), 'opts': ()),
+		o-colors-body:						('colors': (text: 'black-80'), 'opts': ()),
+		o-colors-muted:						('colors': (text: 'black-20'), 'opts': ()),
+		o-colors-opinion:					('colors': (background: 'sky'), 'opts': ()),
+		o-colors-hero:						('colors': (background: 'wheat'), 'opts': ()),
+		o-colors-hero-opinion:				('colors': (background: 'oxford'), 'opts': ()),
+		o-colors-hero-highlight:			('colors': (background: 'claret'), 'opts': ()),
 
 		// Section colors
-		o-colors-section-life-arts:        (all: 'velvet'),
-		o-colors-section-life-arts-alt:    (all: 'candy'),
-		o-colors-section-magazine:         (all: 'oxford'),
-		o-colors-section-magazine-alt:     (all: 'sky'),
-		o-colors-section-house-home:       (all: 'jade'),
-		o-colors-section-house-home-alt:   (all: 'wasabi'),
-		o-colors-section-money:            (all: 'crimson'),
-		o-colors-section-money-alt:        (all: 'white'),
+		o-colors-section-life-arts:			('colors': (all: 'velvet'), 'opts': ()),
+		o-colors-section-life-arts-alt:		('colors': (all: 'candy'), 'opts': ()),
+		o-colors-section-magazine:			('colors': (all: 'oxford'), 'opts': ()),
+		o-colors-section-magazine-alt:		('colors': (all: 'sky'), 'opts': ()),
+		o-colors-section-house-home:		('colors': (all: 'jade'), 'opts': ()),
+		o-colors-section-house-home-alt:	('colors': (all: 'wasabi'), 'opts': ()),
+		o-colors-section-money:				('colors': (all: 'crimson'), 'opts': ()),
+		o-colors-section-money-alt:			('colors': (all: 'white'), 'opts': ()),
 	),
 	'internal': (
-	//	<use case>                <properties>
-		o-colors-focus:                    (outline: 'oxford-80'),
-		o-colors-page:                     (background: 'white'),
-		o-colors-box:                      (background: 'slate-white-5'),
-		o-colors-link:                     (text: 'teal'),
-		o-colors-link-hover:               (text: 'teal-30'),
-		o-colors-link-title:               (text: 'slate-white-15'),
-		o-colors-link-title-hover:         (text: 'slate-white-15'),
-		o-colors-title:                    (text: 'slate'),
-		o-colors-body:                     (text: 'slate'),
-		o-colors-muted:                    (text: 'black-20'),
+		//	<use case>						<properties>
+		o-colors-focus:						('colors': (outline: 'oxford-80'), 'opts': ()),
+		o-colors-page:						('colors': (background: 'white'), 'opts': ()),
+		o-colors-box:						('colors': (background: 'slate-white-5'), 'opts': ()),
+		o-colors-link:						('colors': (text: 'teal'), 'opts': ()),
+		o-colors-link-hover:				('colors': (text: 'teal-30'), 'opts': ()),
+		o-colors-link-title:				('colors': (text: 'slate-white-15'), 'opts': ()),
+		o-colors-link-title-hover:			('colors': (text: 'slate-white-15'), 'opts': ()),
+		o-colors-title:						('colors': (text: 'slate'), 'opts': ()),
+		o-colors-body:						('colors': (text: 'slate'), 'opts': ()),
+		o-colors-muted:						('colors': (text: 'black-20'), 'opts': ()),
 	),
 	'whitelabel': (
-	//	<use case>                <properties>
-		o-colors-page:                     (background: 'white'),
+		//	<use case>						<properties>
+		o-colors-page:						('colors': (background: 'white'), 'opts': ()),
 	)
 );
 
 $_o-colors-default-brand-usecases: map-get($_o-colors-branded-usecases, 'master');
 $_o-colors-current-brand-usecases: map-get($_o-colors-branded-usecases, $_o-colors-brand);
-$o-colors-usecases: map-merge(if($_o-colors-current-brand-usecases, $_o-colors-current-brand-usecases, $_o-colors-default-brand-usecases), $o-colors-usecases);
+$_o-colors-usecases: map-merge(if($_o-colors-current-brand-usecases, $_o-colors-current-brand-usecases, $_o-colors-default-brand-usecases), $_o-colors-usecases);
