@@ -199,12 +199,19 @@
 	}
 }
 
-/// Update the palette with default o-colors palette colours.
-@mixin _oColorsSetPaletteColors {
-	@each $color-name, $color-details in $_o-colors-default-palette-colors {
-		$color-hex: map-get($color-details, 'color');
-		$opts: map-get($color-details, 'opts');
+/// Add default o-colors palette colours.
+@mixin _oColorsSetDefaultPaletteColors {
+	@each $color-name, $color-hex, $opts in $_o-colors-default-palette-colors {
+		$opts: if($opts, $opts, ());
 		@include oColorsSetColor('o-colors', $color-name, $color-hex, $opts);
+	}
+}
+
+/// Add default o-colors usecases.
+@mixin _oColorsSetDefaultUsecases {
+	@each $usecase, $colors, $opts in $_o-colors-default-usecases {
+		$opts: if($opts, $opts, ());
+		@include oColorsSetUseCase('o-colors', $usecase, $colors, $opts);
 	}
 }
 

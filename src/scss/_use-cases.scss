@@ -1,74 +1,93 @@
-////
-/// @group o-colors
-/// @link http://registry.origami.ft.com/components/o-colors
-////
-
-/// color use cases
-///
-/// These mappings define what we use our colors for.
-///
-/// Use case:           Must be a single word comprising just letters, numbers, and dashes.
-/// Properties:         A Sass map of colours `colors` and options `opts`.
-/// Properties-colors:  A Sass map of properties (must be 'border', 'text', 'background', 'outline', or 'all')
-///                     against palette colors (must be an exact match for a name of a color defined
-///                     in palette.scss).
-/// Properties-opts:    A Sass map of options. May include a 'deprecated' key with a deprecation message for
-///						the usecase, or a map of deprecation messages for each usecase property.
-///						E.g. `('deprecated': 'this usecase is not used anymore.')`
-///						E.g. `('deprecated': ('border': 'this usecase has no border property anymore'))`
-///
-/// @type map
-$_o-colors-branded-usecases: (
-	'master': (
-		//	<use case>						<properties>
-		o-colors-focus:						('colors': (outline: 'black-50'), 'opts': ()),
-		o-colors-page:						('colors': (background: 'paper'), 'opts': ()),
-		o-colors-box:						('colors': (background: 'wheat'), 'opts': ()),
-		o-colors-link:						('colors': (text: 'teal'), 'opts': ()),
-		o-colors-link-hover:				('colors': (text: 'teal-30'), 'opts': ()),
-		o-colors-link-title:				('colors': (text: 'black-80'), 'opts': ()),
-		o-colors-link-title-hover:			('colors': (text: 'black-70'), 'opts': ()),
-		o-colors-tag-link:					('colors': (text: 'claret'), 'opts': ()),
-		o-colors-tag-link-hover:			('colors': (text: 'claret-30'), 'opts': ()),
-		o-colors-opinion-tag-link:			('colors': (text: 'oxford'), 'opts': ()),
-		o-colors-opinion-tag-link-hover:	('colors': (text: 'oxford-30'), 'opts': ()),
-		o-colors-title:						('colors': (text: 'black'), 'opts': ()),
-		o-colors-body:						('colors': (text: 'black-80'), 'opts': ()),
-		o-colors-muted:						('colors': (text: 'black-20'), 'opts': ()),
-		o-colors-opinion:					('colors': (background: 'sky'), 'opts': ()),
-		o-colors-hero:						('colors': (background: 'wheat'), 'opts': ()),
-		o-colors-hero-opinion:				('colors': (background: 'oxford'), 'opts': ()),
-		o-colors-hero-highlight:			('colors': (background: 'claret'), 'opts': ()),
+@if oBrandGetCurrentBrand() == master {
+	$_o-colors-default-usecases: (
+		('focus', ('outline': 'black-50')),
+		('page', ('background': 'paper')),
+		('box', ('background': 'wheat')),
+		('link', ('text': 'teal')),
+		('link-hover', ('text': 'teal-30')),
+		('link-title', ('text': 'black-80')),
+		('link-title-hover', ('text': 'black-70')),
+		('tag-link', ('text': 'claret')),
+		('tag-link-hover', ('text': 'claret-30')),
+		('opinion-tag-link', ('text': 'oxford')),
+		('opinion-tag-link-hover', ('text': 'oxford-30')),
+		('title', ('text': 'black')),
+		('body', ('text': 'black-80')),
+		('muted', ('text': 'black-20')),
+		('opinion', ('background': 'sky')),
+		('hero', ('background': 'wheat')),
+		('hero-opinion', ('background': 'oxford')),
+		('hero-highlight', ('background': 'claret')),
 
 		// Section colors
-		o-colors-section-life-arts:			('colors': (all: 'velvet'), 'opts': ()),
-		o-colors-section-life-arts-alt:		('colors': (all: 'candy'), 'opts': ()),
-		o-colors-section-magazine:			('colors': (all: 'oxford'), 'opts': ()),
-		o-colors-section-magazine-alt:		('colors': (all: 'sky'), 'opts': ()),
-		o-colors-section-house-home:		('colors': (all: 'jade'), 'opts': ()),
-		o-colors-section-house-home-alt:	('colors': (all: 'wasabi'), 'opts': ()),
-		o-colors-section-money:				('colors': (all: 'crimson'), 'opts': ()),
-		o-colors-section-money-alt:			('colors': (all: 'white'), 'opts': ()),
-	),
-	'internal': (
-		//	<use case>						<properties>
-		o-colors-focus:						('colors': (outline: 'oxford-80'), 'opts': ()),
-		o-colors-page:						('colors': (background: 'white'), 'opts': ()),
-		o-colors-box:						('colors': (background: 'slate-white-5'), 'opts': ()),
-		o-colors-link:						('colors': (text: 'teal'), 'opts': ()),
-		o-colors-link-hover:				('colors': (text: 'teal-30'), 'opts': ()),
-		o-colors-link-title:				('colors': (text: 'slate-white-15'), 'opts': ()),
-		o-colors-link-title-hover:			('colors': (text: 'slate-white-15'), 'opts': ()),
-		o-colors-title:						('colors': (text: 'slate'), 'opts': ()),
-		o-colors-body:						('colors': (text: 'slate'), 'opts': ()),
-		o-colors-muted:						('colors': (text: 'black-20'), 'opts': ()),
-	),
-	'whitelabel': (
-		//	<use case>						<properties>
-		o-colors-page:						('colors': (background: 'white'), 'opts': ()),
-	)
-);
+		('section-life-arts', (
+			'text': 'velvet',
+			'background': 'velvet',
+			'border': 'velvet',
+			'outline': 'velvet'
+		)),
+		('section-life-arts-alt', (
+			'text': 'candy',
+			'background': 'candy',
+			'border': 'candy',
+			'outline': 'candy'
+		)),
+		('section-magazine', (
+			'text': 'oxford',
+			'background': 'oxford',
+			'border': 'oxford',
+			'outline': 'oxford'
+		)),
+		('section-magazine-alt', (
+			'text': 'sky',
+			'background': 'sky',
+			'border': 'sky',
+			'outline': 'sky'
+		)),
+		('section-house-home', (
+			'text': 'jade',
+			'background': 'jade',
+			'border': 'jade',
+			'outline': 'jade'
+		)),
+		('section-house-home-alt', (
+			'text': 'wasabi',
+			'background': 'wasabi',
+			'border': 'wasabi',
+			'outline': 'wasabi'
+		)),
+		('section-money', (
+			'text': 'crimson',
+			'background': 'crimson',
+			'border': 'crimson',
+			'outline': 'crimson'
+		)),
+		('section-money-alt', (
+			'text': 'white',
+			'background': 'white',
+			'border': 'white',
+			'outline': 'white'
+		)),
+	);
+};
 
-$_o-colors-default-brand-usecases: map-get($_o-colors-branded-usecases, 'master');
-$_o-colors-current-brand-usecases: map-get($_o-colors-branded-usecases, $_o-colors-brand);
-$_o-colors-usecases: map-merge(if($_o-colors-current-brand-usecases, $_o-colors-current-brand-usecases, $_o-colors-default-brand-usecases), $_o-colors-usecases);
+@if oBrandGetCurrentBrand() == internal {
+	$_o-colors-default-usecases: (
+		('focus', ('outline': 'oxford-80')),
+		('page', ('background': 'white')),
+		('box', ('background': 'slate-white-5')),
+		('link', ('text': 'teal')),
+		('link-hover', ('text': 'teal-30')),
+		('link-title', ('text': 'slate-white-15')),
+		('link-title-hover', ('text': 'slate-white-15')),
+		('title', ('text': 'slate')),
+		('body', ('text': 'slate')),
+		('muted', ('text': 'black-20')),
+	);
+};
+
+@if oBrandGetCurrentBrand() == whitelabel {
+	$_o-colors-default-usecases: (
+		('page', ('background': 'white')),
+	);
+};
