@@ -66,7 +66,7 @@ As `o-colors` [no longer outputs usecase CSS classes](#MIGRATION.md#migrating-fr
 The arguments of `oColorsGetContrastRatio` have been renamed. `$col1` becomes `$color-a` and `$col2` becomes `$color-b`. As well as a CSS colour, palette colour names are now also accepted.
 
 ```diff
-	$contrast: oColorsGetContrastRatio('paper', 'teal');
+	$contrast: oColorsGetContrastRatio(#ffffff, #000000);
 -	$contrast: oColorsGetContrastRatio($col1: oColorsGetPaletteColor('paper'), $col2: oColorsGetPaletteColor('teal'));
 +	$contrast: oColorsGetContrastRatio($color-a: 'paper', $color-b: 'teal');
 ```
