@@ -37,7 +37,7 @@ o-colors has a number of mixins and functions for you to access the color palett
 o-colors defines a colour palette (a set of named colours) which may be [previewed in the registry](https://registry.origami.ft.com/components/o-colors). Custom palette colours may be added to the palette to share them with dependencies.
 
 Color Name | Brand Support |
----|---|---
+---|---
 black | master, internal, whitelabel
 white | master, internal, whitelabel
 oxford | master, internal
