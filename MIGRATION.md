@@ -2,7 +2,9 @@
 
 ### Upgrading from v4 to v5
 
-`o-colors` no longer outputs CSS classes for usecases. If your project used these classes instead use Sass mixins or CSS Custom Properties (Variables). If this isn't possible, e.g. due to browser support requirements, please contact the Origami team.
+`o-colors` no longer outputs CSS classes for palette colours or usecases. Sass users should use Sass functions to set colours instead. Build service users should use the palette's CSS Custom Properties (CSS Variables). If that is not possible due to browser support requirements please contact the Origami team.
+
+Removed CSS classes for colour usecase:
 
 - o-colors-focus-outline
 - o-colors-page-background
@@ -31,10 +33,32 @@
 - o-colors-section-money-all
 - o-colors-section-money-alt-all
 
+Removed CSS classes for palette colours:
+
+- o-colors-palette-paper
+- o-colors-palette-claret
+- o-colors-palette-oxford
+- o-colors-palette-teal
+- o-colors-palette-wheat
+- o-colors-palette-sky
+- o-colors-palette-slate
+- o-colors-palette-velvet
+- o-colors-palette-mandarin
+- o-colors-palette-lemon
+- o-colors-palette-candy
+- o-colors-palette-wasabi
+- o-colors-palette-jade
+- o-colors-palette-crimson
+- o-colors-palette-org-b2c
+- o-colors-palette-org-b2c-dark
+- o-colors-palette-org-b2c-light
+
+#### Sass
+
 The following colours have been removed from the palette:
 
-- `inherit`. Replace `oColorsByName('inherit');` with `inherit`.
-- `transparent`. Replace `oColorsByName('transparent');` with `transparent`.
+- `inherit`. Replace `oColorsGetPaletteColor('inherit');` with `inherit`.
+- `transparent`. Replace `oColorsGetPaletteColor('transparent');` with `transparent`.
 
 The following variables have been removed:
 
