@@ -39,7 +39,7 @@ The following palette colours were removed for all brands:
 - `inherit`. Replace `oColorsGetPaletteColor('inherit');` with `inherit`.
 - `transparent`. Replace `oColorsGetPaletteColor('transparent');` with `transparent`.
 
-Deprecated internal and whitelabel brand palette colours were removed. Please contact Origami if your internal product has a usecase for one of the removed colours colours:
+Deprecated internal and whitelabel brand palette colours were removed. Please contact Origami if your product has a usecase for one of the removed colours:
 - Internal brand: candy, wasabi, org-b2c, org-b2c-dark, org-b2c-light, paper, wheat, sky, velvet, mandarin, claret.
 - Whitelabel brand: all colours except black and white have been removed.
 
