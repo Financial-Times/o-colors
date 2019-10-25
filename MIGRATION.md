@@ -2,15 +2,11 @@
 
 ### Upgrading from v4 to v5
 
-<<<<<<< HEAD
+#### CSS Classes
+
 `o-colors` no longer outputs CSS classes for palette colours or usecases. Sass users should use Sass functions to set colours instead. Build service users should use the palette's CSS Custom Properties (CSS Variables). If that is not possible due to browser support requirements please contact the Origami team.
 
 Removed CSS classes for colour usecase:
-=======
-#### CSS Classes
-
-`o-colors` no longer outputs CSS classes for usecases. If your project used these classes instead use Sass mixins or CSS Custom Properties (Variables). If this isn't possible, e.g. due to browser support requirements, please contact the Origami team.
->>>>>>> breaking
 
 - o-colors-focus-outline
 - o-colors-page-background
@@ -39,7 +35,6 @@ Removed CSS classes for colour usecase:
 - o-colors-section-money-all
 - o-colors-section-money-alt-all
 
-<<<<<<< HEAD
 Removed CSS classes for palette colours:
 
 - o-colors-palette-paper
@@ -64,11 +59,6 @@ Removed CSS classes for palette colours:
 
 The following colours have been removed from the palette:
 
-=======
-#### Palette Colours
-
-The following palette colours were removed for all brands:
->>>>>>> breaking
 - `inherit`. Replace `oColorsGetPaletteColor('inherit');` with `inherit`.
 - `transparent`. Replace `oColorsGetPaletteColor('transparent');` with `transparent`.
 
