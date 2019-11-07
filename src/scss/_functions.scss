@@ -117,7 +117,7 @@
 }
 
 /// Returns a brighter or darker tone of a colour, where the hue remains
-/// the same but the saturations and luminance changes.
+/// the same but the saturation and luminance changes.
 ///
 /// Not all our colours allow tones. If a colour cannot be toned an error is
 /// thrown. You may however mix the colour with another supported colour.
