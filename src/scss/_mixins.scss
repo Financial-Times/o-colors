@@ -120,7 +120,7 @@
 		}
 	}
 
-	// Remove the default o-colors namespace so returned namespace names
+	// Remove the default o-colors namespace so returned color names
 	// do not include it.
 	$usecase: _oColorsRemoveDefaultNamespace($usecase);
 
