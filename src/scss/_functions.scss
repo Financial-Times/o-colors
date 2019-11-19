@@ -138,7 +138,7 @@
 	$has-tone-config: map-has-key($_o-colors-tone-saturation, $color-name);
 	@if (not $has-tone-config and ($color-name == 'white' or $color-name == 'black')) {
 		@return _oColorsError('"#{$color-name}" does not support tones. ' +
-			'Consider using a mix instead e.g: ' +
+			'Use a mix instead: ' +
 			'`oColorsMix(\'#{$color-name}\', $percentage: #{$brightness})`');
 	}
 	@if (not $has-tone-config) {
