@@ -118,7 +118,7 @@
 		@return _oColorsError('"$brightness" must be a number between 0 and 100.');
 	}
 
-	// Error for white and black colours which have no hue, they cannot be toned.
+	// Error for colours which have no hue, such as white and black, which we do not allow tones of.
 	@if (hue($color) == 0) {
 		@return _oColorsError('"#{$color-name}" does not support tones. ' +
 			'Use a mix instead: ' +
