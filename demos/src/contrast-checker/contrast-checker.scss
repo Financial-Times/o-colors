@@ -80,7 +80,7 @@ $o-colors-is-silent: false;
 			}
 
 			[role=tab][aria-selected=true] {
-					background-color: oColorsByName('black-10');
+				background-color: oColorsByName('black-10');
 
 				a {
 					font-weight: 600;
