@@ -50,7 +50,7 @@
 			@error 'A palette colour "#{$color-name}" has already been set. ' +
 				'Only default o-colors palette colours may be overridden with `oColorsSetColor`. ' +
 				'If you would like to customise "#{$namespace}" colours, check its README for ' +
-			'customisation options, or contact the Origami team to propose new customisation features.';
+				'customisation options, or contact the Origami team to propose new customisation features.';
 		}
 	}
 	// Set the new colour to the colour palette.
@@ -154,7 +154,7 @@
 		@error 'A usecase "#{$usecase}" has already been set. ' +
 			'Only default o-colors usecases may be overridden with `oColorsSetUseCase`. ' +
 			'If you would like to customise "#{$namespace}" colours, check its README for ' +
-		'customisation options, or contact the Origami team to propose new customisation features.';
+			'customisation options, or contact the Origami team to propose new customisation features.';
 	}
 
 	// Add the use-case and its properties to the global use-case map.
