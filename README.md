@@ -1,4 +1,4 @@
-# o-colors [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](#licence)
+# o-colors
 
 A component to manage colours. Includes the FT colour palette.
 
