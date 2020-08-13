@@ -99,7 +99,7 @@
 
 		@include it('returns an error for default palette colours which do not allow tones') {
 			@include assert-equal(oColorsGetTone('black', 10),
-			('ERROR: "black" does not support tones. Use a mix instead: `oColorsMix(\'black\', $percentage: 10)`'),
+			('ERROR: "black" does not allow tones. We only allow tones for some colours, to reduce the number of different colours used across sites. For custom colours, set the `allow-tones` option of `oColorsSetColor` to enable tones. If using a default o-colors colour consider using the `oColorsMix` function to mix with black to darken or white to lighten.'),
 			$inspect: true);
 			@include assert-equal(oColorsGetTone('white', 10),
 			('ERROR: "white" does not support tones. Use a mix instead: `oColorsMix(\'white\', $percentage: 10)`'),
