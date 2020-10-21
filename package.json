@@ -1,14 +1,23 @@
 {
-	"private": true,
-	"name": "o-colors",
-	"devDependencies": {
-		"eslint": "^7.8.1",
-		"eslint-config-origami-component": "^2.1.0",
-		"origami-ci-tools": "^2.0.2",
-		"remark": "^12.0.1",
-		"remark-lint": "^7.0.1",
-		"remark-preset-lint-origami-component": "^1.2.0",
-		"stylelint": "^13.7.0",
-		"stylelint-config-origami-component": "^1.0.4"
-	}
+    "main": "main.js",
+    "name": "o-colors",
+    "devDependencies": {
+        "eslint": "^7.8.1",
+        "eslint-config-origami-component": "^2.1.0",
+        "origami-ci-tools": "^2.0.2",
+        "remark": "^12.0.1",
+        "remark-lint": "^7.0.1",
+        "remark-preset-lint-origami-component": "^1.2.0",
+        "stylelint": "^13.7.0",
+        "stylelint-config-origami-component": "^1.0.4"
+    },
+    "peerDependencies": {
+        "@financial-times/o-brand": "^3.2.5",
+        "mathsass": "^0.10.1"
+    },
+    "description": "The default colour palette for all FT products. The palette supports colour contrast checking, colour mixing and toneing.",
+    "publishConfig": {
+        "registry": "http://localhost:4873"
+    },
+    "version": "6.0.0-0"
 }
