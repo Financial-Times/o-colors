@@ -1,6 +1,6 @@
 {
     "main": "main.js",
-    "name": "o-colors",
+    "name": "@financial-times/o-colors",
     "devDependencies": {
         "eslint": "^7.8.1",
         "eslint-config-origami-component": "^2.1.0",
