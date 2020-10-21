@@ -12,12 +12,12 @@
         "stylelint-config-origami-component": "^1.0.4"
     },
     "peerDependencies": {
-        "@financial-times/o-brand": "^100.0.0-4",
+        "@financial-times/o-brand": "^100.0.0-5",
         "mathsass": "^0.10.1"
     },
     "description": "The default colour palette for all FT products. The palette supports colour contrast checking, colour mixing and toneing.",
     "publishConfig": {
         "registry": "http://localhost:4873"
     },
-    "version": "100.0.0-4"
+    "version": "100.0.0-5"
 }
