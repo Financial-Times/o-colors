@@ -1,6 +1,8 @@
 {
-    "browser": "main.js",
     "name": "@financial-times/o-colors",
+    "version": "100.0.0-7",
+    "description": "The default colour palette for all FT products. The palette supports colour contrast checking, colour mixing and toneing.",
+    "browser": "main.js",
     "devDependencies": {
         "eslint": "^7.8.1",
         "eslint-config-origami-component": "^2.1.0",
@@ -15,9 +17,7 @@
         "@financial-times/o-brand": "^100.0.0-7",
         "mathsass": "^0.10.1"
     },
-    "description": "The default colour palette for all FT products. The palette supports colour contrast checking, colour mixing and toneing.",
     "publishConfig": {
         "registry": "http://localhost:4873"
-    },
-    "version": "100.0.0-7"
+    }
 }
