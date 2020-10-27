@@ -1,31 +1,42 @@
 {
-    "name": "@financial-times/o-colors",
-    "version": "100.0.0-8",
-    "description": "The default colour palette for all FT products. The palette supports colour contrast checking, colour mixing and toneing.",
-    "license": "MIT",
-    "type": "module",
-    "exports": {
-        ".": {
-            "browser": "./main.js"
-        }
-    },
-    "browser": "./main.js",
-    "types": "types",
-    "devDependencies": {
-        "eslint": "^7.8.1",
-        "eslint-config-origami-component": "^2.1.0",
-        "origami-ci-tools": "^2.0.2",
-        "remark": "^12.0.1",
-        "remark-lint": "^7.0.1",
-        "remark-preset-lint-origami-component": "^1.2.0",
-        "stylelint": "^13.7.0",
-        "stylelint-config-origami-component": "^1.0.4"
-    },
-    "peerDependencies": {
-        "@financial-times/o-brand": "^100.0.0-9",
-        "mathsass": "^0.10.1"
-    },
-    "publishConfig": {
-        "registry": "https://origami-npm-registry-prototype.herokuapp.com"
+  "name": "@financial-times/o-colors",
+  "version": "100.0.0-10",
+  "description": "The default colour palette for all FT products. The palette supports colour contrast checking, colour mixing and toneing.",
+  "keywords": [],
+  "homepage": "https://github.com/Financial-Times/o-colors#readme",
+  "bugs": {
+    "url": "https://github.com/Financial-Times/o-colors/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Financial-Times/o-colors.git"
+  },
+  "license": "MIT",
+  "author": "",
+  "type": "module",
+  "exports": {
+    ".": {
+      "browser": "./main.js"
     }
+  },
+
+  "browser": "./main.js",
+  "types": "types",
+  "devDependencies": {
+    "eslint": "^7.8.1",
+    "eslint-config-origami-component": "^2.1.0",
+    "origami-ci-tools": "^2.0.2",
+    "remark": "^12.0.1",
+    "remark-lint": "^7.0.1",
+    "remark-preset-lint-origami-component": "^1.2.0",
+    "stylelint": "^13.7.0",
+    "stylelint-config-origami-component": "^1.0.4"
+  },
+  "peerDependencies": {
+    "@financial-times/o-brand": "^100.0.0-10",
+    "mathsass": "^0.10.1"
+  },
+  "publishConfig": {
+    "registry": "https://origami-npm-registry-prototype.herokuapp.com"
+  }
 }
