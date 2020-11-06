@@ -1,6 +1,6 @@
 {
   "name": "@financial-times/o-colors",
-  "version": "100.0.0-11",
+  "version": "100.0.0-12",
   "description": "The default colour palette for all FT products. The palette supports colour contrast checking, colour mixing and toneing.",
   "keywords": [],
   "homepage": "https://github.com/Financial-Times/o-colors#readme",
@@ -33,7 +33,7 @@
     "typescript": "^4.0.5"
   },
   "peerDependencies": {
-    "@financial-times/o-brand": "^100.0.0-11",
+    "@financial-times/o-brand": "^100.0.0-12",
     "mathsass": "^0.10.1"
   },
   "publishConfig": {
