@@ -36,7 +36,7 @@
 				"@financial-times/o-fonts@5.0.0-1",
 				"@financial-times/o-forms@9.0.0-1",
 				"@financial-times/o-normalise@3.0.0-0",
-				"@financial-times/o-overlay@4.0.0-0",
+				"@financial-times/o-overlay@4.0.0-beta.1",
 				"@financial-times/o-syntax-highlight@4.0.0-0",
 				"@financial-times/o-tabs@6.0.0-0"
 			],
@@ -57,7 +57,7 @@
 				"@financial-times/o-fonts@5.0.0-1",
 				"@financial-times/o-forms@9.0.0-1",
 				"@financial-times/o-normalise@3.0.0-0",
-				"@financial-times/o-overlay@4.0.0-0",
+				"@financial-times/o-overlay@4.0.0-beta.1",
 				"@financial-times/o-syntax-highlight@4.0.0-0"
 			],
 			"brands":	[
@@ -143,7 +143,7 @@
 				"@financial-times/o-fonts@5.0.0-1",
 				"@financial-times/o-forms@9.0.0-1",
 				"@financial-times/o-normalise@3.0.0-0",
-				"@financial-times/o-overlay@4.0.0-0",
+				"@financial-times/o-overlay@4.0.0-beta.1",
 				"@financial-times/o-syntax-highlight@4.0.0-0",
 				"@financial-times/o-tabs@6.0.0-0"
 			],
@@ -164,7 +164,7 @@
 				"@financial-times/o-fonts@5.0.0-1",
 				"@financial-times/o-forms@9.0.0-1",
 				"@financial-times/o-normalise@3.0.0-0",
-				"@financial-times/o-overlay@4.0.0-0",
+				"@financial-times/o-overlay@4.0.0-beta.1",
 				"@financial-times/o-syntax-highlight@4.0.0-0"
 			],
 			"description": "",
