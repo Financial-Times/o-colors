@@ -101,7 +101,7 @@ candy | master
 wasabi | master
 light-blue | master
 graphics-dark-blue | master
-ft-pink (previously brand-ft-pink) | master
+ft-pink | master
 ft-grey | master
 org-b2c | master
 org-b2c-dark | master
