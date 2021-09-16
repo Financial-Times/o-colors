@@ -1,5 +1,12 @@
 # o-colors [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](#licence)
 
+***
+
+**This component has moved to the [Origami Component System](https://github.com/Financial-Times/origami).**
+
+***
+
+
 A component to manage colours. Includes the FT colour palette.
 
 - [Usage](#usage)
