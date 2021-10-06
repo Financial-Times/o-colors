@@ -1,8 +1,0 @@
-.idea/
-.sass-cache/
-build/
-test/output/
-demos/local
-.DS_Store
-node_modules/
-bower_components/
